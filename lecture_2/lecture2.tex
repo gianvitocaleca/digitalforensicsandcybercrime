@@ -1,75 +1,50 @@
 %section: Ransomwares and ransomware attacks
 %last subsection: how to get infected
-\iffalse
-\subsection{Encryption mechanism: how do ransomware work}
-    Once the malware starts on target computer, it generates a random symmetric key, usually one per file, and it encrypts each file with this symmetric key.\\
-    The symmetric key itself it's encrypted with a public key, of a key pair generated on the server of the group that runs the malware. The private key is on the server. You need to pay the ransom.
-    \\Most of this is automated, when you're requested to pay a ransom, when cryptocurrencies are trasnferred to the addres, it releases the key associated to that address.
-    Different keys to allow the attackers to decrypt only a part of the samples to demonstrate that they can do it.
-
-crypto miner is another example of direct monetization.
-
-
-\section{Indirect monetization}
-    %da inserire in lecture 1
-    examples: abuse of computing resources
-    information gathering (stealing of account infos to sell them)
-    making the machines part of a botnet to rent the botnet
-
-    \subsection[short]{Botnets}
-        slide 17 
-        Controller of the botnet rent out it to perform tasks, most typical example is Dos
-        thousand of machines..
-        Another use is spamming, generating phishing campains, mine cryptos, parallel decryption
-        earn money out of the rent
-
+    \subsection{Encryption mechanism: how do ransomware work}
+        Once the malware starts running on target computer, it generates a random symmetric key\footnote{used both to encrypt and decrypt information}, usually one per file, and it encrypts each file with it.\\
+        The symmetric key itself it's encrypted with a public key, of an asymmetric key pair generated on the server of the group that runs the malware. The private key is stored on the server, and it will released only when the ransom is payed.\\
+        Most of this process is automated: when cryptocurrencies are transferred to the criminals' address, the server releases the key associated to it.
+        Different keys to allow the attackers to decrypt only a part of the samples to demonstrate that they can do it.
+\section{Indirect monetization: Botnets}
+    The word botnet comes from the words \textit{robot} and \textit{network}. A botnet is composed by few hundreds to millions of infected devices which run some sort of malware they got by opening an infected email attachment, by plugging an infected USB drive, visiting an infected website \textit{(these are examples of ways to get infected)}\\
+    Each botnet has a \textbf{botmaster} who controls and rents it out to perform tasks \textit{(denial of service, spamming, phishing campaigns, crypto mining \dots)}, and his only objective is to earn money by renting them.\\
+    The significant challenge with this type of crime is that each bot per-se is not dangerous for the machine itself, but for other machines, and since the cost of cleaning up a machine falls on its owner, some can decide to not do anything about. This cost can be seen as a small fee to be payed by \textit{the community} to get everybody safe. Like a vaccination, some cases of infected machines are not a big trouble for the community, while a lot of them can be really dangerous for everybody.
     \subsection{Rise of the bots}
-        slide 18
-        back in the days botnets were used to control IRC channels to manage the chat.
-        Then instead of using the compromised machines to control the IRC, then used the chat to control the bots.
-        the significant challenge in this type of crime is that each bot per se is not dangerous for the machine itself, but other machines.
-        The cost of cleaning up your machine falls on you 
-        There is a small cost that needs to be payed from each member of the community in order to don't let nobody in the group to get big damage
-        (same thing as vaccination)
-        As long as enough people protect their computers, the fact that your computer has a botnet is not a big problem to you.
-        If lot of people let their computers be part of the botnet, big damage for the internet, big damage for everyone.
-        Until that moment, selfishly not caring about it is not so a big trouble.
-
-    \subsection{Geolocalization of botnets C&C}
-        chart. every quarter you can have a new updated chart.
-        It tells us about command and controls of botnets that we know, they are so larger enough.
-        Observation bias.
-        Also all statistics on crime, cybercrime .. suffer of the same type of bias which is called the heatmap effect.
-        biased on the density of the population and how much data we collected from there
-        not lot of data on China example: black hole..
-        less technological advanced or shitty governments are so..
-        you always have USA on top:
-            more penetration in internet
-            where this think is tracked
-            altre cose..
-        Also countries like netherlands: significant increase tells us that something is on, it could be some netherland organization decided to participate in this data feed putting a lot of data
-            could also be that maybe some kind of attack used bots in netherlands.
-        Singapore is ahead of China?
-            Heatmap effect in the opposite, they're mostly behind the great firewall, most of the things cannot be tracked.
-        There are footprints of Russians and Chinese hacking groups 
-            Russian hacks russian computers also
-            Chinese conservative.
-    \subsection{Type of malware families}
-        most of them botnets of some sort, can do all of the things but they're used to do only one of them
-        There are malwares classified as credential stealers: stealing credentials
-        banking trojans: credential stealers specifically trained to perform stealing of bank account infos.
-        Gozi most common banking trojan
-        Zeus was the most important one.
-
-        Remote Access Tools: basic botnet oriented malware, allow control of a computer in order to perform whatever.
-
-        Loaders: specifically designed to allow a botmaster to load a program of whatever sort on a computer. Maybe a client ask you to install a certain malware on a lot of computers, and you can do.
-
-        We talk about families because there are groups that develop (only) the source code of them, and who performs the attacks buys the code and personalizes it for the specific attack.
-        Three business: how to develop them, how to configure them, how to use them
-
-        There is a market for services related to malwares and cyber attacks (cybercrime as a service, underground market...) structured around the needs of cyber criminals.
-        This market is fueled by the money that these schemes make. Some of these money pays for the tools used to make that money.
+        Back in the days botnets were used to control IRC chats \textit{(see IRC wars)}. Then instead of using the compromised machines to control the chat, botmasters started to use the chat to control the bots.\\
+        In 1999, there was one of the first DDoS attacks, which was against University of Minnesota and used at least 227 bots.\\
+        In the 2000s DDoS attacks against high profile websites \textit{(Amazon, CNN, eBay \dots)} got huge media coverage.
+\newpage
+    \subsection{Geolocalization of botnets command and control}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{chart.png}
+        \end{figure}
+        This chart shows the number of new botnet C\&Cs detected by \textit{Spamhaus} in the second quarter of 2020, and the increase wrt the first one.\\
+        By keeping in mind the \textit{observation bias}, we can also introduce another kind of bias which is called \textbf{heatmap effect}: we're biased on the density of the population and on how much data we collect from a certain country.\\
+        In this kind of charts we'll always have U.S.A. on top, because there's more penetration in the internet, and also this kind of things is tracked. While we'll have less data from less technological advanced states or \textit{perfectly democratic countries} like Russia or the P.R.C. which can result in lower positions while in reality being the first ones.\\
+        Here we see an important increase of C\&C from The Netherlands:
+        \begin{itemize}
+            \item it is possible that \textbf{something is on}
+            \item or simply that some Netherlands organization decided to participate in this data collection feeding a lot of \textit{new} data
+        \end{itemize}
+        Funny thing about Russia and P.R.C: Russian people hack russian computers too, while P.R.C citizens don't hack into their fellows machines.
+\newpage
+    \subsection{Type of (botnet) malware families}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{families.png}
+        \end{figure}
+        Every botnet in general can be used to do any sort of things, but they're used to do only one of them:
+        \begin{itemize}
+            \item \textbf{Credential Stealers:} used to steal sensitive credentials.
+            \item \textbf{Banking Trojans:} credential stealers specifically designed to perform stealing of bank accounts information. \textit{(Gozi is the most common one, Zeus the most important one)}
+            \item \textbf{Remote Access Tools:} basic botnet oriented malware, which allows to control a computer in order to perform whatever.
+            \item \textbf{Loaders:} specifically designed to allow a botmaster to load a program of whatever sort on a computer. Maybe a client ask you to install a certain malware on a lot of computers, and you can do it with a loader.
+        \end{itemize}
+        We talk about families because there are criminal groups that only develop their source code, and who performs the attacks buys the code and personalizes it for the specific purpose they need.\\
+        So we can consider three businesses: how to develop them, how to configure them, how to use them.\\
+        There is a market for services related to malwares and cyber attacks \textit{(cybercrime as a service, underground market...)} structured around the needs of cyber criminals. This market is fueled by the money that these schemes make. Some of these money pays for the tools used to make that money.
+\iffalse
 SLIDE 
     someone stole money from 104000 taxpayers.
     What is the value of someone personal datas that you exchange with agenzia delle entrate?

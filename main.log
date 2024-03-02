@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.16)  1 MAR 2024 18:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.16)  2 MAR 2024 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -151,37 +151,48 @@ File: lecture_1/malicious.png Graphic file (type png)
 <use lecture_1/malicious.png>
 Package pdftex.def Info: lecture_1/malicious.png  used on input line 108.
 (pdftex.def)             Requested size: 241.49895pt x 162.94872pt.
- [7 <./lecture_1/verizon.png>] [8 <./lecture_1/malicious.png>]
-<lecture_1/ransomware_history.png, id=50, 576.65437pt x 323.70938pt>
+ [7 <./lecture_1/verizon.png>] [8 <./lecture_1/malicious.png>] [9]
+<lecture_1/ransomware_history.png, id=53, 576.65437pt x 323.70938pt>
 File: lecture_1/ransomware_history.png Graphic file (type png)
 <use lecture_1/ransomware_history.png>
-Package pdftex.def Info: lecture_1/ransomware_history.png  used on input line 133.
+Package pdftex.def Info: lecture_1/ransomware_history.png  used on input line 140.
 (pdftex.def)             Requested size: 137.9979pt x 77.46461pt.
- [9 <./lecture_1/ransomware_history.png>]
-<lecture_1/ransomware_screen.png, id=55, 638.385pt x 462.22687pt>
+<lecture_1/ransomware_screen.png, id=54, 638.385pt x 462.22687pt>
 File: lecture_1/ransomware_screen.png Graphic file (type png)
 <use lecture_1/ransomware_screen.png>
-Package pdftex.def Info: lecture_1/ransomware_screen.png  used on input line 150.
+Package pdftex.def Info: lecture_1/ransomware_screen.png  used on input line 157.
 (pdftex.def)             Requested size: 137.9979pt x 99.91286pt.
-<lecture_1/ransomware_email.png, id=56, 606.76688pt x 303.38344pt>
+<lecture_1/ransomware_email.png, id=55, 606.76688pt x 303.38344pt>
 File: lecture_1/ransomware_email.png Graphic file (type png)
 <use lecture_1/ransomware_email.png>
-Package pdftex.def Info: lecture_1/ransomware_email.png  used on input line 158.
+Package pdftex.def Info: lecture_1/ransomware_email.png  used on input line 165.
 (pdftex.def)             Requested size: 165.59853pt x 82.7988pt.
-<lecture_1/ransomware_email2.png, id=57, 560.8453pt x 365.11406pt>
+<lecture_1/ransomware_email2.png, id=56, 560.8453pt x 365.11406pt>
 File: lecture_1/ransomware_email2.png Graphic file (type png)
 <use lecture_1/ransomware_email2.png>
-Package pdftex.def Info: lecture_1/ransomware_email2.png  used on input line 159.
+Package pdftex.def Info: lecture_1/ransomware_email2.png  used on input line 166.
 (pdftex.def)             Requested size: 165.59853pt x 107.80241pt.
-) (./lecture_2/lecture2.tex) [10 <./lecture_1/ransomware_screen.png> <./lecture_1/ransomware_email.png> <./lecture_1/ransomware_email2.png>] [11] [12
-
-] [13
-
-] [14
-
-] [15
+ [10 <./lecture_1/ransomware_history.png> <./lecture_1/ransomware_screen.png>]) (./lecture_2/lecture2.tex [11 <./lecture_1/ransomware_email.png> <./lecture_1/ransomware_email2.png>] [12]
+<lecture_2/chart.png, id=71, 604.50844pt x 353.06906pt>
+File: lecture_2/chart.png Graphic file (type png)
+<use lecture_2/chart.png>
+Package pdftex.def Info: lecture_2/chart.png  used on input line 20.
+(pdftex.def)             Requested size: 207.0021pt x 120.89848pt.
+ [13 <./lecture_2/chart.png>]
+<lecture_2/families.png, id=75, 1056.94875pt x 660.21657pt>
+File: lecture_2/families.png Graphic file (type png)
+<use lecture_2/families.png>
+Package pdftex.def Info: lecture_2/families.png  used on input line 35.
+(pdftex.def)             Requested size: 207.0021pt x 129.30081pt.
+) [14 <./lecture_2/families.png>] [15
 
 ] [16
+
+] [17
+
+] [18
+
+] [19
 
 ] (./main.aux)
  ***********
@@ -190,18 +201,18 @@ L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1722 strings out of 474141
- 29175 string characters out of 5748625
+ 1742 strings out of 474141
+ 29637 string characters out of 5748625
  1934998 words of memory out of 5000000
- 24051 multiletter control sequences out of 15000+600000
+ 24069 multiletter control sequences out of 15000+600000
  564217 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,16n,65p,509b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,16n,65p,590b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (17 pages, 2433396 bytes).
+Output written on main.pdf (20 pages, 3145343 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 147 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6,12 +6,17 @@
 \contentsline {subsection}{\numberline {1.1.3}Data breaches and targeted attacks}{7}{}%
 \contentsline {section}{\numberline {1.2}Brief history of malicious software}{8}{}%
 \contentsline {section}{\numberline {1.3}Financially motivated attackers}{9}{}%
-\contentsline {section}{\numberline {1.4}Ransomwares and ransomware attacks}{9}{}%
-\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{9}{}%
+\contentsline {section}{\numberline {1.4}Direct monetization: ransomware attacks}{10}{}%
+\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{10}{}%
 \contentsline {subsection}{\numberline {1.4.2}Ransomware screenshot and social meanings}{10}{}%
-\contentsline {subsection}{\numberline {1.4.3}How to get infected}{10}{}%
-\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{12}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{13}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{14}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{15}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{16}{}%
+\contentsline {subsection}{\numberline {1.4.3}How to get infected}{11}{}%
+\contentsline {subsection}{\numberline {1.4.4}Encryption mechanism: how do ransomware work}{11}{}%
+\contentsline {section}{\numberline {1.5}Indirect monetization: Botnets}{12}{}%
+\contentsline {subsection}{\numberline {1.5.1}Rise of the bots}{12}{}%
+\contentsline {subsection}{\numberline {1.5.2}Geolocalization of botnets command and control}{13}{}%
+\contentsline {subsection}{\numberline {1.5.3}Type of (botnet) malware families}{14}{}%
+\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{15}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{16}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{17}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{18}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{19}{}%
