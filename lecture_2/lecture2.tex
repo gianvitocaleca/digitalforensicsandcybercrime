@@ -44,117 +44,69 @@
         We talk about families because there are criminal groups that only develop their source code, and who performs the attacks buys the code and personalizes it for the specific purpose they need.\\
         So we can consider three businesses: how to develop them, how to configure them, how to use them.\\
         There is a market for services related to malwares and cyber attacks \textit{(cybercrime as a service, underground market...)} structured around the needs of cyber criminals. This market is fueled by the money that these schemes make. Some of these money pays for the tools used to make that money.
+\newpage
+\section{The cybercrime ecosystem}
+    The status quo consists in \textbf{organized groups} performing \textbf{various activities:}
+    \begin{itemize}
+        \item Development and procurement of exploits
+        \item Site infection
+        \item Victim monitoring
+        \item Selling \textit{exploit kits}
+    \end{itemize}
+    \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{ecosystem.png}
+    \end{figure}
+    These ecosystems can exists because some of the activites done are not illegal: developing exploits per-se is not illegal, selling one is not illegal, the usage of them may be or may be not illegal.
+    Even the services related to the configuration of malware are not illegal, while execution and operation may be.
+    If you're sufficiently shielded and you run these \textit{businesses} in countries that cannot persecute you, we can even know your name and surname but you cannot be arrested.
+    \begin{itemize}
+        \item Developers write the source code for malwares with the help of packers and exploits developers
+        \item Crime service enablers:
+        \begin{itemize}
+            \item Quality assurance makes sure that antiviruses don't detect their software
+            \item Bulletproof hosting is a kind of \textit{close-an-eye} hosting, \textit{(e.g. russina business networks)} with permit certain suspect activities over their infrastructure, they're sort of borderline organization with lot of regular customers, and some bad ones
+        \end{itemize}
+    \end{itemize}
+    \subsection{Identity sales}
+        People's identities are sold on the black market. They are worth because they can be used for fraud, to open bank accounts used for money laudering for example.
+        The more they're useful, the more they are worth.
+        Worth 50 dollars for you that sell it, the one who pays is going to use them for fraud which is worth more.
+        The black market is fueled from an enormous amount of money that people stole.
+    \subsection{Drive by download}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{drivebydownload.png}
+        \end{figure}
+        This is another way in which malwares are installed:\\
+        an exploit breaks into your browser and executes code on your machine. This requires your browser to be vulnerable and for you to visit a compromised website with the exploit running \textit{(streaming, cracks of programs websites,\dots)}.
+        The most compromised are \textit{factually illegal websites}: you're not scared of the strange url if you are in need to see the last movie in streaming, download the expensive program's crack, this is in contrast with a normal situation like going to amazon to buy shoes.\\
+        But, \textit{traps} can be also present in legitimate websites.\\
+        What actually happens is that the users endup in a series of redirects, called \textbf{redirect chain}, which will endup in a visit to a website running what is called \textbf{exploitation pack} for your browser.
+    \subsection{Exploitation kits sales}
+        This kind of kits is sold in the dark web by well known organizations, take \textit{Blackhole} as example:\\
+        they were buying exploits from developers to earn 10s of millions per month renting them.\\
+        Their boss, surprisingly called Dmitry “Paunch” Fedotov, was arrested in 2013 after years of running the website.
+    \subsection{Monetization on the dark web}
+        Monetization takes a lot of forms, one of them is stealing credit card numbers to sell them for a relatively small price.\\
+        The hackers get \textit{easy and fast} money, while the buyers need to use the real money on the cards to buy expensive objects or to start frauds because they can be easily refunded. \textit{(apple computers, ethnic travel example..)}.
+    \subsection{Cybercrime and perception}
+        Online, you detach people from the picture. It's actually easier to commit crimes, it's easier to crack a program instead of stealing a car, lot of cyber criminals would never be criminals in the real world.
+        But when you do cybercrime, your perspective is different: you have another perception of what you're doing, that's the reason because crime happens more online.\\
+        Ethical people understand the consequences of their actions, and may decide to not do them, but someone can not care about what can happen as a consequence of their actions and perform them anyways:\\
+        in the Jamal Khashoggi case, the exploiter which wrote the code for the spyware that ended up to make him killed, would never kill someone. But the consequences of his actions did.
+    \subsection{Money mules and money laundering}
+        Most cybercrimes end up with a digital form of money, which crimials want to bring in a physiscal form, completely disconnected from what they did in principle.
+        \begin{itemize}
+            \item They can pay invoices to companies somewhere in the world, which in a certain way makes sure that the money come back clean. \textit{(traditional way)}
+            \item They can make use of \textbf{money mules}
+        \end{itemize}
+        Money mules are intermediary people which by purpose or not make earnings coming from cybercrime clean money.\\
+        Accomplished ones may be people that have nothing to lose \textit{(prejudiced, poor people \dots)}, they just open bank accounts by their names and get the money transferred and then withdrawn and handed to criminals.\\
+        Some of them may also open accounts by somebody else's name using identities that may be stolen with an attack and bought online. They're most difficult to catch because the Police needs to be actually there while they are withdrawing money.
+        \\Unaccomplished ones may be people which are fooled by things like the Nigerian prince scam: they get the money on their bank account, send 70\% of them to criminals in packages or by moneytransfer, and keep 30\%. Most of the cases they get arrested and have to pay back all the money, also the ones they don't own no more.\\
+        Buying and selling of goods \textit{(ricettazione)}, videogames curriencies, \dots, are other ways to perform money laundering.
 \iffalse
-SLIDE 
-    someone stole money from 104000 taxpayers.
-    What is the value of someone personal datas that you exchange with agenzia delle entrate?
-    You can sell identities on the black market. Worth because them can be used for fraud, open bank accounts used for money laudery.
-    The more they're useful, the more they are worth.
-    Worth 50 dollars for you that sell it, who pays is going to use them for fraud which is worth more.
-    Market fueled from an enormous amount of money that people stole.
-SLIDE 23
-
-    another way in which malwares are installed
-    drive by download, exploit breaks your browser and executes code on your machine. This requires your browser to be vulnerable and for you to visit the website which uses it.
-    people compromises or run websites like porn, streaming, cracks of programs.
-    you're not scared of the strange url if you are in need to see streaming, download crack, in contrast with amazon if you buy shoes.
-    you can also place the "trap" in a legitimate website.
-
-    In reality you'll endup in a series of redirect chain 
-    In that redirection chain you endup in the exploitation pack for your browser:
-        there is people selling this service kit to try 10-12 exploits tipo abbonamento 10.000€ mese 
-
-SLIDE 24
-    Advertisement of someone selling, 
-
-SLIDE 25(?)
-    Dashboard of black hole: exploitation as a service
-    black hole ended in 2013 because the guy was arrested.
-
-    These people just buy exploits, because they just can earn 10s millions per month and pay exploit hackers to develop them.
-
-SLIDE 25:
-    these ecosystems can exists because some of the activites done are not illegal. Developing exploits per se is not illegal, selling one is not illegal, the usage of them may be or may be not illegal.
-    Even the services related to the configuration of malware are not, execution and operation may be.
-    If you're sufficiently shielded and you run in countries that cannot persecute you, we can know even name and surname but people cannot be arrested.
-
-    packers develop things used in malwares, 
-    lot of other affiliates: quality assurants change them to not be detected from antiviruses
-    bulletproof hosting: hosts that kind of close an eye, for instance russian business network hosted whatever.
-    borderline organization with lot of regular customers, and some bad ones
-    
-    botnets are both enabler or attacks
-    + the part of money laundering
-SLIDE 26
-    someone looking to buy vulnerabilites.
-SLIDE 29
-    monetization takes a lot of forms:
-        people buying and selling cc numbers for 30\$ of sure and safe money instead of laundering.
-        an example is buying apple computers or expensive things.
-        They sell a volume of these for little sure and easy money.
-        
-        To make the card i bought for 30 in something more valuable
-            travel industry: ethnic travel agencies are those that work with immigrants
-            lot of planes to fill-up 
-            partially tourists and business people
-            part of them sold in blocks to people who travel back to their home countries for a low price.
-            legal business.
-
-            This creates possibility for a fraud:
-                these people are used to buy in cash the tickets for a much lower price than you can find online.
-                if you buy tickets with a stolen credit card from a regular travel agent and resell them for cash in a poor neighbor as a ethnical travel agent
-                you make less money, if person find out 
-                you have sold the ticket for a lower secure money.
-                if buyer is very unlucky gets to the airport and gets arrested.
-
-    If you detach others from the picture (online), it's easier to commit crimes: example steal a car vs steal a movie.
-    lot of cyber criminal would not do the same thing in the real world
-    different PERCEPTION.
-    This makes crime happen more often online,
-    lot of crime enablers
-    ethical people understand consequences of your actions.
-
-Telephone of Khashoggi was infected with spywares.
-Who sold the eploits for this phone to let the spyware installed would never had killed Jamal
-The exploit maybe or not may not be used in that way.
-this permits more people in participate
-
-SLIDE 31 MONEY MULES AND MONEY LAUNDERY
-    most cybercrime end up with a digital form of money.
-    Your problem is to bring this in a form which is not linked to the crime.
-    On a certain level this may sound easy, in general it is not because most of the transfers leave a trace.
-    The real moment in which a criminal brakses the chain of traceability is the moment when cash turn physical cash or goods and go back digital again.
-
-    Some of the schemes are traditional:
-        pay invoice to a company somewhere in the world, runs some processes, pays other companies... 
-
-    Particular cyber crime one:
-        use of money mules: they're traditionally accomplished, they know what they're doing, they have not so much to luse
-        they open bank accounts, receive the money and hand cash to somebody
-        
-        some of them open account with different identity, and to catch them you need to do while they whitdraw. More difficult.
-
-        Nigerian prince:
-            ask you money in order to get more money, cost 500 dollars to get 1 billion
-            until you realize that you have been scammed they keep asking you money.
-
-            A variant is connected to the money mule.
-                you actually get the promised money, i give you money, withdraw them and send them phisically with money transfer to someone
-                keep 30\%
-                Or send the money in an envelope to a postal box in kazakhstan
-
-                Money arrive in your bank account from bank accounts of compromised people.
-                At a certain point they arrest you.
-                Good lawyer: you've been cheated. Ridai il 30 che ti sei tenuto e ripaga il 70
-                Bad lawyer: you get persecuted.
-
-        Considera RICETTAZIONE: apple computer sold at 40\% in meno....
-
-        points, virtual currency of games has been used for this...  
-
-        If you are a cyber criminal with crypto you need an exchange which is not any exchange but a stronzo one.
-
-
 \chapter{Cryptocurrencies: abuses and forensics}
     we talk about them in the way they are used in cybercrime.
 
