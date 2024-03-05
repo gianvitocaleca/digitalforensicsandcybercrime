@@ -106,27 +106,18 @@
         Some of them may also open accounts by somebody else's name using identities that may be stolen with an attack and bought online. They're most difficult to catch because the Police needs to be actually there while they are withdrawing money.
         \\Unaccomplished ones may be people which are fooled by things like the Nigerian prince scam: they get the money on their bank account, send 70\% of them to criminals in packages or by moneytransfer, and keep 30\%. Most of the cases they get arrested and have to pay back all the money, also the ones they don't own no more.\\
         Buying and selling of goods \textit{(ricettazione)}, videogames curriencies, \dots, are other ways to perform money laundering.
-\iffalse
 \chapter{Cryptocurrencies: abuses and forensics}
-    we talk about them in the way they are used in cybercrime.
-
-    Bitcoin is the attempt to create electronic cash.
-    cash has a lot of properties that you would replicate, in the digital world usually you don't have these properties.
-
-    electronic distributed ledger (node of where all the transaction happened)
-        no central authority
-        need to solve a problem which is very hard
-        problem of byzanine consensus
-        blockchain enables the creation of distributed ledger.
-        used to run bitcoin, but you can use any other ledger to run blockchain
-
-SLIDE 4
-    in the bitcoin world every user uses a wallet (the way they were designed originally)
-    in btc the concept of cryptographic pair of keys can hold a certain amount of btc
-    by using the keys you can use/send those money
-    what uses them is called wallet.
-
-SLIDE 5
+    We talk about cryptocurrencies in the way they are used in cybercrime.
+    \section{Bitcoin and blockchain}
+        Bitcoin is an attempt to create \textbf{electronic cash}: a digital currency that has lots of properties that physical money have, one of them is \textbf{no central authority}.\\
+        What Satoshi Nakamoto wanted to have is an electronic distributed ledger\footnote{ledger=registro}.\\
+        Having no central authority is a really hard problem to solve \textit{(byzantine consensus)}, he did it with \textbf{the blockchain}.\\
+        The blockchain is a \textbf{shared, append-only, trustable} ledger of all coins transactions. The limits of distributed consensus defined in the Byzantine Problem and CAP Theorem are solved using the technique of \textbf{proof-of-work}.
+    \section{Wallet and addresses}
+        A wallet is the software that allows to manage and store the \textbf{public} and \textbf{private} keys for each of the user's bitcoin addresses. To create and sign transactions, track the balance.\\
+        A bitcoin address is an alphanumeric string which identifies a \textit{point} where you can send bitcoin to, and where they can be sent from.
+        In order to know how many Bitcoin are \textit{stored} in that key you need to go to the origin of all the transactions and track the flow of them to understand how much of them are there now. This computations is not really efficient but can run without central authority, so the only reason for using a blockchain is if it is really so important to get a way out of a central authority.
+\iffalse
     bitcoin address is alphanumeric string which identifies a point where you can send bitcoin
     and where them can start from.
     In order to know how much btc are in that key you need to go to the origin of all the transactions and track the flow of them to understand how much of them are there now.
