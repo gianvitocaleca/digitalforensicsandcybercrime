@@ -25,8 +25,11 @@
 \contentsline {chapter}{\numberline {2}Cryptocurrencies: abuses and forensics}{19}{}%
 \contentsline {section}{\numberline {2.1}Bitcoin and blockchain}{19}{}%
 \contentsline {section}{\numberline {2.2}Wallet and addresses}{19}{}%
-\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{20}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{21}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{22}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{23}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{24}{}%
+\contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{20}{}%
+\contentsline {section}{\numberline {2.4}Mining}{20}{}%
+\contentsline {section}{\numberline {2.5}Fork events}{20}{}%
+\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{22}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{23}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{24}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{25}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{26}{}%

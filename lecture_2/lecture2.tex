@@ -117,79 +117,20 @@
         A wallet is the software that allows to manage and store the \textbf{public} and \textbf{private} keys for each of the user's bitcoin addresses. To create and sign transactions, track the balance.\\
         A bitcoin address is an alphanumeric string which identifies a \textit{point} where you can send bitcoin to, and where they can be sent from.
         In order to know how many Bitcoin are \textit{stored} in that key you need to go to the origin of all the transactions and track the flow of them to understand how much of them are there now. This computations is not really efficient but can run without central authority, so the only reason for using a blockchain is if it is really so important to get a way out of a central authority.
-\iffalse
-    bitcoin address is alphanumeric string which identifies a point where you can send bitcoin
-    and where them can start from.
-    In order to know how much btc are in that key you need to go to the origin of all the transactions and track the flow of them to understand how much of them are there now.
-
-    Not really efficient but can run without central authority 
-    The only reason for using a blockchain is if it is really so important to get a way out of a central authority
-    it is the less efficient thing ever but it has a way out of central authority.
-    for any other reason it doesnt' make sense.
-
-    WE WANT TO DO TRANSACTION ON A LEDGER WITH NO AUTHORITY, WHE USE THIS SHITTY TECHNOLOGY
-SLIDE 6
-    as soon the transaction is on the immutable ledger the money are on the other address.
-    How do we ensure that this is the only transaction done with that bitcoin 
-    we need to have a consolidated immutable ledger
-    with a central authority this would be easy.
-    how do we agree on a ledger which cannot be back modified?
-
-    slide 7
-        certain btc associated with your public key
-        joe signs a transaction which moves them to alices' wallet.
-
-        I need to have an history that cannot be modified
-            Joe could unsign the key. How do we do?
-
-        Transactions are put in a block, block linked in a so-called block chain (linked list)
-        we want this list to be immutable
-
-        Mining:
-            Solves 2 problems:
-                ensuring that the list cannot change 
-                generate bitcoin
-
-                we seal the block and get a little btc in reward, and when we seal the block we tell everyone were we want to send the reward
-
-                mining is a very computational demanding activity
-                    hash function 
-                    collect transaction, put them in the block, put there a destination for a reward
-                    bruteforce the block in a way that the hash of the block has a certain number of zeros to start with.
-                    This is difficult, the more zeros at the beginning, the more difficult for a miner to find the right combination.
-                    Miners are using computational power to trying to find the right solution, once they find it they publish the solution.
-                    At this point the other miners, look at the transaction that are not in a block yet, try to put them in the next block and try again.
-                    The more computational power you put, the faster you will get to the solution.
-
-                    The difficulty increases more and more, the reward got smaller and smaller but btc value gets larger and larger.
-
-                    block = set of transactions + reward location which a sha256 with a certain number of zeros.
-
-                    After I found a solution, the new block must be linked to this one ... mancaun pezzo 13.56 sul next hash 
-
-
-                    Sooner or later two entities get a solution at the same time or more or less. What happens?
-                    For some people chain ends with block a and some with block b, do i append to a or to b?
-                        what happens is a fork
-                        slide 13,14 ...  
-                            alternative ending of the chain
-                            some nodes see the 1st, some the 2nd.
-                            you start from there and search the next one.
-                            you can see now two different blockchains.
-                            sooner or later someone finds a solution
-                                who mines on the green blockchain fount the purple solution
-                                    the rule now is that the true blockchain is the longest one.
-                                        purple block is one ahead, i'm no more in the true one. 
-                                        it doesn't make more sense to try again the red one.
-                                        give up and go to the shortest.
-                                    
-                            This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is now the longest one
-                            means that you compete with all the others.
-
-                            Blockchain solves the problem of central authority by making people to do useless thing 
-
-
-
-
-
-\fi
+    \section{The bitcoin transaction life cycle}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{lifecycle.png}
+        \end{figure}
+        As soon as the transaction is on the immutable ledger, the money are on the other address. How do we ensure that this is the only transaction done with those Bitcoins?\\
+        Our immutable ledger must be consolidated, with a central authority that would have been easy, how do we agree with no central authority? We need a history that cannot be modified, and to do this we talk about mining.\\
+        Mining is the process to generate a block containing all the transactions, and to append it to the blockchain.
+    \section{Mining}
+        Miners compete to generate a new valid block that solves a complex mathematical problem bybruteforce: the solver is then rewarded a fixed number of BTC.\\
+        It is a computational demanding activity: miners put a set of transactions in the new block, put there a destination for the reward and then start bruteforcing the block to find a sha256 hash of it which starts \textbf{with a certain number of zeros}. The more zeros, the more difficult is the process.\\
+        When a block is added to the blockchain, the other miners stop bruteforcing their blocks and start to compute the hash of another one, to link it to the last found block.
+        The difficulty increases more and more, the reward got smaller and smaller but BTC value gets larger and larger.
+    \section{Fork events}
+        Sooner or later two miners will get a solution at more or less the same time. This causes a fork where the situation is that for some miners the blockchain ends with block A and for some others with block B.\\
+        Now the blockchains are two, and sooner or later some miner will find a solution and append a new block in one of them. The rule says that \textbf{the longerst blockchain is the true one}. As soon as one blockchain becomes longer, all the miners move to that leaving the other one sadly alone.\\
+        This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is the longest one: this means that you would compete with all the other miners.     
