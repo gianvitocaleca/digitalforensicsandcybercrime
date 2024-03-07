@@ -28,8 +28,19 @@
 \contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{20}{}%
 \contentsline {section}{\numberline {2.4}Mining}{20}{}%
 \contentsline {section}{\numberline {2.5}Fork events}{21}{}%
-\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{22}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{23}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{24}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{25}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{26}{}%
+\contentsline {section}{\numberline {2.6}Bitcoin and black market}{21}{}%
+\contentsline {subsection}{\numberline {2.6.1}Pseudo-anonimity}{21}{}%
+\contentsline {subsubsection}{Silk Road Example}{22}{}%
+\contentsline {subsection}{\numberline {2.6.2}Why do people use Bitcoin for ransoms?}{22}{}%
+\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{23}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{24}{}%
+\contentsline {chapter}{\numberline {3}Introduction to Digital Forensics}{25}{}%
+\contentsline {section}{\numberline {3.1}What does forensics mean?}{25}{}%
+\contentsline {section}{\numberline {3.2}The Daubert standard (USA)}{25}{}%
+\contentsline {subsection}{\numberline {3.2.1}The Daubert Standard}{25}{}%
+\contentsline {subsection}{\numberline {3.2.2}What is scientific? (Italy)}{26}{}%
+\contentsline {subsection}{\numberline {3.2.3}Daubert Test for scientific}{26}{}%
+\contentsline {section}{\numberline {3.3}Example of forensic engagements}{27}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{28}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{29}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{30}{}%
