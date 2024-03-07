@@ -129,8 +129,15 @@
         Miners compete to generate a new valid block that solves a complex mathematical problem bybruteforce: the solver is then rewarded a fixed number of BTC.\\
         It is a computational demanding activity: miners put a set of transactions in the new block, put there a destination for the reward and then start bruteforcing the block to find a sha256 hash of it which starts \textbf{with a certain number of zeros}. The more zeros, the more difficult is the process.\\
         When a block is added to the blockchain, the other miners stop bruteforcing their blocks and start to compute the hash of another one, to link it to the last found block.
-        The difficulty increases more and more, the reward got smaller and smaller but BTC value gets larger and larger.
+        The difficulty increases more and more, the reward got smaller and smaller but BTC value gets larger and larger.\\
+        Besides of the reward you get, you can also put a fee you want to receive from the transactions you included in the block. Since reward is becoming smaller, fees are becoming larger. Now the fees make small transactions unfeasible.
+\newpage    
     \section{Fork events}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{fork.png}
+        \end{figure}
         Sooner or later two miners will get a solution at more or less the same time. This causes a fork where the situation is that for some miners the blockchain ends with block A and for some others with block B.\\
-        Now the blockchains are two, and sooner or later some miner will find a solution and append a new block in one of them. The rule says that \textbf{the longerst blockchain is the true one}. As soon as one blockchain becomes longer, all the miners move to that leaving the other one sadly alone.\\
-        This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is the longest one: this means that you would compete with all the other miners.     
+        Now the blockchains are two, and sooner or later some miner will find a solution and append a new block in one of them. The rule says that \textbf{the longest blockchain is the true one}. As soon as one blockchain becomes longer, all the miners move to that leaving the other one sadly alone.\\
+        This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is the longest one: this means that you would compete with all the other miners. 
+        To be sure that a certain transaction is there and cannot be canceled, you must wait that the block in which it finds itself is a couple blocks behind the last one.    

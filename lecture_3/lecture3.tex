@@ -1,0 +1,55 @@
+%ultima cosa \section{fork events}
+\iffalse
+\section{Bitcoin and black market}
+    Bitcoin immediately started to be used for black markets. Because you had a way to pay without an infrastructure.
+    \subsection{Pseudo-anonimity}
+        The first reason to use Bitcoin for black markets is \textbf{anonimity}. In reality Bitcoin is pseudonimous: the identifier for transactions is not directly connected to an identity. Every entity generates multiple keys for themselves, so you cannot also say if two keys are of the same entity. The keys still have a pseudonym identifier, so transactions are linked to the pseudonym. This pseudonimity is robust because don't refer in any way to users.\\
+        Transactions are public by the way, and this is a terrible property if you're interested in anonimity. While addresses are not connected to people, there is something that connects addresses of the same person: transaction can have multiple keys as input and send all the money in a certain destination, a transaction like that means that the keys of the input belong to the same entity.\\
+        Bitcoin transactions cannot spend partially, you cannot send 0.6 of the 0.8 bitcoin you have to a destination, you need to send 0.2 to another entity. If you send btc like that, the transaction has 2 destinations: a brand new one \textit{shadow address which belongs to the same entity} and a pre-existent one.\\
+        So, by analizing transactions we can connect addresses to each other.
+
+        RESEARCH:
+            keys belonging to the same entity collapsed in large sets.
+            People back in the days used btc for multiple transactions, and some of them shared their addresses, e.g. to receive donations.
+            You need only one of the addresses to be associated to a name to get the name of the owner of all the addresses in a set.
+
+        EXAMPLE: SILK ROAD
+            big black market using btc as currency run by someone called dread pirate roberts.
+            Ross Ulbricht arrested 
+            in order to track down him they just found out that he used altoid as nickname on several forums to advertise silkroad and to hire developers for a specific business (which was silkroad)
+            with the email with his name 
+
+        WHAT IF WE WANTED TO TRY TO FIND THE ADDRESSES CONNECTED TO SILK ROAD
+            sign up to silk road 
+            deposit your "wallet" to the middleman address they used
+            get the address
+            track the flow looking at the ledger
+            but, in bitcoin is possible to mix togheter the bitcoins in a very complicated way 
+
+            what we know for sure is that all the keys are of the same owner (left part)
+            the one under is still of the same owner, so associated ones probably are
+            so you can track 
+
+            Look at that address, at somepoint it had more than 500.000 bitcoins
+            altoid asked for a problem in PHP with an example code which contained a key
+            tracked back and got connection with silk road.
+
+        The point is that the pseudonym ends up in clusters belonging to the same user. You just need to find one post like that and then find them.
+
+    WHY PEOPLE USES THIS FOR RANSOM PAYMENTS?
+        Other characteristics other than pseudonimity:
+            -BTC transactions are irreversible, No central authority, no one can go back change history
+                This is a very important characteristic because the money are kept 
+                Any other electronic payments systems can rollback transactions.
+                The ones on cryptocurrencies are final.
+            -Other digital payments require an infrastructure: bank account and so, here you just need an address.
+
+    CryptoLocker
+        first wave september 2013
+        vedi slide 
+        grafico pagamenti vs infections 
+        qualitative data on the clients of an antivirus company 
+        we can see that people payed. It was just needed to look for 0.3 btc transactions.
+    There exists also cryptocurrencies with stronger anonimity like Monero.
+ %slide 3 and 4 le fa carminati fraud detection
+\fi
