@@ -1,0 +1,158 @@
+% ultima cosa \section{Example of forensic engagements}
+\chapter{Acquisition}
+    Forensics born in the USA, it borders with law so it was developed with the US laws in mind.
+    Some of the developed concepts talk in the context of the world being a big USA (tipic american behavior)
+
+    The legal system of USA and the EUs ones are extremely different:
+        common law vs civil law 
+        our approach to courts is very different:
+            in the US most cases are tried by juries of peers and the judge works to make the court work. He is the gateway for admissibility of evidence (can it be presented to the jury to take it into account?)
+            in an homicide trial the judge decides that the gun with the fingerprints of the assassin is not admissible, the lawyers cannot talk about that and the jury cannot take it into account 
+            admissibility of scientific evidence is based completely on the chain of custody:
+                when it is collected the chain of custody starts (tracking where the evidence was taken, who was in custody, where was it stored, who analyzed it, what was done to it)
+                if the chain of custody is broken, the evidence in inadmissible.
+    
+    In italy the judgment is by the judge(s), the jury is actually a set of "judges" extracted from people extracted from a certain set (corte d'assise)
+    The admissibility of evidence is different:
+        the judge evaluates if it is or not and he writes a verdict based on the evidence that got him convinced.
+        what the rest of the world would call evidence, in italy is called "fonte di prova" (potential evidence) because the "prova" is what the judge evaluated do be evidence to get a verdict.
+        
+        in italy evidence is inadmissible if:
+            it has been acquired in violation of law (illegal search) and not writable to verdict. But he has seen it.
+
+    The Counsil of Europe has an international law agreement "Convention of Budapest on cybercrime 1999"
+    it was incorporated in Italian law in 2008 
+    It makes easier for police and judges of CoE to make a little bit more similar the way in which they interact with digital evidence
+
+    violating budapest doesn't actually mean to collect in violation of law
+    if the violated law makes people to be subjected to a certain penalty it is inadmissible.
+
+    Also international standards:
+
+\section{Brittleness of digital evidence}
+    It is because if it is modified, there is no way to tell. It is not tamper evident.
+    If I remove a word from an email there is no way to see that. Unless there is something that tells me that the thing doesn't look right 
+
+    since no way to tell if something has been manipulated
+    no way to tell if or when chain of custody was violated.
+
+    Digital evidence can be fake created:
+        suppose that we want to prove that we need to edit a file at a certain time
+        change the clock of the computer
+        do the things 
+        change the clock back 
+
+        there is no way to tell that this happened. Except if there is an external system that can see the problem with the clock on your local "client"
+
+        WHEN is a very important thing, perfect fakes of when is a really bad thing
+
+We need an entire process of acquisition to create ways to make digital evidence as far as possible tamper evident 
+    significantly different from other fields like physical evidence
+        steal of drug from evidence bag 
+        cleaning of fingerprints from a gun 
+
+This is important because 
+    tamper evidence allows the detection of errors in good faith 
+    if evidence is tamper evident i can detect that it has been modified, i can check for errors 
+
+    also detection of ethical behavior 
+        in italy there is presunction that the police doesn't lie. Siguro
+        The problem is that whenever you say that something could have been manipulated, you suggest that police tampered 
+        case of una bomber in veneto
+        police identified a suspect, zornitta 
+
+HASHES IN DIGITAL FORENSICS 
+    we use hash functions to record an object at a given step of Acquisition
+    constantly checked to ensure identity, authenticity, non-tampered state of evidence 
+    it "freezes" the crime scene è un termine usato veramente "congelare la scena del crimine"
+
+    1: what has appened before we don't know 
+    2: we can only tell if something has been tampered, hashes don't allow to go back. We also need a certain number of copies to work with.
+    3: to use hashes doesn't mean that without hashes integrity is not assured
+        in US where chain of custody is, a case can be made that with no hash it has been broken 
+        in italy chainis not a thing, we just need to convince the judge that evidence is no more genuine, we need to prove that it has been modified, we cannot without hash. Proving that hash changed at a certain point can be sufficient to demonstrate that something has been modified, but problem: WHAT?
+    
+    Since evidence is going to be stored on a certain media, hashes must be put in another place (ex. writing them is the most frequent, or use digital signatures)
+
+SW AND HW FOR ACQUISITION
+    HW: write blockers (we'll talk about)
+        embedded devices 
+        or
+        SW: linux supports most extensive file system + una cosa con il mounting (we'll see)
+
+BITSTREAM IMAGES:
+    usually we acquire a machine or a drive, what we want to acquire is a bitstream image of the drive: a bit-by-bit copy 
+    the basic reason is that if we only copy the visible content we leave behind all the possible info contained into unallocated space 
+    %è entrato un piccione
+    this may be different with special cases: raid drives, virtual drives,..  
+
+    we call it "freezing a drive"
+    forensic clone/copy/acquisition 
+
+BASIC PROCEDURE OF ACQUISITION:
+    GUARDA LA SLIDE 
+    + immagine di write locker che è a bridge that connects to sata port blocking the writing signals.
+    examples of commands are from Linux 
+    comando 1: pipeline con utility to sha256sum the sda 
+        option noerror= keep going even if the drive generated an error 
+
+    comando 2: copy the source, give a name to the file which will contain the bit by bit copy of the drive 
+    most filesystem have a size limit for file dimension
+
+    if hashes are different means that the copy didn't happen correctly.
+    or maybe you tampered with the drive 
+    maybe damaged block reads differently or destroys when you read it 
+    the drive broken between the two times 
+    doesn't happen often but it can happen 
+    these operations may alter evidence, this has consequences 
+
+    by comparing the three hashes we can find what exactly happened when something goes wrong. 
+
+    old hashes maybe because previous copies when sha1 or md5 were used 
+
+CHALLENGES: TIME 
+    a tipical hdd (traditional one) at a tipical transfer speed and if also write blocker is on usb.
+    for a 2tb size drive it's going to take even hours 
+
+    with the process seen before is 3 times the time.
+
+    but there are tools like dcfldd that will do the things in parallel 
+
+ACTUAL way
+    use embedded duplicators
+
+CHALLENGE: size 
+    filesystem limits to 4tb mostly for the size of a file. So you need to break it up.
+    If you work for an extensive investigation, 10s 100s laptops means 10s, 100s terabytes.
+    need for storage area networks storage facilities.
+
+    if you're not in the lab, one of the few ways to manage things is to transmit data trough the network.
+    a way can be to use netcat
+    put it listening to a port 
+    and run dd piping to netcat sending 
+
+CHALLENGE: encryption
+    many machines use encryption, mac, windows, mobiles 
+    in some cases the keys for decription are on the motherboard of the computer 
+    the image is going to be useless without the computer 
+
+    if keys are stored on board it can be a problem even if the person wants to provide the key because(?)
+
+these were the basic procedures 
+
+COMPLICATED CASES, ALTERNATIVE PROCEDURES 
+    it is hard to disconnect the drive or it is a bad idea (examples: hardware based encryption, RAID devices if it is a hardware RAID the implementation depends on the hardware card, if we take out the drives and copy they images we don't know how put them togheter, iMac, not standard drive connectors)
+    we need to boot that hardware
+    if you boot the os on the machine, the drive is changed (swap file, temporary file) you never want to boot the operating system
+    boot from another boot media, live linux 
+        do it with great care, different machines have different ways to do boot from different drives 
+        you don't want to accidentally boot the real operating system.
+        if the drive is disconnectible, try to boot from the external device, once you know how to do it then reconnect it 
+        sometimes you need to do it properly the 1st time 
+
+        you cannot use any distribution, swap partitions on the drive marked for being linux swap, the thing will use it
+        use certain distributions like tsurugi, backbox.
+
+
+
+

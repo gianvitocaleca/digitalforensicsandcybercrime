@@ -41,6 +41,9 @@
 \contentsline {subsection}{\numberline {3.2.2}What is scientific? (Italy)}{26}{}%
 \contentsline {subsection}{\numberline {3.2.3}Daubert Test for scientific}{26}{}%
 \contentsline {section}{\numberline {3.3}Example of forensic engagements}{27}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{28}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{29}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{30}{}%
+\contentsline {section}{\numberline {3.4}Phases of an investigation (Pollitt)}{27}{}%
+\contentsline {chapter}{\numberline {4}Acquisition}{29}{}%
+\contentsline {section}{\numberline {4.1}Brittleness of digital evidence}{30}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{33}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{34}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{35}{}%
