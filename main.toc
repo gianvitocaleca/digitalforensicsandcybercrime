@@ -45,6 +45,14 @@
 \contentsline {chapter}{\numberline {4}Acquisition}{28}{}%
 \contentsline {section}{\numberline {4.1}Brittleness of digital evidence}{28}{}%
 \contentsline {section}{\numberline {4.2}The usage of hashes in digital forensics}{29}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{30}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{31}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{32}{}%
+\contentsline {section}{\numberline {4.3}Hardware and software for acquisition}{29}{}%
+\contentsline {section}{\numberline {4.4}Bitstream images}{30}{}%
+\contentsline {section}{\numberline {4.5}Basic procedure of acquisition}{30}{}%
+\contentsline {subsection}{\numberline {4.5.1}Challenges: time}{30}{}%
+\contentsline {subsection}{\numberline {4.5.2}Challenges: size}{31}{}%
+\contentsline {subsection}{\numberline {4.5.3}Challenges: encryption}{31}{}%
+\contentsline {section}{\numberline {4.6}Alternative procedures}{31}{}%
+\contentsline {subsection}{\numberline {4.6.1}Alternative 1: booting from live distribution}{31}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{32}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{33}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{34}{}%

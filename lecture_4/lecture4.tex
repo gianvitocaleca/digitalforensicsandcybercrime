@@ -28,86 +28,54 @@
         \item Hashes are used to prove that something has been modified, but cannot tell what.
     \end{itemize}   
     Since evidence is going to be stored on a certain media, hashes must be put in another place \textit{(e.g. writing them on a physical register is the most frequent, or use digital signatures)}.
-\iffalse
-SW AND HW FOR ACQUISITION
-    HW: write blockers (we'll talk about)
-        embedded devices 
-        or
-        SW: linux supports most extensive file system + una cosa con il mounting (we'll see)
-
-BITSTREAM IMAGES:
-    usually we acquire a machine or a drive, what we want to acquire is a bitstream image of the drive: a bit-by-bit copy 
-    the basic reason is that if we only copy the visible content we leave behind all the possible info contained into unallocated space 
-    %è entrato un piccione
-    this may be different with special cases: raid drives, virtual drives,..  
-
-    we call it "freezing a drive"
-    forensic clone/copy/acquisition 
-
-BASIC PROCEDURE OF ACQUISITION:
-    GUARDA LA SLIDE 
-    + immagine di write locker che è a bridge that connects to sata port blocking the writing signals.
-    examples of commands are from Linux 
-    comando 1: pipeline con utility to sha256sum the sda 
-        option noerror= keep going even if the drive generated an error 
-
-    comando 2: copy the source, give a name to the file which will contain the bit by bit copy of the drive 
-    most filesystem have a size limit for file dimension
-
-    if hashes are different means that the copy didn't happen correctly.
-    or maybe you tampered with the drive 
-    maybe damaged block reads differently or destroys when you read it 
-    the drive broken between the two times 
-    doesn't happen often but it can happen 
-    these operations may alter evidence, this has consequences 
-
-    by comparing the three hashes we can find what exactly happened when something goes wrong. 
-
-    old hashes maybe because previous copies when sha1 or md5 were used 
-
-CHALLENGES: TIME 
-    a tipical hdd (traditional one) at a tipical transfer speed and if also write blocker is on usb.
-    for a 2tb size drive it's going to take even hours 
-
-    with the process seen before is 3 times the time.
-
-    but there are tools like dcfldd that will do the things in parallel 
-
-ACTUAL way
-    use embedded duplicators
-
-CHALLENGE: size 
-    filesystem limits to 4tb mostly for the size of a file. So you need to break it up.
-    If you work for an extensive investigation, 10s 100s laptops means 10s, 100s terabytes.
-    need for storage area networks storage facilities.
-
-    if you're not in the lab, one of the few ways to manage things is to transmit data trough the network.
-    a way can be to use netcat
-    put it listening to a port 
-    and run dd piping to netcat sending 
-
-CHALLENGE: encryption
-    many machines use encryption, mac, windows, mobiles 
-    in some cases the keys for decription are on the motherboard of the computer 
-    the image is going to be useless without the computer 
-
-    if keys are stored on board it can be a problem even if the person wants to provide the key because(?)
-
-these were the basic procedures 
-
-COMPLICATED CASES, ALTERNATIVE PROCEDURES 
-    it is hard to disconnect the drive or it is a bad idea (examples: hardware based encryption, RAID devices if it is a hardware RAID the implementation depends on the hardware card, if we take out the drives and copy they images we don't know how put them togheter, iMac, not standard drive connectors)
-    we need to boot that hardware
-    if you boot the os on the machine, the drive is changed (swap file, temporary file) you never want to boot the operating system
-    boot from another boot media, live linux 
-        do it with great care, different machines have different ways to do boot from different drives 
-        you don't want to accidentally boot the real operating system.
-        if the drive is disconnectible, try to boot from the external device, once you know how to do it then reconnect it 
-        sometimes you need to do it properly the 1st time 
-
-        you cannot use any distribution, swap partitions on the drive marked for being linux swap, the thing will use it
-        use certain distributions like tsurugi, backbox.
-\fi
-
-
-
+\section{Hardware and software for acquisition}
+    \begin{itemize}
+        \item Hardware:
+        \begin{itemize}
+            \item Removable HD enclosures or connectors with different plugs
+            \item Write blocker
+            \item External disks 
+            \item USB, firewire, SATA, e-SATA controllers if possible
+        \end{itemize}
+        \item Linux: extensive native file system support, ease of accessing drives and partitions without mounting them
+    \end{itemize}
+\section{Bitstream images}
+    What we want to acquire, if possible, is a \textbf{bitstream image}, a bit-by-bit clone of the original evidence media. The main reason is because if we only copy the allocated content we potentially lose information stored in the unallocated part of the disk. This is called a \textbf{forensic clone} or clone copy or image of the disk.
+    %honorable mention per il piccione che è entrato in aula
+\section{Basic procedure of acquisition}
+    \begin{itemize}
+        \item Disconnect the media from the original system, if possible
+        \item Connect the source media to the analysis station, if possible with a write blocker 
+        \item Compute the hash of the source:
+        \begin{itemize}
+            \item Linux: \textit{\#dd if=/dev/sda conv=noerror,sync | sha256sum}
+            \item conv=noerror means \textit{"keep going even if the system generated some errors"}
+        \end{itemize}
+        \item Copy the source:
+        \begin{itemize}
+            \item Linux:
+            \item \textit{\#dd if=/dev/sda of=/tmp/acquisition.img conv=noerror,sync}
+        \end{itemize}
+        \item Compute the hashes of the source and the clone
+        \begin{itemize}
+            \item Linux: \textit{\#dd if=/dev/sda conv=noerror,sync | sha256sum}
+            \item \textit{\#sha256sum /tmp/acquisition.img}
+        \end{itemize}
+        \item Compare the three hashes
+    \end{itemize}
+    If the hashes are different, it means that the copy didn't happened correctly or that you tampered with the drive, or that some damaged block read broke it, or that some damaged block reads everytime something different \dots \\
+    It could be also good to compute MD5 and SHA-1 hashes, for redundancy and backward compatibility.
+    \subsection{Challenges: time}
+        A typical hard drive capacity today is 1TB. Transfer speeds are in the order of 600MB/s \textit{(SATA 3)}, but mechanical drives reach an average of 80MB/s \textit{(SSDs are actually fast as SATA3)}, USB connectors are up to 100MB/s.\\
+        This means that for a 1TB drive you can expect to wait several hours to complete a copy or to run a hash. Tools like \textbf{embedded duplicators} or software like dcfldd can make this run in parallel to save time.
+    \subsection{Challenges: size}
+        File systems limit to 4TB mostly for the size of a file. If a drive is larger, it has to be spliced in more files.\\
+        Space is also needed to keep data for all the devices used in an investigation, which can be in the order of the hundreds of terabytes, that's why NAS or SAN systems are common in forensic shops.\\
+        Sometimes it can be also useful to move images across a network, for exaple by using netcat to listen for a stream generated by the computer which is taking the acquisition.
+    \subsection{Challenges: encryption}
+        Many machines use encryption. In some cases the key for decription is stored on the motherboard of the computer, and so the image became useless without the computer.
+\section{Alternative procedures}
+    \subsection{Alternative 1: booting from live distribution}
+        Sometimes it is mandatory to work directly on the actual machine, because of systems with weird connectors, RAID devices or because of specific investigation constraints.\\
+        In these cases it is possible to live-boot the system using a Linux distribution targeted for forensic analysis, like \textit{Tsurugi} or \textit{BackBox}\footnote{The reason why we use specific distribution, is because we do not want to overwrite linux swap partitions on the media}.\\
+        This process has to be performed with great care, different systems have different ways to access the boot menu, and if by chance the original operating system is booted, it may be cause a loss of useful data.
