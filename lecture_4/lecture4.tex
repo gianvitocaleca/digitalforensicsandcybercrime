@@ -1,79 +1,34 @@
 % ultima cosa \section{Example of forensic engagements}
 \chapter{Acquisition}
-    Forensics born in the USA, it borders with law so it was developed with the US laws in mind.
-    Some of the developed concepts talk in the context of the world being a big USA (tipic american behavior)
-
-    The legal system of USA and the EUs ones are extremely different:
-        common law vs civil law 
-        our approach to courts is very different:
-            in the US most cases are tried by juries of peers and the judge works to make the court work. He is the gateway for admissibility of evidence (can it be presented to the jury to take it into account?)
-            in an homicide trial the judge decides that the gun with the fingerprints of the assassin is not admissible, the lawyers cannot talk about that and the jury cannot take it into account 
-            admissibility of scientific evidence is based completely on the chain of custody:
-                when it is collected the chain of custody starts (tracking where the evidence was taken, who was in custody, where was it stored, who analyzed it, what was done to it)
-                if the chain of custody is broken, the evidence in inadmissible.
-    
-    In italy the judgment is by the judge(s), the jury is actually a set of "judges" extracted from people extracted from a certain set (corte d'assise)
-    The admissibility of evidence is different:
-        the judge evaluates if it is or not and he writes a verdict based on the evidence that got him convinced.
-        what the rest of the world would call evidence, in italy is called "fonte di prova" (potential evidence) because the "prova" is what the judge evaluated do be evidence to get a verdict.
-        
-        in italy evidence is inadmissible if:
-            it has been acquired in violation of law (illegal search) and not writable to verdict. But he has seen it.
-
-    The Counsil of Europe has an international law agreement "Convention of Budapest on cybercrime 1999"
-    it was incorporated in Italian law in 2008 
-    It makes easier for police and judges of CoE to make a little bit more similar the way in which they interact with digital evidence
-
-    violating budapest doesn't actually mean to collect in violation of law
-    if the violated law makes people to be subjected to a certain penalty it is inadmissible.
-
-    Also international standards:
-
+    Forensics was born in the USA, it borders with law so it was developed with US laws in mind.\\
+    The legal system of USA and the EUs ones are extremely different, and so is the court approach:
+    \begin{itemize}
+        \item In the U.S. most of the cases are tried by juries of peers, the judge works to make the court work. In fact, the judge is the one to decide if evidece is admissible or not. If not admissible, that could not be talked about from jury and lawyers or taken into account. Admissibility of scientific evidece is completely based on the concept of \textbf{chain of custody}: \textit{tracking where the evidence was taken, who was in custody, where was it stored, who analyzed it, what was done to it}. If that is broken, evidence becomes inadmissible.
+        \item In Italy is the judge the one who takes the decision. The jury exists only in Corte d'Assise and it is made by people extracted from a certain set. Is the judge to evaluate the admissibility of the evidence, it is inadmissible only if it was taken in violation of laws.
+    \end{itemize}
+    By the way, the Counsil of Europe has an international law agreement called \textbf{Convention of Budapest on cybercrime}, it was written in 1999, and was incorporated in the Italian law in 2008. Also international standards from ISO/IEC can be applied.
 \section{Brittleness of digital evidence}
-    It is because if it is modified, there is no way to tell. It is not tamper evident.
-    If I remove a word from an email there is no way to see that. Unless there is something that tells me that the thing doesn't look right 
-
-    since no way to tell if something has been manipulated
-    no way to tell if or when chain of custody was violated.
-
-    Digital evidence can be fake created:
-        suppose that we want to prove that we need to edit a file at a certain time
-        change the clock of the computer
-        do the things 
-        change the clock back 
-
-        there is no way to tell that this happened. Except if there is an external system that can see the problem with the clock on your local "client"
-
-        WHEN is a very important thing, perfect fakes of when is a really bad thing
-
-We need an entire process of acquisition to create ways to make digital evidence as far as possible tamper evident 
-    significantly different from other fields like physical evidence
-        steal of drug from evidence bag 
-        cleaning of fingerprints from a gun 
-
-This is important because 
-    tamper evidence allows the detection of errors in good faith 
-    if evidence is tamper evident i can detect that it has been modified, i can check for errors 
-
-    also detection of ethical behavior 
-        in italy there is presunction that the police doesn't lie. Siguro
-        The problem is that whenever you say that something could have been manipulated, you suggest that police tampered 
-        case of una bomber in veneto
-        police identified a suspect, zornitta 
-
-HASHES IN DIGITAL FORENSICS 
-    we use hash functions to record an object at a given step of Acquisition
-    constantly checked to ensure identity, authenticity, non-tampered state of evidence 
-    it "freezes" the crime scene è un termine usato veramente "congelare la scena del crimine"
-
-    1: what has appened before we don't know 
-    2: we can only tell if something has been tampered, hashes don't allow to go back. We also need a certain number of copies to work with.
-    3: to use hashes doesn't mean that without hashes integrity is not assured
-        in US where chain of custody is, a case can be made that with no hash it has been broken 
-        in italy chainis not a thing, we just need to convince the judge that evidence is no more genuine, we need to prove that it has been modified, we cannot without hash. Proving that hash changed at a certain point can be sufficient to demonstrate that something has been modified, but problem: WHAT?
-    
-    Since evidence is going to be stored on a certain media, hashes must be put in another place (ex. writing them is the most frequent, or use digital signatures)
-
+    Digital evidence is \textbf{brittle}\footnote{fragile}, it is because if it is modified there is no way to tell. In other words, it is not \textbf{tamper evident}\footnote{non mostra segni di manomissione anche se manomessa}. This means that there is no way to say if the chain of custody was violated.\\
+    Digital evidence can also be fake created:
+    \begin{itemize}
+        \item By changing for example the clock of a computer, it is possible to create a fake file which was modified in a different time, and there is no way to figure out if that happened.
+    \end{itemize}
+    We need an entire process of acquisition to create ways to make digital evidence as far as possible tamper evident, there is a need to ensure:
+    \begin{itemize}
+        \item Legal compliance: evidence must comply with the laws.
+        \item Ethical behavior from all parties: even the police can act unhetical
+        \item Detection of errors in good faith 
+        \item Detection of natural decay
+    \end{itemize}
+\section{The usage of hashes in digital forensics}
+    Hash function are used to record the state of an object at a given step of acquisiton. It is constantly checked to ensure authenticity and non-tampered state of that at any further phase of acquisition. They are used to \textit{"freeze"} the crime scene.
+    \begin{itemize}
+        \item We don't know what happened before that first step
+        \item We can only tell if something has been tampered, but not what has been tampered. We also cannot restore data if tampered.
+        \item Hashes are used to prove that something has been modified, but cannot tell what.
+    \end{itemize}   
+    Since evidence is going to be stored on a certain media, hashes must be put in another place \textit{(e.g. writing them on a physical register is the most frequent, or use digital signatures)}.
+\iffalse
 SW AND HW FOR ACQUISITION
     HW: write blockers (we'll talk about)
         embedded devices 
@@ -152,7 +107,7 @@ COMPLICATED CASES, ALTERNATIVE PROCEDURES
 
         you cannot use any distribution, swap partitions on the drive marked for being linux swap, the thing will use it
         use certain distributions like tsurugi, backbox.
-
+\fi
 
 
 
