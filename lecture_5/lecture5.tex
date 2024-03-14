@@ -1,0 +1,54 @@
+    \subsection{Alternative 2: Target powered on}
+        For many reasons:
+        \begin{itemize}
+            \item If we do forensics for a company, maybe the computer must be kept on
+            \begin{itemize}
+                \item Sometimes it is randomly on, maybe you seize a macbook which is turned on
+                \item Can we turn it off or must we left it on? Maybe it is a company server
+            \end{itemize}
+        \end{itemize}
+        Since the computer is on, our actions are going to modify it.
+        In the case we turn it off, we're going to change the state of the computer. When we're working on a machine which is turned on, it changes our approach to evidence. 
+        Before we thought about it as immutable as possible. Now we don't.
+        A lot of situations make the analyst unable to keep the system frozen.
+        Since our actions are going to tamper with the state of the system, the less we can make a system frozen, the most we need to document what we did. (to preserve chain of custody (USA))
+        "The fact that this file has been modified at 11.30 maybe is a result of my command".
+        Here we don't have the safeguard of the hash.
+        machine on -> we cannot freeze it -> can we turn it off? -> if it was e.g. a server we cant -> we need to properly document all of our actions.
+
+        The decision of turning off a machine in any case will change its state, we still need to document that we did it.
+
+        Situation in which we rarely find ourselves:
+            Live forensics: to not confondere with live linux distribution
+                means situation in which you don't turn off the machine 
+                    when the cost is too much if you shut down 
+                    or because we want to observe what the attacker is doing (e.g. intruder)
+
+        If the machine is suspectedly a target of an attacker, and we (don't?) want to observe the attacker, we isolate the machine, maybe disconnecting the network from the machine.
+
+        It may be useful to dump the memory of the machine, easy on linux (internal feature), hard on windows (external utility, you need to alter the machine by installing something)
+        If we are investigating a breakin, most of the attacks are fileless (look into memory)
+
+        Before turning off the machine we now may consider encryption (unusable devices after shutdown)
+
+        if the machine is important and needs to reboot after, you need to shut it down properly 
+
+        if not critical you can pull the plug without shutting down and so 
+
+        it depends on how likely things we search are to be stored in the caches or things..
+        our reasoning still has to be documented
+
+        Summarizing, situation of turned on machines is implicitly more challenging wrt turned off machines. Lot of things have to be figured out by reasoning.
+        Comandi linux per fare cose sulla slide 16
+            process data: which processes are using which files
+            users data:
+            memory acquisition: dump memory 
+    /subsection{Alternate 3: live network analysis}
+        In enterprise environments if we want to observe an attacker whithout it being scared of our actions, the two things that we can use to do this are observation points that are outside of the machine like logs and network traffic 
+
+    /subsection{New Challenges}
+        \begin{itemize}
+            \item Forensics in cloud environments
+            \item Mobile forensics
+            \item SSD drives work different than magnetic drives
+        \end{itemize}
