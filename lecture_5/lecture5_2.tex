@@ -1,119 +1,59 @@
 \chapter{Identification}
-    \textit{understanding DB structure, understanding source code, reverse engineering}
-    Identification means to perform actions that fall anywhere in computer science.
-    We look at either the methodology and specific forensics cases.
-
+    The purpose of Identification is to perform actions that can fall anywhere in computer science.\\
+    We'll look at either the methodologies and specific forensics cases.\\
     Tipically we use Linux:
     \begin{itemize}
-        \item extensive native file system support
+        \item extensive native file system support 
         \item we can just dump a disk image as a file with linux, and we can mount the copy as if it were a drive, also read only to prevent writing and keep the copies not touched.
-        \item common to use virtualized windows machines to execute some utilities, software available only on winzozz
     \end{itemize}
-    There is an exception, several forensics tools run under windows and replicate a lot of these functionalities e.g. xways 
-
-    Nobody uses windows by itself. It must be confined, it stinks.
-    It automatically mounts drives and writes on them.
-    No hot swap devices, no support for every file system
-    Best is to use linux with windows virtual machine.
-    Typical way to share file use vmware tools or network share.
-    Samba-SMB 
-    Keep in mind that if you share something in these ways, this sharing is file level, any utility that analize drives cannot work in this way.
-    To use a windows utility to analyze drive, you need to mount the copy as a drive for windows, usually with virtualization software.
-    In these cases, you can use non-persistent mode of vmware/virtualbox: map a device so that any write get recorded on the side, not actually changing the drive.
-
-    CONSIDERATIONS THAT WE NEED TO TAKE IN OUR APPROACHES TO ANALYSIS 
-        Basic consideration goes back to our definition of scientific = repeatable 
-
-        Experiment: without explanation of how the experiment works, it doesn't carry any meaning 
-                    examples: machine does dna matching (two samples, outputs a probability). The only way for this to be acceptable as scientific is by showing that the machine under reasonable circumstances performs the operation, we can assess how well, steps are always the same, once we've opened the machine, closed and sealed it, we could at almost admit the results. We should be acble to tell if the machine is still working correctly 
-        
-        Use open source sw or you need to be able to show me that the tool outputs can be reproduced with another experiment
-        Law enforcement only tools like kid's images thing 
-        You have to show me that the same can be extracted with a non proprietary tool.
-        proprietary software have open source access for judges or people related 
-
-    DURING ANALYSIS we WORK ON EVERYTHING
-        We may need to apply many techniques from computer science.
-        The reason why people goes to a forensic expert 
-            being able of doing analysis 
-            competence: things he knows about cs in general.
-
-            good forensics expert maybe cannot be competent in processor design 
-            call someone else to work with (La Sciuto)
-
-    RECOVERY OF DELETED DATA 
-        Data/evidence voluntarily or unvoluntarily deleted because time passed, by the OS, by formatting drive, by a fault damaged drive.
-        In many of these cases, we may be able to reconstruct all or part of the information 
-        ora vediamo il file system di unix 
-
-            Is a way to orgnaize space on a drive to store information. Archive like thing 
-            The basic idea is to have units of information= files, to put on the storage drive, so to have an index of what is stored and where.
-            If the index is there I can go to the place where things are stored, with no index i may not reach them but they can still be stored.
-            inodes keep pointers to blocks (metadata)
-            in unix you have a series of ten direct block entries that tell there is this content on the drive and it belongs to the driv ease
-            pointers* that point to data blocks 
-            i have metadata with pointers 
-
-        when we delete a file the operating system just marks the file as deleted and not show it no more 
-        these things will go away at random and independently from each others 
-        sometimes it happens that the os reconstructs the tree of the filesystem, it doesn't care about deleted files, at this point the metadata flagged as deleted disappears.
-        Independently from this, sometimes when the os need the space of a deleted datablock it takes it.
-        those things happen at random, and in the case of blocks they won't necessarily happen all at the same time.
-        statistically on a large hard drive there is a good possibility that metadata goes away before data blocks.
-
-        DISK GEOMETRY
-            tracks, cylinders
-            when you read and write, the minimum portion of the track is called sector
-            we still use this terminology to refer at the "geometry" of the drive.
-            What we care about is the sector 
-            The os can not really work on a sector, because of different sector sizes 
-            filesystems are made to work on clusters of sectors 
-            mimmo NTFS created clusters of 4kb 
-            independently from the sector dimension on the drive.
-            
-            OS store files cluster by cluster. You store a 5kb file on a filesystem of size 4k you use 4k + 1k/5k of another sector 
-
-            Interesting effect is that the file is blocked by clusters, written by sectors. This file spans 7 sectors, (image). But the drive will not be overwritten by data because the data we wrote is less.
-            Slack space 
-            In the slack space we know there are remainances of old files.
-            Btw some files get stored once and stay there forever. Example dll 
-            Shared libraries 
-            What happens if i save a dll on top of a file that was there before?
-            The slack space is there with the dll forever.
-            Years later you can find files deleted years before.
-            Disadvantage is that they are a small portion.
-            Less than 4k of an email, webpage could be useful to retrieve
-            of an image, video, big files less useful.
-
-            Some filetypes need the complete file to be interpreted.
-            Small fragment of encrypted file is useless.
-
-            disconnected image 
-
-            Sectors are one after the other (slide 12), if we place a file on a drive there is a good possibility that all the sectors of a file are one after the other.
-            Put ourselves in the situation in which metadata are lost but data still there.
-            I can take the entire drive, scan it as a string of bytes and seek 
-            issues: fragmentation or other things he said 13:57
-
-            typical though by seeking we can seek for specific things that have headers and footers and collect them.
-            Some of them will be broken, some of them will have been overwritten in some places 
-            Some of them can be weird 
-            Some of them will be perfect. 
-
-            The issues are what happens if the file is fragmented, it was a big problem on small drives, now in most cases drives are so large to not fragment 
-            and most of os try to not break files for performance reasons.
-            If files are broken usually they're broken in two 
-            There are some techniques to find fragmented portions of a file 
-
-            Another issues is with encrypted, compressed files. In those cases we really need the file to be complete 
-            Headerless files because they were taken away header or footer
-            compressed/encrypted headerless are not approachable.
-
-            slide 13 tools 
-                photorec is a carver but it works better with pictures and videos 
-                gpart to recover damaged partition tables carver that looks for partitions
-                testdisk to recover 
-            
-
-
-    
+    Why not Windows? Nobody uses windows by itself. It must be confined, it stinks.
+    \begin{itemize}
+        \item It tampers with drives by automatically mounting them and writing on them.
+        \item No image handling or hotswapping of drives.
+        \item No support for non Windows filesystems.
+    \end{itemize}
+    The best thing to do is to use linux as host with windows as guest on virtual machines:
+    \begin{itemize}
+        \item Work the images with Linux, mount them read-only and exporting them via Samba or vmware \textit{"not persistent"} to Windows.
+        \item Use specific windows tools
+    \end{itemize}
+    Keep in mind that sharing something like this, is doing it file level: any utility that analize drives cannot work in this way.
+    \subsection{What does scientific mean?}
+        We defined scientific as repeatable. Any other expert will be able to perform the same experiment, on a clone of the image, obtaining the same results I obtained.\\
+        The experiment is not just a black box tool with an input and an output, the expert must be able to perform the same analysis by hand (at least in theory). This means that analysis software needs to be open sourced, and possibly free. Proprietary or "law enforcement only" tools can be used but the analysis must be performed again with something repeatable. \textit{(Judges, Lawyers, Marescialli, they can access the source for "law enforcement only" tools)}.
+    \subsection{What does analyisis mean?}
+        During the analysis phase, we may need to apply many techniques from computer science, that's the reason because people goes to a forensic expert. 
+        Forensic experts are able to do analysis because they are competent in computer science in general. They can also be ethically prone to call other experts in fields in which they're not so expert.
+    \section{Recovery of deleted data} 
+        Data/evidence may have been voluntarily or unvoluntarily deleted because time passed, because of the OS, because the drive was formatted, because the drive was faulty.
+        In many of these cases, we may be able to reconstruct all or part of the information, which is one of the most typical tasks computer forensics experts perform.\\
+        Let's look at the UNIX file system again for the millionth time to recall basic elements on data storage by OSs:\\
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{filesystem.png}
+        \end{figure}
+        A file system is a way to organize the space on a drive to store information. It's an archive-like thing.
+        The basic idea is to have units of information \textit{(files)}, to put on the storage drive, and then to have an index of what is stored and where. Following the index I can find the place where things are stored.\\
+        Whithout the index I may not reach them \textit{(if they were deleted)} but they can still be stored:\\
+        when we delete a file the operating system just marks the file as deleted and just doesn't shows it no more. The actual data will go away when overwritten by other files.\\
+        Indexes and data will go away randomly and independently from each other, statistically on a large hard drive there is a good possibility that metadata goes away before data blocks.
+        \subsection{Disk Geometry}
+            tracks, cylinders \dots 
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\linewidth]{sectors.png}
+            \end{figure}
+            When reading and writing, the minimum portion of a track is called sector, each drive has a different sector size, and the OS can't manage it for each of the existent models.\\
+            OS's filesystems are made to work on clusters of sectors \textit{(NTFS uses 4kb clusters)}, independently of the real dimension on the drive. So, storing for example a file of size 5kb needs 1 cluster of 4kb + a fourth of a cluster, and leaves the remaining part as unused slack space.\\
+            In the slack space there can possibly be remainances of old files, obviously they can be small portions, so only small files can be retrieved \textit{(e-mails, text files \dots)}, while other filetypes can't because they need to be full to be read \textit{(images, encrypted files \dots)}\\
+            Sectors are one after the other, if we place a file on a drive there is a good possibility that all the sectors of it are one after the other, so by scanning \textit{(cramming)} the drive can be possible to find them and restore them too.\\
+            The issues are with fragmented files, it was a big problem on small drives, now in most cases drives are so large to not fragment and most of OS's try to not break files for performance reasons. There still are techniques to find fragments of files and restore them.\\
+            Another issue is with encrypted, compressed files. In those cases we really need the file to be complete to be able to read them.\\
+            Headerless files because they were taken away header or footer cannot be interpreted. Headerless compressed/encrypted files are unpracticable.
+        \subsection{Free software tools for data recovery}
+            \begin{itemize}
+                \item TSK and Autopsy can perform data recovery under linux, they support NTFS, FAT, FFS, EXT2, EXT3..
+                \item Foremost can perform file recovery trough carving
+                \item gpart, testdisk can perform partition recovery
+                \item photorec can seek specifically for images or videos
+            \end{itemize}

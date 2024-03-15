@@ -1,62 +1,67 @@
-\contentsline {part}{I\hspace {1em}Cybercrime: threats, modus operandi, underground economy, financially-motivated malware}{3}{}%
-\contentsline {chapter}{\numberline {1}Cybercrime: Threat Landscape}{4}{}%
-\contentsline {section}{\numberline {1.1}Threat landscape}{4}{}%
-\contentsline {subsection}{\numberline {1.1.1}A gartner quadrant of threats}{6}{}%
-\contentsline {subsection}{\numberline {1.1.2}Examples of internal treaths}{7}{}%
-\contentsline {subsection}{\numberline {1.1.3}Data breaches and targeted attacks}{8}{}%
-\contentsline {section}{\numberline {1.2}Brief history of malicious software}{9}{}%
-\contentsline {section}{\numberline {1.3}Financially motivated attackers}{10}{}%
-\contentsline {section}{\numberline {1.4}Direct monetization: ransomware attacks}{11}{}%
-\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{11}{}%
-\contentsline {subsection}{\numberline {1.4.2}Ransomware screenshot and social meanings}{11}{}%
-\contentsline {subsection}{\numberline {1.4.3}How to get infected}{12}{}%
-\contentsline {subsection}{\numberline {1.4.4}Encryption mechanism: how do ransomware work}{12}{}%
-\contentsline {section}{\numberline {1.5}Indirect monetization: Botnets}{13}{}%
-\contentsline {subsection}{\numberline {1.5.1}Rise of the bots}{13}{}%
-\contentsline {subsection}{\numberline {1.5.2}Geolocalization of botnets command and control}{14}{}%
-\contentsline {subsection}{\numberline {1.5.3}Type of (botnet) malware families}{15}{}%
-\contentsline {section}{\numberline {1.6}The cybercrime ecosystem}{16}{}%
-\contentsline {subsection}{\numberline {1.6.1}Identity sales}{17}{}%
-\contentsline {subsection}{\numberline {1.6.2}Drive by download}{17}{}%
-\contentsline {subsection}{\numberline {1.6.3}Exploitation kits sales}{17}{}%
-\contentsline {subsection}{\numberline {1.6.4}Monetization on the dark web}{17}{}%
-\contentsline {subsection}{\numberline {1.6.5}Cybercrime and perception}{18}{}%
-\contentsline {subsection}{\numberline {1.6.6}Money mules and money laundering}{18}{}%
-\contentsline {chapter}{\numberline {2}Cryptocurrencies: abuses and forensics}{19}{}%
-\contentsline {section}{\numberline {2.1}Bitcoin and blockchain}{19}{}%
-\contentsline {section}{\numberline {2.2}Wallet and addresses}{19}{}%
-\contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{20}{}%
-\contentsline {section}{\numberline {2.4}Mining}{20}{}%
-\contentsline {section}{\numberline {2.5}Fork events}{21}{}%
-\contentsline {section}{\numberline {2.6}Bitcoin and black market}{21}{}%
-\contentsline {subsection}{\numberline {2.6.1}Pseudo-anonimity}{21}{}%
-\contentsline {subsubsection}{Silk Road Example}{22}{}%
-\contentsline {subsection}{\numberline {2.6.2}Why do people use Bitcoin for ransoms?}{22}{}%
-\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{23}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{24}{}%
-\contentsline {chapter}{\numberline {3}Introduction to Digital Forensics}{25}{}%
-\contentsline {section}{\numberline {3.1}What does forensics mean?}{25}{}%
-\contentsline {section}{\numberline {3.2}The Daubert standard (USA)}{25}{}%
-\contentsline {subsection}{\numberline {3.2.1}The Daubert Standard}{25}{}%
-\contentsline {subsection}{\numberline {3.2.2}What is scientific? (Italy)}{26}{}%
-\contentsline {subsection}{\numberline {3.2.3}Daubert Test for scientific}{26}{}%
-\contentsline {section}{\numberline {3.3}Example of forensic engagements}{27}{}%
-\contentsline {section}{\numberline {3.4}Phases of an investigation (Pollitt)}{27}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{28}{}%
-\contentsline {chapter}{\numberline {4}Acquisition}{29}{}%
-\contentsline {section}{\numberline {4.1}Brittleness of digital evidence}{29}{}%
-\contentsline {section}{\numberline {4.2}The usage of hashes in digital forensics}{30}{}%
-\contentsline {section}{\numberline {4.3}Hardware and software for acquisition}{30}{}%
-\contentsline {section}{\numberline {4.4}Bitstream images}{31}{}%
-\contentsline {section}{\numberline {4.5}Basic procedure of acquisition}{31}{}%
-\contentsline {subsection}{\numberline {4.5.1}Challenges: time}{31}{}%
-\contentsline {subsection}{\numberline {4.5.2}Challenges: size}{32}{}%
-\contentsline {subsection}{\numberline {4.5.3}Challenges: encryption}{32}{}%
-\contentsline {section}{\numberline {4.6}Alternative procedures}{32}{}%
-\contentsline {subsection}{\numberline {4.6.1}Alternative 1: booting from live distribution}{32}{}%
-\contentsline {subsection}{\numberline {4.6.2}Alternative 2: Target powered on}{32}{}%
-\contentsline {subsection}{\numberline {4.6.3}Alternate 3: live network analysis}{33}{}%
-\contentsline {subsection}{\numberline {4.6.4}New Challenges (separate classes)}{33}{}%
-\contentsline {chapter}{\numberline {5}Identification}{34}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{37}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{38}{}%
+\contentsline {part}{I\hspace {1em}Cybercrime: threats, modus operandi, underground economy, financially-motivated malware}{4}{}%
+\contentsline {chapter}{\numberline {1}Cybercrime: Threat Landscape}{5}{}%
+\contentsline {section}{\numberline {1.1}Threat landscape}{5}{}%
+\contentsline {subsection}{\numberline {1.1.1}A gartner quadrant of threats}{7}{}%
+\contentsline {subsection}{\numberline {1.1.2}Examples of internal treaths}{8}{}%
+\contentsline {subsection}{\numberline {1.1.3}Data breaches and targeted attacks}{9}{}%
+\contentsline {section}{\numberline {1.2}Brief history of malicious software}{10}{}%
+\contentsline {section}{\numberline {1.3}Financially motivated attackers}{11}{}%
+\contentsline {section}{\numberline {1.4}Direct monetization: ransomware attacks}{12}{}%
+\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{12}{}%
+\contentsline {subsection}{\numberline {1.4.2}Ransomware screenshot and social meanings}{12}{}%
+\contentsline {subsection}{\numberline {1.4.3}How to get infected}{13}{}%
+\contentsline {subsection}{\numberline {1.4.4}Encryption mechanism: how do ransomware work}{13}{}%
+\contentsline {section}{\numberline {1.5}Indirect monetization: Botnets}{14}{}%
+\contentsline {subsection}{\numberline {1.5.1}Rise of the bots}{14}{}%
+\contentsline {subsection}{\numberline {1.5.2}Geolocalization of botnets command and control}{15}{}%
+\contentsline {subsection}{\numberline {1.5.3}Type of (botnet) malware families}{16}{}%
+\contentsline {section}{\numberline {1.6}The cybercrime ecosystem}{17}{}%
+\contentsline {subsection}{\numberline {1.6.1}Identity sales}{18}{}%
+\contentsline {subsection}{\numberline {1.6.2}Drive by download}{18}{}%
+\contentsline {subsection}{\numberline {1.6.3}Exploitation kits sales}{18}{}%
+\contentsline {subsection}{\numberline {1.6.4}Monetization on the dark web}{18}{}%
+\contentsline {subsection}{\numberline {1.6.5}Cybercrime and perception}{19}{}%
+\contentsline {subsection}{\numberline {1.6.6}Money mules and money laundering}{19}{}%
+\contentsline {chapter}{\numberline {2}Cryptocurrencies: abuses and forensics}{20}{}%
+\contentsline {section}{\numberline {2.1}Bitcoin and blockchain}{20}{}%
+\contentsline {section}{\numberline {2.2}Wallet and addresses}{20}{}%
+\contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{21}{}%
+\contentsline {section}{\numberline {2.4}Mining}{21}{}%
+\contentsline {section}{\numberline {2.5}Fork events}{22}{}%
+\contentsline {section}{\numberline {2.6}Bitcoin and black market}{22}{}%
+\contentsline {subsection}{\numberline {2.6.1}Pseudo-anonimity}{22}{}%
+\contentsline {subsubsection}{Silk Road Example}{23}{}%
+\contentsline {subsection}{\numberline {2.6.2}Why do people use Bitcoin for ransoms?}{23}{}%
+\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{24}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{25}{}%
+\contentsline {chapter}{\numberline {3}Introduction to Digital Forensics}{26}{}%
+\contentsline {section}{\numberline {3.1}What does forensics mean?}{26}{}%
+\contentsline {section}{\numberline {3.2}The Daubert standard (USA)}{26}{}%
+\contentsline {subsection}{\numberline {3.2.1}The Daubert Standard}{26}{}%
+\contentsline {subsection}{\numberline {3.2.2}What is scientific? (Italy)}{27}{}%
+\contentsline {subsection}{\numberline {3.2.3}Daubert Test for scientific}{27}{}%
+\contentsline {section}{\numberline {3.3}Example of forensic engagements}{28}{}%
+\contentsline {section}{\numberline {3.4}Phases of an investigation (Pollitt)}{28}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{29}{}%
+\contentsline {chapter}{\numberline {4}Acquisition}{30}{}%
+\contentsline {section}{\numberline {4.1}Brittleness of digital evidence}{30}{}%
+\contentsline {section}{\numberline {4.2}The usage of hashes in digital forensics}{31}{}%
+\contentsline {section}{\numberline {4.3}Hardware and software for acquisition}{31}{}%
+\contentsline {section}{\numberline {4.4}Bitstream images}{32}{}%
+\contentsline {section}{\numberline {4.5}Basic procedure of acquisition}{32}{}%
+\contentsline {subsection}{\numberline {4.5.1}Challenges: time}{32}{}%
+\contentsline {subsection}{\numberline {4.5.2}Challenges: size}{33}{}%
+\contentsline {subsection}{\numberline {4.5.3}Challenges: encryption}{33}{}%
+\contentsline {section}{\numberline {4.6}Alternative procedures}{33}{}%
+\contentsline {subsection}{\numberline {4.6.1}Alternative 1: booting from live distribution}{33}{}%
+\contentsline {subsection}{\numberline {4.6.2}Alternative 2: Target powered on}{33}{}%
+\contentsline {subsection}{\numberline {4.6.3}Alternate 3: live network analysis}{34}{}%
+\contentsline {subsection}{\numberline {4.6.4}New Challenges (separate classes)}{34}{}%
+\contentsline {chapter}{\numberline {5}Identification}{35}{}%
+\contentsline {subsection}{\numberline {5.0.1}What does scientific mean?}{36}{}%
+\contentsline {subsection}{\numberline {5.0.2}What does analyisis mean?}{36}{}%
+\contentsline {section}{\numberline {5.1}Recovery of deleted data}{36}{}%
+\contentsline {subsection}{\numberline {5.1.1}Disk Geometry}{37}{}%
+\contentsline {subsection}{\numberline {5.1.2}Free software tools for data recovery}{38}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{39}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{40}{}%
