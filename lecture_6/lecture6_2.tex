@@ -1,0 +1,47 @@
+MOST DRIVES HERE ARE SSD
+    most cellphones drive work in a similar way to ssd 
+    they're made of nand flash, permanent, fast, cheap 
+    on the surface they work exactly the same way as HDD
+    You don't see any difference 
+    But the two technologies are different.
+
+    Nand flash has a limited lifetime 
+    so, since we write and erase a lot, we need to figure out ways to make these last long enough
+    
+    Another difference is that nand memories have blocks from 16 to 512 kb long
+    blocks in ssds can only be written completely
+    when the block is rewritten it is all rewritten
+    and before, it has to be blanked
+    the combination of this things, + fast time for reading
+    but you want the hdds and ssd to work in the same way 
+    ssd had to possibly be put inside an os that didn't knew about the ssd 
+    FTL controller fakes the fact of the drive working like an HDD.
+    It lies to the operating system 
+
+    It lies about geometry 
+
+    We write a lot, rewrite, (some files are never rewritten)
+    If we took these files and place them on the drive at random, the cells for the os files stay uguali
+    The files instead get spaccati subito   
+    FTL swaps them doing wear leveling 
+
+    another thing we can do is to maybe keep things in a cache. SSD drives have large onboard cache to write on the drive only when it is really necessary  
+    (Write caching)
+    Also compressing data uses less blocks.
+    Redundant space in ssds 
+
+    + if we want to write to a cell we first need to blank it, which is not the same for hard drives.
+    Blankning takes time. So, to make ssd drives more performant, when we have time we start blanking.
+    In order to start blanking we need to have from the os a list of the data areas that can be blanked
+    This process is called trimming.
+    This thing makes more difficult to recover undeleted data. Now we can no more exploit the laziness of the OS.
+    When SSDs were not supported yet by OS, controller developers tried to do garbage collection. To figure out alone the FTL what to blank,
+    Now they're supported, so trimming.
+
+    Bad block handling.
+
+    All of these summarized makes the FTL lie on the position of the blocks, on the internal structure of the drive, 
+    same situation of memory allocation in processes/threads
+    the same for usb sticks. FTL on USB sticks is cheap and do not perform all of the operations.
+    hash of usb sticks change every time because of the shitty FTL 
+    Since the drive performs trimming, and it happens everytime we're not reading or writing. When we connect a write locker, the drive starts trimming.
