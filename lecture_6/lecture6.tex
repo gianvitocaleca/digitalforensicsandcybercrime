@@ -5,65 +5,50 @@
         \item Definitive techniques: make impossible to recover data
     \end{itemize}
     \subsection{Critical failure points}
-        The technology dependent phases are acquisition and idenfitication, 
-        zlide 16
+        Acquisition \textit{(usage of tools for repeatable cloning and custody)} and identification \textit{(usage of tools for analysis of file systems, data reconstruction and carving)}
+        Interfering, it is possible to compromise the process. We talk about transient anti-forensics if we interfere with identification, definitive anti-forensics if we interfere with acquisition.
     \subsection{Timeline tampering (definitive)}
-        We've already mentioned that files have metadata. Typical are filename and position in the file path, other important metadata are accessed, modified, created dates.\\
-        In Windows NT was introduced the time and date when one of the three was changed.
-        A typical way to use these data is to take all of the MAC entries of all files in the drive and put them in reverse order starting from the most recent.
-        Since everytime you touch a file, you change the E entry. So you can see the effects of the last operations performed on the computer going backwards.
-        As we go back, since every action overwrites the previous value. We just will see the last. A timeline is a sequence of actions taken,
-        lista dove tu vedi l'ultima modifica di ogni file, quindi piu vai indietro più le date sono "sparse".
-
+        Files' metadata store also information about modified, accessed, created dates \textit{(MAC)} + Entry Changed (E) value on NTFS.\\
+        A typical way to use these data is to take all of the MAC entries of all files in the drive and put them in reverse order starting from the most recent, to display a so-called timeline.\\
+        As we go back, since every action overwrites the previous value we just will see the last one, as far we go, old data are shown because they maybe were stored and never touched.\\
+        MAC information can be modified to make them appear separated, close, randomized or moving them completely out of scope.\\
         MAC though are not inforced by the OS, they're only declarations. There exist tools just to change these values, those values are not there for security reasons.
-        In unix you can use the touch command to change the thing.
-        In NTFS there is also the Entry changed so the thing is difficult
-        The E value should correspond to the latter of MAC 
-        But, as a forensic expert we cannot guarantee that these values are correct, so if they support or don't support theories we must keep in mind this.
-
-        If you run touch or timestomp, there is no track of this, we can have a drive with manipulated access times.
+        In Unix you can use the touch command to change the thing for example, and there is no track of this, we can have a drive with manipulated access times.\\
+        So, as forensic experts we cannot guarantee that these values are correct, and if we use them to support or not support theories we must keep in mind.
     \subsection{Countering file recovery (definitive)}
-        There are tools that take care to go on the specific blocks and overwrite them. There are also tools that perform it by zeroing the not allocated part and/or the slack space.
-        heide, sdelete
-
-        also encryption usually encrypted drives are stored as big files that are not used in the same way in which the filesystem would use the block
-        or usage of virtual machines , they use dynamically allocated drive (file). If you delete a file, the thing is actualli shrunk. So vm often counter implicitly file recovery.
-        They shrink and enlarge.
-        Quando cancelli uno zero o un uno, l'effetto è differente ed è in certi casi teoricamente possibile ricostruire (questo negli anni 80)
-        In 2023 most drives are not magnetic. In magnetic drives, which now are dense. The thing is that this is not possible now, surely.
-        Since there was this worry, in the 80s they came up with the Gutmann patterns 
-        overwrite with zeros, ones, 27 overwrites.
-        these secure things became a best practice, still used by modern tools, but there is no reason to do that now, even before.
+        File recovery uses data remnants, but some tools can perform \textit{secure deletion}: 
+        \begin{itemize}
+            \item they can overwrite blocks, fill not allocated parts and/or slack spaces with zeros
+            \item they can go on specific blocks and overwrite them
+        \end{itemize}
+        Encrypted drives can create problems with file recovery, also because they're managed in a way which is different from the usual filesystem's usage of the blocks.\\
+        Virtual machines, when dynamically allocating drives \textit{(which are actually files)} have they to shrink if data are deleted and to enlarge when new data is written, often implicitly countering file recovery.
+        \subsubsection*{The talk}
+            Gutmann in the 80's said that probably it was possible to understand if a zero was written in a sector or a one was, because of the magnetism. In reality it was difficult to do that (impossible) even in the 80s, with nowadays dense disks it is certainly not possible.\\
+            But we still have the Gutmann patterns to \textit{"erase"} disk contents.
+%sono arrivato qua
     \subsection{Fileless attacks (definitive)}
-        Many modern attacks tend to be fileless, if an attack is fileless the evidence of the attack is lost.\\
-        For instance metasploit offers things that run commands that are not actually stored into the disk.
-        The only thing that can save us is to dump the memory of the machine in our acquisition phase.
-    \subsection{Filesystem insertion and subversion technologies (transient)}
-        We place data where there's no reason to look for them, in particular inside filesystem metadata.
-        In the case of ext2/ext3 the file for journal is the difference.
-        ext2 avoid to touch that file if it is there 
-        adding it to a ext2 partition, you can put things in there and they will stay there 
-        so, someone wrote WaffenFS to do this 
-        RuneFS uses inodes for bad blocks (blocks avoided because broken), if you misclassify blocks as broken, FS 
-        13:25 le ultime 2 
+        Many modern attacks tend to be fileless, with no traces on the disk at all.\\
+        For instance, Metasploit's meterpreter is injected in a process' memory space, and gives attacker control without writing anything to disk.
+        So, if the machine is off, the evidence is lost, the only thing that can save us is to dump the memory of the machine, if possible, in our acquisition phase.
+    \subsection{Filesystem insertion (transient)}
+        Data placed where there's no reason to look for them, in particular inside filesystem metadata. Inside a partition table there is space for $\sim$ 32KB of data.\\
+        In ext2/3:
+        \begin{itemize}
+            \item RuneFS can write in bad block inodes
+            \item WaffenFS adds a fake ext3 journal in an ext2 partition
+            \item KY FS uses directory inodes
+            \item Data Mule FS puts data in padding and metadata structures of filesystem ignored by forensic tools
+        \end{itemize}
     \subsection{Log analysis ($\sim$ transient)}
-        On most machines one of the big sources of info for forensic analysis is logs. They tend to be long text files with structured text inside.
-        We scroll trough it and by sight see if there are any entries different from the others.
-        So, one of the ways to confuse an analyst is to try to make log lines as good as the others.
-        In most cases log analysis is done by an algorithm, scripts which search for regular expressions or so.
-        Some attackers break the regular patterns, maybe use an username that contains a linebreak character. The line would be skipped (theoretically example).
-        Log injection techniques do this kind of things.
-        Transient in the sense that they're trying to confuse the analysis tools. In reality however some of them could be modified in the way in which the log is definitive.
+        On most machines one of the big sources of info for forensic analysis are logs.\\ 
+        Logs tend to be long text files with structured text inside, so they can be manually scrolled or checked by use of regular expressions or scripts.\\
+        If attackers can inject stuff in the logs (very likely), they can try to make your scripts fail, or even to exploit them.\\
+        Maybe they use an username that contains a linebreak character, the line would be skipped (theoretically example).\\
+        Techniques which are transient in the sense that they're trying to confuse the analysis tools. In reality however some of them could be modified in the way in which the log becomes definitive.
     \subsection{Partition table tricsk (transient)}
-        Sci-fi 
-        Unaligned partitions. This may be enough to make a forensic tool to fail.
-        In an investigation where you have 1 drive and you expect for results that you don't find 
-        You still go on and check for all of the things that you can, to figure out.
-
-        extended partitions..
-
-        Transient techniques work when for example the drives are a lot and the analyst has no clue of where they could be 
-        they will be fooled.
-
-        burglar in the museum example.
+        \textit{"sci-fi"}\\
+        Partitions can be uncorrectly aligned, this may be enough to make a forensic tool to fail. \\
+        Adding a number of extended partitions which can be managed by the Operating Systems but not by forensic tools, or a sufficiently large number of logical partitions in an extended one to make the tools fail.\\
+        Transient techniques like this work well when for example the drives are a lot and the analyst has no clue of where evidence can be. But, with a small number of drives, if an expert knows what to search for and where to, most of the times he can find the evidence.
 
