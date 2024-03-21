@@ -1,0 +1,54 @@
+CLOUD FORENSICS 
+    One of the problems with cloud is that cloud means a lot of things to a lot of different people 
+    What are we referring to as cloud forensics?
+        We distinguish mostly Infrastructure as a service, PlatformaaS, SaaS
+
+    Distinction between public cloud (above), private cloud: a company internally reorganized their infrastructure as something based on a private cloud.
+    but we are interested in acquiring data from a public cloud, because we cannot access directly the hardware 
+
+    Acquisition issues 
+        whenever we have a public cloud system, we access data without accessing hardware 
+        In infrastructure as a service, most access, vm on aws. 
+        Our acquisition methods will never be dumping a drive but, copying a virtual machine.
+        Difference with the traditional forensics process.
+        The acquisition of the vms running in a cloud provider, it's not a problem. cie uno papero 
+
+        We do not acquire from bare metal but we have a way to acquire virtual machines remotely 
+        
+        In IaaS we can dump the virtual machine, we will access to everything except for ()
+        
+        In SaaS we have nothing, if we have log is ok, but ?
+
+        Depending on the type of infrastructure we may have different kinds of access to data.
+
+        Logs of third parties have higher credibility than your logs because of the fact that you may have manipulated them
+
+        In cloud proving time of events is easier, because of the third parties 
+
+Real problem is that data maybe sometimes do not exists 
+    page of instagram video is not stored, it is composed at the moment that you see 
+    with the data at that moment 
+
+    Data we acquire is the result of a transaction, of a running application   
+    Hard to understand for judges, lawyers, court people.
+
+    Editorial responsibility 
+
+Acquisition issues 
+    even in simple cases there is a series of things to make it hard 
+    Pages are dynamic content, before they were static and you could fetch them from the server 
+    In dynamic content what we see is something unreproducible in court 
+    simple print out is not sufficient.
+    If the page is composed by elements imported by different external services, how much can we acquire of them?
+
+
+    visualization is different from data 
+    
+    attribution is important 
+        suppose to have a case with a certain infrastructrue, and one of the question is where physically is located the server that was deploying the structure 
+        suppose to have ip address, website, how to determine where physically the datacenter is located, it's not an easy question 
+        there are cases where from this question depends taxation 
+        
+
+
+

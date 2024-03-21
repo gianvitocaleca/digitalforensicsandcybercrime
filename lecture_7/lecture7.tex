@@ -1,0 +1,79 @@
+We don't know what the FTL gives us when we ask for a block which is in trimming list.
+HW producer will never tell us how the FTL is made.
+Because the FTL is the main component of SSDs and is the thing that makes a drive different from another.
+Proprietary information.
+
+In SSDs we have the problem that if we ask for a certain sector, we get from the FTL something which is shown us 
+
+Can we bypass FTL?
+    Not by software
+    In theory, it is possible to read memory chips themselves by putting them on a bench and access trough it
+    But since FTL encrypts/compress/obfuscate data because the way it uses data is a proprietary secret.
+    FTL are purposely built to make reverse engineering difficult.
+    It would be extremely time consuming because of reverse engineering.
+    The process of soldering chips and things may be distructive.
+    It is a restriction, you can do it only once and so..
+    "Analisi irripetibile". Analysis which destroys the evidence because of the way the analysis works.
+
+    Mobile devices do the same things that FTL does, and the same thing happens ()
+
+
+Challenges in black box analysis and goals 
+
+    SSD drives in general have the characteristic that FTL can edit data even without any write command to be sent.
+    Just need to turn it on.
+
+    Problems with hashes before, after reading 
+    
+    This also happens with USB sticks 
+
+    
+What did they test 
+    How trimming impacts drives 
+    How garbage collection impacts drives 
+    How to recover files considering what wear leveling does and the fact that FTLs may compress and encrypt files 
+
+    they took 3 different drives, they said they were doing the ticked things 
+    they disabled caches to perform these experiments
+Trimming 
+
+    flow chart slide methodology
+
+Results
+    they used different OSs and drives 
+    at that moment OSs didn't probably also support 
+
+    Whenever the OS notified appropriately the drive about deleting, all of the files were gone in few seconds
+    so the reality is that usually a drive already trimmed itself when connected 
+    if trimming worked, data were gone within seconds
+
+    In their tests one of the drives was trimmed on formatting but not on deletion 
+    One if unmounted 
+    Nowadays most OS will handle trimming correctly and so most of SSD drives would not keep data 
+    Since in some cases it don't work correctly it is still important to check them 
+
+Garbage Collection 
+    flow chart 
+Results 
+    they don't do gc 
+
+Erasing Patterns 
+    they found out that some drives trimmed by stripes 
+    Zanero thinks that it was a faulty drive 
+    We cannot exclude that sometimes it fails to trim things so we can still find files 
+
+Compression 
+    if you have a drive that performs compression, the throughput is different 
+    If a drive performs compression, it is even more unlikely to understand what is stored on the drive when dismounted 
+
+Wear Leveling 
+    not interesting because performed by the drive itself 
+    The point was to try to test if it created multiple copies of the data 
+    The results were that it doesn't
+
+Files Recoverability 
+    only when the drive had difects, so it was not correctly trimming 
+
+
+poi ha chiuso 
+
