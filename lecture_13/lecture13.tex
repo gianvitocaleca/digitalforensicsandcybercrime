@@ -1,0 +1,174 @@
+9 maggio 2024
+Slide 33(sua)
+Missing values:
+    can occur because of various reasons:
+        information can be non-applicable (why? 12:40)
+        information can be undisclosed (read above)
+        error during merging sources
+    Usually there are a lot of missing values and they are not so easy to manage.
+    They may also impact or not your model
+
+    Some techniques exist to deal directly with missing values (e.g. decision trees), so they're not influenced by missing values
+    other instead need some additional preprocessing (e.g. linear regression)
+
+    What do you do when you find out you have missing values?
+        - replace with known values (mean, median)
+        - delete it -> when you decide to delete a feature, you basically decide that the feature is uncorrelated with the label
+        - keep it -> because it is correlated with the label 
+
+        Perform a statistical test to understand if the missing value is correlated or not with the target label
+
+    Example: dataset 
+        delete row 6
+        many missing values in credit bureau score --> but in this case if we analyse the values inserted and we try them against
+                                                        the label, we see that when it is inserted, the entries are labeled as frauds
+                                                        better keep it or replace it 
+                                                        or average or just do something to introduce as less bias as possible
+        marital status of line 1 --> at some point of the anaysis you'd be tempted to add your knowledge to the dataset 
+                                    lucky: good 
+                                    unlucky: bias 
+                                    An alternative solution is to use the mode of the dataset 
+    Outliers:
+        extreme observations that are very dissimilar to the rest of the population
+        in this specific part of the processing step we want to identify the ones that may influence too much our model 
+        things that are too much out of range wrt the rest of the modle 
+
+        Valid observation: salary of boss is 1 million
+        Invalid observation: age is 300
+
+        We call
+            Univariate outliers: if they outly in one dimension 
+            Multivariate outliers: if they outly in multiple dimensions 
+
+        Univariate outliers detection 
+            compute minimum and maximum and search for how much values are near them, if there are a lot is ok 
+            Graphical tools: histograms (some values are less frequent than others, if they included in the model they may bias)
+                             box plot: leggilo a slide 42(sua)
+                             z-score: comput the differenc between mean, divide std and obtain the zscores 
+        
+        Multivariate outliers 
+            Do some statistical test non ho capito 13:00
+
+        You have to decide if the detected observation is valid or not 
+            if invalid you consider the outlier as a missing value, perform the same decision you'd made for a missing value 
+            if valid -> impose a lower and a upper limit and any value below/above is brought back to the limits 
+        
+        It is important to perform this in a correct way 
+            13:04 slide 50(sua)
+        Expert based outlier detection 
+            sometimes is not too easy, they can also be unnoticed if not analysed by an Expert  
+                some data may be okay but not okay if taken toghether 
+                additional knowledge may help you to build specific rules to do something pddddd 13:05
+
+            Example:
+                birth date 1/1/1980
+                category child 
+                the invalid value cannot be determined, they are not outlier alone, but toghether 
+
+        Distance between point 
+            Euclidean vs Manhattan che sarebbero L2 vs L1 norm 
+                attention: the distance between monetary is more determining than the one for recency(years)
+                    you need to standardise data.
+
+        Standardisation:
+            min/max (outlier max? and now you keep its info in the standardisation)
+            z-score (assumes Normal Distribution)
+            decimal scaling 
+            depending on which you may introduce bias 
+        
+        Categorisation:
+            It is needed to reduce the number of categories 
+            Basic methods:
+                equal interval binning-> bins with the same range
+                equal frequency binning -> bins with the same number of observation
+                --> altre 2 cose zioncam
+        
+        Variable selection:
+            Typically only a few variables actually contribute to the prediction
+            select only the helpful ones 
+            usually in fraud detection the number of variables are in the range of 10-15
+            how do we find these variables?
+        
+            Filters:
+                selection mechanisms based on statistical tests or (?).
+                Tabella con i tipi di test performabili in base al tipo di variabile e target 
+
+            Principal Component Analysis 
+                dimension reduction by forming new linearly independent (non correlated) variables (a new set of variables)
+                and the variables are a linear combination of the original set of features 
+                + they have the property to better describe the distribution 
+                these are called principal components 
+                if you start from a dataset with 15 variables you'll obtain 15 components 
+                so fai come c'è scritto alla slide 60
+                perchè the variance contained in the original data is summarized by top-k components 
+                some of them are less important, so you can discard them 
+
+                Limitations:
+                    reduced interpretability 
+                        a transaction may be labeled as fraudulent without me knowing why because the features are strange 
+
+Unsupervised Learning for fraud detection 
+    Aim to find fraudulent cases as anomalies that deviates from the norm 
+    The challenge is to find a way to correctly model the norm 
+        Behavior of the average customer at a snapshot in time 
+        The average behavior of given customer at given period
+    
+    Unsupervised ml = anomaly detection 
+        Relevant where:
+            you're starting to do fraud detection 
+            no labeled hystorical dataset 
+            fraudsters keep becoming stronger sti pazzi 
+
+    ULChalleng
+        define the average behavior or norm 
+            it depend on the application field 
+            boundary between norm and outlier is not clear-out because fraudsters try to blend in 
+            The norm may change overtime, even if you were able to define the norm on the original data, you must be ready to update it
+    
+    Basic task of finding anomalies 
+        find outliers (single/multi dimension) single with histogram or box plot, multi with scatter plot 
+
+        disadvantages:
+            less formal and only limited to few dimensions 
+            it requires a human 
+            for a large dataset is very very very difficult to perform 
+
+    Statistical outlier detection 
+        z-score 
+        fit a distribution 
+        break point analysis 
+        peer group analysis
+
+        Break point analysis
+            intra-account method 
+                ha detto delle cose 
+                detect a breakpoint in your ds and compare the distributions before and after this breakpoint 
+                breakpoint is a sudden change in an account behavior 
+                example slide 71
+                    compare the distribution of the old model wrt new model's 
+                    t-score (slide 72)
+        
+        peer group analysis 
+            inter-account fraud detection method 
+            Peer group is a group of accounts which have similar behavior to the target account 
+            when an account's behavior deviates substantially from it's peers then an anomaly is signaled 
+                1- identify the peer group, using prior, statistical way(similarity metrics)
+                    define the number of peers (too small) -> noise sensitive 
+                                                (too big) -> insensitive to local
+                poi ha detto cose? Chi lo sa? 13:39 
+
+            CC fraud example 
+                weekly amount time series 
+                    verify whether the amount spent at timestep n is anomalous 
+                    c'è il disegno 
+                    consider the peer group and see if the amount spent is anomalous wrt peer group 
+
+        These techniques are the basis for existing unsup. learning techniques.
+            What are the advantages and disadvantages of peer-group/break-point analysis 
+                if we consider months from january to november, everything performed in december can be cosnidered anomalous (Christmas)
+                for sure the main disadvantage is that they have issues with seasonality
+                What can we do to limit the problem of seasonality?
+                    peers will behave similarly during christmas, so it depends on the objective of your fraud detection system
+                    if it might be efficient enough you can think to combine the two approaches 
+                    ha aggiunto cose (13:47)
+    Clustering (ultimi 2 minuti)
