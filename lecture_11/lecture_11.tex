@@ -1,73 +1,68 @@
 \section{Expert-based knowledge}
-    Based on the domain knowledge of the fraud analyst: gathering and processing the right information in the right manner.
-    
-    Detailed and manual investigation of suspicious cases, which may indicate a new fraud mechanism
-        -understand and address the new mechanism 
-    Comprehension of the fraud mechanism allows extending the fraud detection and prevention mechanism. Every time a new transaction is flagged suspicious, is going to be investigated, if it's labeled as fraud, the specific case will be added to the fraud detection mechanism.
-
-
-Fraud investigation and management
-    When fraudulent activites have been detected and confirmed, two types of measures are typically taken:
-        Corrective 
-        Preventive 
-
-    Corrective Measures 
-        Aim to resolve the fraud and correct the consequences. Go past your log to also check if in the past similar fraud cases happened (Retrospective Screening)
-        The sooner corrective measures are taken and fraud is detected, the more effective such measures are and the more losses can be avoided
-
-    Ti sei perso la slide Preventive Measures 
-Anche Expert-Based Approach
-
-Red flags of frauds
-        Scheme, behaviours, which seems to be out of place. Something you want to detect because it belongs to a fraud scheme.
-        Them are translated in expert rules and included in a rule engine.
-    
-Rule-based Engine Disadvantages 
-        Everytime you have to detect case, and manually write the rule for that specific case
-        The more complex is the mechanism, the more complex is the rule translation 
-        Easy to bypass rules (example, go over a treshold of a little bit)
-        Rules based on past history, new fraud patterns are not automatically signaled.
-
-        You need to continously monitor, improve and updtate rule based engine to remain effective.
-
-Fraud becomes easier to detect the more time has passed
-        A fraud mechanism is first successifully used: it will increase in the usage, and in the number of this particular type of Fraud
-        The more a scheme is used, the more is evident, easier is to detect, also past-happened cases are discovered
-        So big data can be explored and exploited for fraud detection at a lower cost = data-driven fraud detection
-
-Expert-based Systems
-    relies on human expert input, evaluation and monitoring 
-    Starting point and complementary tool to develop an effective fraud-detection and prevention system
-
-    Automated data driven fraud detection systems 
-        Requires less human involvement 
-        Could lead to a more efficient and effective system 
-        Expert knowledge remains crucial to build effective systems 
-
-Data-driven fraud detection 
-    1 - Precision
-    2 - Operational Efficiency 
-    3 - Cost efficiency 
-    4 - Growing amount of interest 
-
-    1 - Precision 
-        Organizations have a limited investigation capacity. These systems are able to increase the detection power wrt the classic approaches.
-        Process massive volumes of information to uncover frauds that are not apparent to the human eye 
-        Goals:
-            Make optimal use of the limited investigation capacity 
-            Maximize the fraction of fraudulent cases among the inspected ones (more frauds detected)
-    
-    2 - Operational and Cost Efficiency
-        Imagine you want to build a system to detect cc transaction frauds vs bonifici (bank transfer)
-
-        cc detection you want to know immediately they stole your card 
-        bank transfer needs 2 days to be executed, you can wait it .
-
-        Choose the correct detection system depending on the context
-
-    4 - Growing amount of interest 
-        13:03
-
+    \subsection{Expert-based approach}
+        The expert-based approach is based on the domain knowledge of the fraud analyst: he is able to gather and process the right information in the right manner.\\
+        Performing detailed and manual investigation of suspicious cases, may indicate a new fraud mechanism, an analyst can understand and address the new mechanism.\\
+        Comprehension of the fraud mechanism allows extending the fraud detection and prevention mechanism.\\ 
+        Every time a new transaction is flagged suspicious, is going to be investigated, if it's labeled as fraud, the specific case will be added to the fraud detection mechanism.
+    \subsection{Fraud investigation and management}
+        There are two possible types of measures that can be taken when fraudulent activities are detected and confirmed:
+        \begin{itemize}
+            \item Corrective Measures
+            \item Preventive Measures
+        \end{itemize}
+        \subsubsection{Corrective Measures} 
+            Aim to resolve the fraud and correct the consequences. We call \textbf{retrospective screening} the set of actions to retrospectively detect frauds and subsequently address similar cases.\\
+            The sooner corrective measures are taken and fraud is detected, the more effective such measures are and the more losses can be avoided.
+        \subsubsection{Preventive Measures}
+            Aim to prevent future frauds, making the organization more robust and less vulnerable.\\
+            The typical process:
+            \begin{itemize}
+                \item Investigate the fraud case to understand the underlying mechanisms
+                \item Extend the available expert knowledge with the discovered mechanisms
+                \item Adjust the detection and prevention system
+            \end{itemize}
+    \subsection{Rule-based engine}
+        If-then rules are applied to future transactions and trigger an alert when a fraud may be committed.\\
+        They are based on previously detected fraud patterns.\\
+        Disadvantages:
+        \begin{itemize}
+            \item \textbf{Expensive to build:} each fraud case must be detected, and rules for the specific case must be written. Rules' complexity increases with fraud scheme complexity.
+            \item \textbf{Difficult to mantain and manage:} the rule base must be kept lean and effective, every signaled case requires human follow-up and investigation.
+            \item \textbf{New fraud patterns are not automatically signaled:} rules are based on past history, but fraud is a dynamic phenomenon and fraudsters can learn and circumvent the rules.
+        \end{itemize}
+        Rule based engine must be continously monitored, improved and updated to remain effective.
+    \subsection{Fraud becomes easier to detect the more time has passed}
+        A fraud mechanism is first successifully used:
+        \begin{itemize}
+            \item it will increase in the usage, fraudsters appear to be repeated offenders
+            \item it will increase the number of this particular type of fraud, because fraudsters share knowledge 
+        \end{itemize} 
+        The more the scheme is used, the more it will become \textbf{evident}, becoming \textbf{statistically easier to detect}, then also similar frauds committed in the past will be discovered.\\
+        Big data can be explored and exploited for fraud detection at a lower cost $\rightarrow$ data-driven fraud detection.
+    \subsection{Expert based vs Automated fraud-detection systems}
+        Expert based systems relies on human expert input, evaluation and monitoring. They are a starting point and complementary tool to develop an effective fraud-detection and prevention system.\\
+        Automated data-driven systems require less human involvement and can lead to a more efficient and effective system, but, \textbf{expert knowledge remains crucial to build effective systems}
+    \subsection{Data-driven fraud detection}
+        \begin{itemize}
+            \item \textbf{Precision:}
+            \begin{itemize}
+                \item Organizations have a limited investigation capacity
+                \item These approaches have increased detection power wrt classic approaches
+                \item They process massive volumes of information to discover frauds that are not apparent to the human eye
+                \item The goals of a fraud-detection system are to make optimal use of the limited investigation capacity and maximize the fraction of fraudulent cases among the inspected ones, high precision means high fraction of inspected frauds
+            \end{itemize}
+            \item \textbf{Operational efficiency:}
+            \begin{itemize}
+                \item operational requirements impose time constraints on the processing of a case
+            \end{itemize} 
+            \item \textbf{Cost efficiency:} expert based fraud detection systems are challenging and labor intensive, automated data-driven approaches are compliant with stringent operational requirements
+            \item \textbf{Growing amount of interest:} 
+            \begin{itemize}
+                \item frauds have a negative social and financial impacts, which increases awareness and attention for them.
+                \item This makes grow investments and research from academia, industry and government.
+            \end{itemize}
+        \end{itemize}
+\iffalse
 Fraud-Detection techniques
     Frauds are hard to detect 
         and they remain hard and complex to detect even if fraud-detection approaches have evolved and gained significant power over the past years 
@@ -133,5 +128,4 @@ Operational Efficiency
         analytical model?
 
     Must be able to deal with the massive volumes of data.
-
-        
+\fi
