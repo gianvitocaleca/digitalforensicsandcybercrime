@@ -62,49 +62,60 @@
                 \item This makes grow investments and research from academia, industry and government.
             \end{itemize}
         \end{itemize}
+\section{Fraud-Detection Techniques}
+    Frauds are hard to detect, and they remain hard and complex to detect even if fraud-detection approaches have evolved and gained significant power over the past years.
+    \subsection{Fraud detection is challenging}
+        \begin{itemize}
+            \item Where's wally? Scan of the picture to seek for the things which have particular signs which resemble the ones of Willy.
+            \item Grid of numbers: average behavior, whatever deviates from the norm is stange and so fraudulent 
+        \end{itemize}
+    \subsection{Fraud detection techniques}
+        Fraudsters develop advanced strategies to cover their tracks to avoid being detected. There is the need for new techniques that are able to detect and address stealthy patterns.
+        \begin{itemize}
+            \item \textbf{Unsupervised Learning} or \textbf{descriptive} analytics techniques
+            \item \textbf{Supervised Learning} or \textbf{predictive} analytics techniques
+        \end{itemize}
+    \subsection{Unsupervised learning techniques}
+        Or descriptive analytics.\\
+        \begin{itemize}
+            \item \textbf{Unsupervised:}
+            \begin{itemize}
+                \item They do not require labeled observations
+                \item They learn the norm from hystorical observation, \textbf{detecting anomalies means to find behaviors that deviates from the norm}
+            \end{itemize}
+            \item Allow detecting \textbf{novel} fraud patterns
+            \begin{itemize}
+                \item Which are different in nature from historical frauds 
+                \item And make use of new, unknown mechanisms 
+            \end{itemize}
+        \end{itemize}
+        This is a \textbf{complementary tool} to improve its expert rule-based fraud-detection system
+        \subsubsection{Example: Telecommunications Fraud}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.6\linewidth]{telecom.png}
+            \end{figure}
+        \subsubsection{Limitations of unsupervised techniques}
+            They are prone to \textbf{deception}\footnote{inganno}: camouflage-like fraud strategies, because it detect new frauds only if them lead to detectable deviations from normality.\\
+            These techniques need to be improved by complementing other tools.
+    \subsection{Supervised learning techniques}
+        Or predictive analytics.\\
+        \textit{Learn from historical observations to retrieve patterns that allow differentiating normal and fraudulent behavior}\\
+        Aim at finding tracks that fraudsters cannot hide: \textit{"known alarms"}.
+        These techniques can be applied to:
+        \begin{itemize}
+            \item Predict frauds 
+            \item Detect frauds 
+            \item Estimate the amount of fraud 
+        \end{itemize}
+        \subsubsection{Limitations of supervised techniques}
+            \begin{itemize}
+                \item They need historical examples to learn from \textit{(i.e. a labeled dataset)}
+                \item They have low detection power against different and new fraud types
+            \end{itemize}
+    \subsection{Complementarity of supervised and unsupervised methods }
+        Use both methods in developing a powerful fraud-detection and prevention system. Each method focuses on different aspects of fraud.
 \iffalse
-Fraud-Detection techniques
-    Frauds are hard to detect 
-        and they remain hard and complex to detect even if fraud-detection approaches have evolved and gained significant power over the past years 
-        Usi machine imparare --> usano un altro macchina imparare per rompere il tuo macchina imparare
-
-Fraud detection is challenging
-    Number: average behavior, whatever deviates from the norm is stange and so fraudulent 
-
-Fraud detection techniques
-    Need for new techniques that are able to detect and
-    address stealthy patterns
-
-    Unsupervised Learning: used every single time you don't have lables 
-    Supervised Learning: 
-
-Unsupervised:
-    no label, learn the norm from historical observation
-    Detecting anomalies = find behavior that deviates from normal one.
-    Allow detecting novel fraud pattern 
-    Complementary tool to improve its expert rule-based fraud-detection system.
-
-    Example: telecommunications fraud 
-
-Disadvantages 
-    Mimic the normal behavior by slightly changing the features to make the thing less findable by the thing 
-    camouflage-like fraud strategies 
-
-Supervised learning techniques 
-    bla bla spiega 
-    used to 
-    predict frauds
-    detect frauds 
-    estimate the amount of fraud 
-
-Disadvantages 
-    We need to have a labeled dataset --> difficult because it's not a good advertisement for the bank to expose itself 
-    Low detection power against different and new fraud types 
-
-Complementarity of supervised and unsupervised methods 
-    Use both in developing a powerful fraud-detection and prevention system 
-    They focus on different aspects of fraud.
-
     you'll get a list of transactions ranked by their anomaly scoring 
 
     unsupervised learning part is used to optimize the detection capacity.
