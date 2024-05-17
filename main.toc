@@ -66,85 +66,103 @@
 \contentsline {subsection}{\numberline {3.7.1}Fraud detection is challenging}{36}{}%
 \contentsline {subsection}{\numberline {3.7.2}Fraud detection techniques}{36}{}%
 \contentsline {subsection}{\numberline {3.7.3}Unsupervised learning techniques}{36}{}%
-\contentsline {subsubsection}{Example: Telecommunications Fraud}{36}{}%
-\contentsline {subsubsection}{Limitations of unsupervised techniques}{36}{}%
+\contentsline {subsubsection}{Example: Telecommunications Fraud}{37}{}%
+\contentsline {subsubsection}{Limitations of unsupervised techniques}{37}{}%
 \contentsline {subsection}{\numberline {3.7.4}Supervised learning techniques}{37}{}%
 \contentsline {subsubsection}{Limitations of supervised techniques}{37}{}%
-\contentsline {subsection}{\numberline {3.7.5}Complementarity of supervised and unsupervised methods }{37}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{38}{}%
-\contentsline {chapter}{\numberline {4}Introduction to Digital Forensics}{39}{}%
-\contentsline {section}{\numberline {4.1}What does forensics mean?}{39}{}%
-\contentsline {section}{\numberline {4.2}The Daubert standard (USA)}{39}{}%
-\contentsline {subsection}{\numberline {4.2.1}The Daubert Standard}{39}{}%
-\contentsline {subsection}{\numberline {4.2.2}What is scientific? (Italy)}{40}{}%
-\contentsline {subsection}{\numberline {4.2.3}Daubert Test for scientific}{40}{}%
-\contentsline {section}{\numberline {4.3}Example of forensic engagements}{41}{}%
-\contentsline {section}{\numberline {4.4}Phases of an investigation (Pollitt)}{41}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{42}{}%
-\contentsline {chapter}{\numberline {5}Acquisition}{43}{}%
-\contentsline {section}{\numberline {5.1}Brittleness of digital evidence}{43}{}%
-\contentsline {section}{\numberline {5.2}The usage of hashes in digital forensics}{44}{}%
-\contentsline {section}{\numberline {5.3}Hardware and software for acquisition}{44}{}%
-\contentsline {section}{\numberline {5.4}Bitstream images}{45}{}%
-\contentsline {section}{\numberline {5.5}Basic procedure of acquisition}{45}{}%
-\contentsline {subsection}{\numberline {5.5.1}Challenges: time}{45}{}%
-\contentsline {subsection}{\numberline {5.5.2}Challenges: size}{46}{}%
-\contentsline {subsection}{\numberline {5.5.3}Challenges: encryption}{46}{}%
-\contentsline {section}{\numberline {5.6}Alternative procedures}{46}{}%
-\contentsline {subsection}{\numberline {5.6.1}Alternative 1: booting from live distribution}{46}{}%
-\contentsline {subsection}{\numberline {5.6.2}Alternative 2: Target powered on}{46}{}%
-\contentsline {subsection}{\numberline {5.6.3}Alternate 3: live network analysis}{47}{}%
-\contentsline {subsection}{\numberline {5.6.4}New Challenges (separate classes)}{47}{}%
-\contentsline {chapter}{\numberline {6}Analysis or Identification}{48}{}%
-\contentsline {subsection}{\numberline {6.0.1}What does scientific mean?}{49}{}%
-\contentsline {subsection}{\numberline {6.0.2}What does analyisis mean?}{49}{}%
-\contentsline {section}{\numberline {6.1}Recovery of deleted data}{49}{}%
-\contentsline {subsection}{\numberline {6.1.1}Disk Geometry}{50}{}%
-\contentsline {subsection}{\numberline {6.1.2}Free software tools for data recovery}{51}{}%
-\contentsline {section}{\numberline {6.2}Antiforensic techniques}{51}{}%
-\contentsline {subsection}{\numberline {6.2.1}Critical failure points}{51}{}%
-\contentsline {subsection}{\numberline {6.2.2}Timeline tampering (definitive)}{51}{}%
-\contentsline {subsection}{\numberline {6.2.3}Countering file recovery (definitive)}{52}{}%
-\contentsline {subsection}{\numberline {6.2.4}Fileless attacks (definitive)}{52}{}%
-\contentsline {subsection}{\numberline {6.2.5}Filesystem insertion (transient)}{52}{}%
-\contentsline {subsection}{\numberline {6.2.6}Log analysis ($\sim $ transient)}{53}{}%
-\contentsline {subsection}{\numberline {6.2.7}Partition table tricsk (transient)}{53}{}%
-\contentsline {chapter}{\numberline {7}SSD Forensics}{54}{}%
-\contentsline {section}{\numberline {7.1}SSD technology}{54}{}%
-\contentsline {section}{\numberline {7.2}Can we bypass the FTL?}{55}{}%
-\contentsline {section}{\numberline {7.3}Challenges in black box analysis and goals}{55}{}%
-\contentsline {subsection}{\numberline {7.3.1}An unclear picture}{55}{}%
-\contentsline {subsection}{\numberline {7.3.2}Testing methodology}{55}{}%
-\contentsline {subsection}{\numberline {7.3.3}Test drives}{56}{}%
-\contentsline {subsection}{\numberline {7.3.4}Trimming}{56}{}%
-\contentsline {subsection}{\numberline {7.3.5}Garbage Collection}{57}{}%
-\contentsline {subsection}{\numberline {7.3.6}Erasing Patterns}{57}{}%
-\contentsline {subsection}{\numberline {7.3.7}Compression}{57}{}%
-\contentsline {subsection}{\numberline {7.3.8}Wear Leveling}{57}{}%
-\contentsline {subsection}{\numberline {7.3.9}Files Recoverability}{58}{}%
-\contentsline {chapter}{\numberline {8}Cloud Forensics}{62}{}%
-\contentsline {section}{\numberline {8.1}Acquisition issues}{62}{}%
-\contentsline {subsection}{\numberline {8.1.1}simple case: web pages}{63}{}%
-\contentsline {section}{\numberline {8.2}Analysis issues}{63}{}%
-\contentsline {section}{\numberline {8.3}Attribution issues}{63}{}%
-\contentsline {section}{\numberline {8.4}Legal issues}{64}{}%
-\contentsline {section}{\numberline {8.5}Forensically-enabled clouds}{65}{}%
-\contentsline {section}{\numberline {8.6}Dual considerations: cloud-enabled forensics}{65}{}%
-\contentsline {chapter}{\numberline {9}Evaluation and Presentation}{66}{}%
-\contentsline {section}{\numberline {9.1}Evaluation Phase}{66}{}%
-\contentsline {section}{\numberline {9.2}Items to evaluate}{66}{}%
-\contentsline {section}{\numberline {9.3}Relationship with lawyers}{67}{}%
-\contentsline {section}{\numberline {9.4}Relationship with the customer}{67}{}%
-\contentsline {section}{\numberline {9.5}Relationship with prosecutors/police}{67}{}%
-\contentsline {section}{\numberline {9.6}Evaluation: analyzing the documents}{68}{}%
-\contentsline {section}{\numberline {9.7}Typical technical and factual errors}{68}{}%
-\contentsline {section}{\numberline {9.8}Typical presentation errors}{69}{}%
-\contentsline {section}{\numberline {9.9}Presentation: writing your report}{69}{}%
-\contentsline {section}{\numberline {9.10}How not to write a report}{70}{}%
-\contentsline {section}{\numberline {9.11}Structure of a report}{70}{}%
-\contentsline {subsection}{\numberline {9.11.1}Example}{71}{}%
-\contentsline {section}{\numberline {9.12}Testimony as a witness}{71}{}%
-\contentsline {subsection}{\numberline {9.12.1}Direct examination}{72}{}%
-\contentsline {subsection}{\numberline {9.12.2}Cross examination}{72}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{73}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{74}{}%
+\contentsline {subsection}{\numberline {3.7.5}Complementarity of supervised and unsupervised methods }{38}{}%
+\contentsline {subsection}{\numberline {3.7.6}Graph/Network Analysis}{38}{}%
+\contentsline {subsection}{\numberline {3.7.7}Developing a fraud-detection system}{38}{}%
+\contentsline {subsection}{\numberline {3.7.8}Challenges of developing fraud-detection models}{39}{}%
+\contentsline {subsubsection}{Frauds are a dynamic phenomenon}{39}{}%
+\contentsline {subsubsection}{Good detection power}{39}{}%
+\contentsline {subsubsection}{Skewness of the data}{39}{}%
+\contentsline {subsubsection}{Operational Efficiency}{39}{}%
+\contentsline {section}{\numberline {3.8}Fraud management cycle}{39}{}%
+\contentsline {subsection}{\numberline {3.8.1}Regular update of the model}{40}{}%
+\contentsline {section}{\numberline {3.9}Fraud Analytical Process}{40}{}%
+\contentsline {subsection}{\numberline {3.9.1}Possible analysis output}{41}{}%
+\contentsline {subsection}{\numberline {3.9.2}Additional consideration}{41}{}%
+\contentsline {subsection}{\numberline {3.9.3}Key characteristics of a successful fraud analytics model}{41}{}%
+\contentsline {subsubsection}{Statistical accuracy}{41}{}%
+\contentsline {subsubsection}{Interpretability}{41}{}%
+\contentsline {subsubsection}{Operational efficiency}{42}{}%
+\contentsline {subsubsection}{Fraud Detection Costs}{42}{}%
+\contentsline {subsubsection}{Regulatory compliance}{42}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{43}{}%
+\contentsline {chapter}{\numberline {4}Introduction to Digital Forensics}{44}{}%
+\contentsline {section}{\numberline {4.1}What does forensics mean?}{44}{}%
+\contentsline {section}{\numberline {4.2}The Daubert standard (USA)}{44}{}%
+\contentsline {subsection}{\numberline {4.2.1}The Daubert Standard}{44}{}%
+\contentsline {subsection}{\numberline {4.2.2}What is scientific? (Italy)}{45}{}%
+\contentsline {subsection}{\numberline {4.2.3}Daubert Test for scientific}{45}{}%
+\contentsline {section}{\numberline {4.3}Example of forensic engagements}{46}{}%
+\contentsline {section}{\numberline {4.4}Phases of an investigation (Pollitt)}{46}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{47}{}%
+\contentsline {chapter}{\numberline {5}Acquisition}{48}{}%
+\contentsline {section}{\numberline {5.1}Brittleness of digital evidence}{48}{}%
+\contentsline {section}{\numberline {5.2}The usage of hashes in digital forensics}{49}{}%
+\contentsline {section}{\numberline {5.3}Hardware and software for acquisition}{49}{}%
+\contentsline {section}{\numberline {5.4}Bitstream images}{50}{}%
+\contentsline {section}{\numberline {5.5}Basic procedure of acquisition}{50}{}%
+\contentsline {subsection}{\numberline {5.5.1}Challenges: time}{50}{}%
+\contentsline {subsection}{\numberline {5.5.2}Challenges: size}{51}{}%
+\contentsline {subsection}{\numberline {5.5.3}Challenges: encryption}{51}{}%
+\contentsline {section}{\numberline {5.6}Alternative procedures}{51}{}%
+\contentsline {subsection}{\numberline {5.6.1}Alternative 1: booting from live distribution}{51}{}%
+\contentsline {subsection}{\numberline {5.6.2}Alternative 2: Target powered on}{51}{}%
+\contentsline {subsection}{\numberline {5.6.3}Alternate 3: live network analysis}{52}{}%
+\contentsline {subsection}{\numberline {5.6.4}New Challenges (separate classes)}{52}{}%
+\contentsline {chapter}{\numberline {6}Analysis or Identification}{53}{}%
+\contentsline {subsection}{\numberline {6.0.1}What does scientific mean?}{54}{}%
+\contentsline {subsection}{\numberline {6.0.2}What does analyisis mean?}{54}{}%
+\contentsline {section}{\numberline {6.1}Recovery of deleted data}{54}{}%
+\contentsline {subsection}{\numberline {6.1.1}Disk Geometry}{55}{}%
+\contentsline {subsection}{\numberline {6.1.2}Free software tools for data recovery}{56}{}%
+\contentsline {section}{\numberline {6.2}Antiforensic techniques}{56}{}%
+\contentsline {subsection}{\numberline {6.2.1}Critical failure points}{56}{}%
+\contentsline {subsection}{\numberline {6.2.2}Timeline tampering (definitive)}{56}{}%
+\contentsline {subsection}{\numberline {6.2.3}Countering file recovery (definitive)}{57}{}%
+\contentsline {subsection}{\numberline {6.2.4}Fileless attacks (definitive)}{57}{}%
+\contentsline {subsection}{\numberline {6.2.5}Filesystem insertion (transient)}{57}{}%
+\contentsline {subsection}{\numberline {6.2.6}Log analysis ($\sim $ transient)}{58}{}%
+\contentsline {subsection}{\numberline {6.2.7}Partition table tricsk (transient)}{58}{}%
+\contentsline {chapter}{\numberline {7}SSD Forensics}{59}{}%
+\contentsline {section}{\numberline {7.1}SSD technology}{59}{}%
+\contentsline {section}{\numberline {7.2}Can we bypass the FTL?}{60}{}%
+\contentsline {section}{\numberline {7.3}Challenges in black box analysis and goals}{60}{}%
+\contentsline {subsection}{\numberline {7.3.1}An unclear picture}{60}{}%
+\contentsline {subsection}{\numberline {7.3.2}Testing methodology}{60}{}%
+\contentsline {subsection}{\numberline {7.3.3}Test drives}{61}{}%
+\contentsline {subsection}{\numberline {7.3.4}Trimming}{61}{}%
+\contentsline {subsection}{\numberline {7.3.5}Garbage Collection}{62}{}%
+\contentsline {subsection}{\numberline {7.3.6}Erasing Patterns}{62}{}%
+\contentsline {subsection}{\numberline {7.3.7}Compression}{62}{}%
+\contentsline {subsection}{\numberline {7.3.8}Wear Leveling}{62}{}%
+\contentsline {subsection}{\numberline {7.3.9}Files Recoverability}{63}{}%
+\contentsline {chapter}{\numberline {8}Cloud Forensics}{67}{}%
+\contentsline {section}{\numberline {8.1}Acquisition issues}{67}{}%
+\contentsline {subsection}{\numberline {8.1.1}simple case: web pages}{68}{}%
+\contentsline {section}{\numberline {8.2}Analysis issues}{68}{}%
+\contentsline {section}{\numberline {8.3}Attribution issues}{68}{}%
+\contentsline {section}{\numberline {8.4}Legal issues}{69}{}%
+\contentsline {section}{\numberline {8.5}Forensically-enabled clouds}{70}{}%
+\contentsline {section}{\numberline {8.6}Dual considerations: cloud-enabled forensics}{70}{}%
+\contentsline {chapter}{\numberline {9}Evaluation and Presentation}{71}{}%
+\contentsline {section}{\numberline {9.1}Evaluation Phase}{71}{}%
+\contentsline {section}{\numberline {9.2}Items to evaluate}{71}{}%
+\contentsline {section}{\numberline {9.3}Relationship with lawyers}{72}{}%
+\contentsline {section}{\numberline {9.4}Relationship with the customer}{72}{}%
+\contentsline {section}{\numberline {9.5}Relationship with prosecutors/police}{72}{}%
+\contentsline {section}{\numberline {9.6}Evaluation: analyzing the documents}{73}{}%
+\contentsline {section}{\numberline {9.7}Typical technical and factual errors}{73}{}%
+\contentsline {section}{\numberline {9.8}Typical presentation errors}{74}{}%
+\contentsline {section}{\numberline {9.9}Presentation: writing your report}{74}{}%
+\contentsline {section}{\numberline {9.10}How not to write a report}{75}{}%
+\contentsline {section}{\numberline {9.11}Structure of a report}{75}{}%
+\contentsline {subsection}{\numberline {9.11.1}Example}{76}{}%
+\contentsline {section}{\numberline {9.12}Testimony as a witness}{76}{}%
+\contentsline {subsection}{\numberline {9.12.1}Direct examination}{77}{}%
+\contentsline {subsection}{\numberline {9.12.2}Cross examination}{77}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{78}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{79}{}%

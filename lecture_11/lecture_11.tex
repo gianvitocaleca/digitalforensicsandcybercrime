@@ -76,7 +76,7 @@
             \item \textbf{Supervised Learning} or \textbf{predictive} analytics techniques
         \end{itemize}
     \subsection{Unsupervised learning techniques}
-        Or descriptive analytics.\\
+        Or descriptive analytics.
         \begin{itemize}
             \item \textbf{Unsupervised:}
             \begin{itemize}
@@ -90,8 +90,9 @@
             \end{itemize}
         \end{itemize}
         This is a \textbf{complementary tool} to improve its expert rule-based fraud-detection system
+\newpage
         \subsubsection{Example: Telecommunications Fraud}
-            \begin{figure}
+            \begin{figure}[ht!]
                 \centering
                 \includegraphics[width=0.6\linewidth]{telecom.png}
             \end{figure}
@@ -113,30 +114,39 @@
                 \item They need historical examples to learn from \textit{(i.e. a labeled dataset)}
                 \item They have low detection power against different and new fraud types
             \end{itemize}
+\newpage
     \subsection{Complementarity of supervised and unsupervised methods }
         Use both methods in developing a powerful fraud-detection and prevention system. Each method focuses on different aspects of fraud.
-\iffalse
-    you'll get a list of transactions ranked by their anomaly scoring 
-
-    unsupervised learning part is used to optimize the detection capacity.
-    supervised + user is used to classify transactions 
-
-Graph/Network analysis 
-    Possible to combine the before-tokd sup+unsup with this.
-    graphs of interactions between different financial institutions 
-
-Frauds are a dynamic phenomenon (slide 116 sua 13:40 slide 80 nostra)
-Good detection power (continua)
-    reduce as much as possible false positive, because the code means it was written by someone paid for "nothing", and clients may feel annoyed and change bank 
-    low false alarm rate
-
-Skewness of the data = only a limited number of cases are frauds 
-Ago nerpa gliaio
-
-Operational Efficiency 
-    Limited amount of time to reach a decision and let a transaction pass or not 
-        impacts design of operations IT systems 
-        analytical model?
-
-    Must be able to deal with the massive volumes of data.
-\fi
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{complementarity.png}
+        \end{figure}
+        The expert will get a list of transactions ranked by their anomaly scoring. He will analyse, label and use them to tune the supervised learning model.\\
+        The unsupervised learning model is used to optimise the detection capacity of the model.
+    \subsection{Graph/Network Analysis}
+        It is possible to combine the before-told supervised+unsupervised model with techinques based on graphs/network analysis.\\
+        In the financial fraud detection domain, maybe graphs are not useful, while for anti-money laundering it can be useful to have graphs of the transactions between different bank istitutions.\\ 
+        \textit{It extends the abilities of the fraud-detection system by learning and detecting charactersistics of fraudulent behavior in a network of linked entities.}
+    \subsection{Developing a fraud-detection system}
+        It is composed by:
+        \begin{itemize}
+            \item Expert-based rule engine
+            \item Unsupervised learning systems
+            \item Supervised learning systems
+        \end{itemize}
+        The exact order of adopting the different techniques depend on the characteristics of the type of fraud:\\
+        If the company has no labeled dataset start from rules + unsupervised, for example.
+    \subsection{Challenges of developing fraud-detection models}
+        \subsubsection{Frauds are a dynamic phenomenon}
+            Fraudsters adapt their approaches to commit fraud without being exposed: they study fraud-detection and prevention systems to understand their functioning and discover their weaknesses.\\
+            Models must be able to adapt to it.
+        \subsubsection{Good detection power}
+            Detect fraud as accurately as possible, trying to have:
+            \begin{itemize}
+                \item \textbf{Low false negative rate:} this can have a financial impact for the institution
+                \item \textbf{Low false alarm rate:} customers can even change institution if annoyed
+            \end{itemize}
+        \subsubsection{Skewness of the data}
+            The number of available examples of fraudulent cases is usually small.
+        \subsubsection{Operational Efficiency}
+            Since you usually have a limited amount of time to detect and investigate suspicious case, the sistem must also allow to keep with the stringent operational constraints.
