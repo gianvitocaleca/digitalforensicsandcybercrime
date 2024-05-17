@@ -1,59 +1,60 @@
 \chapter{Machine Learning for Fraud Detection}
+    We will discuss a selection of techniques with a particular focus on the fraud practitioner's perspective
+    \section{Data Preprocessing Step}
+        Data are tipically dirty. \textbf{Data-filter mechanisms} must be applied to clean up and reduce the data, because even the littlemost mistake can make the data totally unusable and lead to a faulty model.
+        \subsection{Types of data sources}
+            When building a data driven model you may use data from different sources that provide different types of information. We will consider transactional data.
+        \subsection{Transactional data}
+            \textit{Structured and detailed information capturing the key characteristics of a customer transaction}
+            Usually summarized over long time horizons by \textbf{aggregating}:
+            \begin{itemize}
+                \item averages
+                \item trends 
+                \item maximum or minimum values
+            \end{itemize}
+            On these data, the features you want to keep are:
+            \begin{itemize}
+                \item \textbf{Amount of money}
+                \item \textbf{Frequency}
+                \item \textbf{Recency}
+            \end{itemize}
+            These three features are meaningful when interpreted individually, and their interaction is very useful for fraud detection and anti-money laundering.\\
+            All these features come from expert driven analysis of the data.
+\iffalse
+            Merging data sources 
+                once you selected the correct sources you have to merge them, in a structured manner (tables) 
+                    the rows are the entities you analyze
+                    columns contain info about the basic entities
 
-1: Data Preprocessing Step
-    in theory for data: "the bigger the better"
-    Is this specific sentence true in your opinion:
-        No, if data are total garbage more data means more cacataddosso
+            Types of data elements
+                continous: defined in an interval (amount, timesteamp,,,,)
+                categorical: data that can be nominal, ordinal, finite 
+                    the challenge of fd domain is that usually data are a mixture of these categorical data 
+                    they need to manage both of these data 
+                    preprocessing works also in transforming all the sources in a way to be able to understand them by the model 
 
-        The first real challenge, data are tipically dirty
-            from which you have to extract good data 
-            remove inconsistencies, incompleteness, duplication
+            Sampling 
+                process to take a subset of historical data to build a model 
+                usually the model is built on a sample of the entire dataset, a subset of the entire dataset, which is smaller
+                why don't we use the whole dataset?
+                    Train-test split 
+                    maybe some features never change, so maybe a small dataset would represent the same information
+                    data from a long time ago may be no more important today
 
-            Usually you apply filtering to cleanup and reduce the data 
-            even the littlemost mistake may lead to a faulty model 
+                Sampling may introduce bias 
+                    the decision of the amount of data to be considered can introduce it because maybe you're wrong on the subset of data to be considered 
 
-    When building a data driven model you may use data from different sources (slide 7)
-        your job is to decide which kind of data you will use 
-    
-    Transactional data 
-        usually preprocessed and summarized over long time horizons 
-        averages, treneds, maxmin values
-        every single time you work on these data, the features you want to keep are amount of data, frequency recency
-        all these features come from expert driven things
+                    Credit card context example
+                        you have to choose a month 
+                            non va bene
+                            you can use a month which is a kind of "average" of all the months (usually less precise but just one model)
 
-    Merging data sources 
-        once you selected the correct sources you have to merge them, in a structured manner (tables) 
-            the rows are the entities you analyze
-            columns contain info about the basic entities
+                            or, instead of building the average, you can build a model for each month of a year, and use the correct model in the correct time phase (more precise, costy, lot of models (12 per user))
 
-    Types of data elements
-        continous: defined in an interval (amount, timesteamp,,,,)
-        categorical: data that can be nominal, ordinal, finite 
-            the challenge of fd domain is that usually data are a mixture of these categorical data 
-            they need to manage both of these data 
-            preprocessing works also in transforming all the sources in a way to be able to understand them by the model 
+                Stratified Sampling (13.30 ti sei addormentato)
 
-    Sampling 
-        process to take a subset of historical data to build a model 
-        usually the model is built on a sample of the entire dataset, a subset of the entire dataset, which is smaller
-        why don't we use the whole dataset?
-            Train-test split 
-            maybe some features never change, so maybe a small dataset would represent the same information
-            data from a long time ago may be no more important today
-
-        Sampling may introduce bias 
-            the decision of the amount of data to be considered can introduce it because maybe you're wrong on the subset of data to be considered 
-
-            Credit card context example
-                you have to choose a month 
-                    non va bene
-                    you can use a month which is a kind of "average" of all the months (usually less precise but just one model)
-
-                    or, instead of building the average, you can build a model for each month of a year, and use the correct model in the correct time phase (more precise, costy, lot of models (12 per user))
-
-        Stratified Sampling (13.30 ti sei addormentato)
-
-        Visual Data Exploration 
-            To have initial insights
-            
-        Dataset overview example 13.40
+                Visual Data Exploration 
+                    To have initial insights
+                    
+                Dataset overview example 13.40
+\fi

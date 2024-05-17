@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.16)  17 MAY 2024 23:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.16)  18 MAY 2024 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -275,92 +275,91 @@ File: lecture_12/process.png Graphic file (type png)
 <use lecture_12/process.png>
 Package pdftex.def Info: lecture_12/process.png  used on input line 30.
 (pdftex.def)             Requested size: 207.0021pt x 91.98874pt.
- [40 <./lecture_12/process.png>]
-Overfull \hbox (3.88948pt too wide) in paragraph at lines 57--58
-\OT1/cmr/m/n/10 When a deeper un-der-stand-ing of the de-tected frauds is re-quired, a fraud-detection
- []
+ [40 <./lecture_12/process.png>] [41]) (./lecture_12/lecture_12_2.tex [42]
+Chapter 4.
+) [43
 
-[41]) [42] [43
+] [44] [45
 
 ] (./lecture_3/lecture3_2.tex
-Chapter 4.
-[44
+Chapter 5.
+[46
 
 ]
-<lecture_3/forensics.png, id=196, 569.12625pt x 316.93407pt>
+<lecture_3/forensics.png, id=202, 569.12625pt x 316.93407pt>
 File: lecture_3/forensics.png Graphic file (type png)
 <use lecture_3/forensics.png>
 Package pdftex.def Info: lecture_3/forensics.png  used on input line 50.
 (pdftex.def)             Requested size: 172.5pt x 96.06265pt.
- [45]) [46 <./lecture_3/forensics.png>] [47
+ [47]) [48 <./lecture_3/forensics.png>] [49
 
 ] (./lecture_4/lecture4.tex
-Chapter 5.
-[48
-
-] [49] [50]) (./lecture_5/lecture5.tex [51]) (./lecture_5/lecture5_2.tex [52]
 Chapter 6.
-[53
+[50
+
+] [51] [52]) (./lecture_5/lecture5.tex [53]) (./lecture_5/lecture5_2.tex [54]
+Chapter 7.
+[55
 
 ]
-<lecture_5/filesystem.png, id=227, 376.40625pt x 204.01219pt>
+<lecture_5/filesystem.png, id=234, 376.40625pt x 204.01219pt>
 File: lecture_5/filesystem.png Graphic file (type png)
 <use lecture_5/filesystem.png>
 Package pdftex.def Info: lecture_5/filesystem.png  used on input line 33.
 (pdftex.def)             Requested size: 241.49895pt x 130.89732pt.
- [54 <./lecture_5/filesystem.png>]
-<lecture_5/sectors.png, id=232, 542.025pt x 231.11343pt>
+ [56 <./lecture_5/filesystem.png>]
+<lecture_5/sectors.png, id=238, 542.025pt x 231.11343pt>
 File: lecture_5/sectors.png Graphic file (type png)
 <use lecture_5/sectors.png>
 Package pdftex.def Info: lecture_5/sectors.png  used on input line 44.
 (pdftex.def)             Requested size: 241.49895pt x 102.97386pt.
- [55 <./lecture_5/sectors.png>]) (./lecture_6/lecture6.tex [56] [57]) (./lecture_6/lecture6_2.tex [58]
-Chapter 7.
-) (./lecture_7/lecture7.tex [59
+ [57 <./lecture_5/sectors.png>]) (./lecture_6/lecture6.tex [58] [59]) (./lecture_6/lecture6_2.tex [60]
+Chapter 8.
+) (./lecture_7/lecture7.tex [61
 
-] [60]
-<lecture_7/trim.png, id=253, 433.62pt x 313.9228pt>
+] [62]
+<lecture_7/trim.png, id=259, 433.62pt x 313.9228pt>
 File: lecture_7/trim.png Graphic file (type png)
 <use lecture_7/trim.png>
 Package pdftex.def Info: lecture_7/trim.png  used on input line 32.
 (pdftex.def)             Requested size: 276.00105pt x 199.82256pt.
-<lecture_7/garbage.png, id=254, 339.51843pt x 293.59688pt>
+<lecture_7/garbage.png, id=260, 339.51843pt x 293.59688pt>
 File: lecture_7/garbage.png Graphic file (type png)
 <use lecture_7/garbage.png>
 Package pdftex.def Info: lecture_7/garbage.png  used on input line 45.
 (pdftex.def)             Requested size: 276.00105pt x 238.68126pt.
- [61 <./lecture_7/trim.png>]
-<lecture_7/patterns.png, id=259, 386.19281pt x 311.66437pt>
+ [63 <./lecture_7/trim.png>]
+<lecture_7/patterns.png, id=265, 386.19281pt x 311.66437pt>
 File: lecture_7/patterns.png Graphic file (type png)
 <use lecture_7/patterns.png>
 Package pdftex.def Info: lecture_7/patterns.png  used on input line 52.
 (pdftex.def)             Requested size: 276.00105pt x 222.73846pt.
-<lecture_7/compression.png, id=260, 313.9228pt x 311.66437pt>
+<lecture_7/compression.png, id=266, 313.9228pt x 311.66437pt>
 File: lecture_7/compression.png Graphic file (type png)
 <use lecture_7/compression.png>
 Package pdftex.def Info: lecture_7/compression.png  used on input line 59.
 (pdftex.def)             Requested size: 276.00105pt x 274.02771pt.
-<lecture_7/wearleveling.png, id=261, 281.55188pt x 313.9228pt>
+<lecture_7/wearleveling.png, id=267, 281.55188pt x 313.9228pt>
 File: lecture_7/wearleveling.png Graphic file (type png)
 <use lecture_7/wearleveling.png>
 Package pdftex.def Info: lecture_7/wearleveling.png  used on input line 66.
 (pdftex.def)             Requested size: 276.00105pt x 307.75241pt.
-<lecture_7/recoverability.png, id=262, 304.88907pt x 287.57437pt>
+<lecture_7/recoverability.png, id=268, 304.88907pt x 287.57437pt>
 File: lecture_7/recoverability.png Graphic file (type png)
 <use lecture_7/recoverability.png>
 Package pdftex.def Info: lecture_7/recoverability.png  used on input line 73.
 (pdftex.def)             Requested size: 276.00105pt x 260.33719pt.
- [62 <./lecture_7/garbage.png>]) (./lecture_7/lecture7_2.tex [63 <./lecture_7/patterns.png>] [64 <./lecture_7/compression.png>] [65 <./lecture_7/wearleveling.png>] [66 <./lecture_7/recoverability.png>]
-Chapter 8.
-[67
-
-]) (./lecture_8/lecture8.tex [68] [69]) (./lecture_8/lecture8_2.tex [70]
+ [64 <./lecture_7/garbage.png>]) (./lecture_7/lecture7_2.tex [65 <./lecture_7/patterns.png>] [66 <./lecture_7/compression.png>] [67 <./lecture_7/wearleveling.png>] [68 <./lecture_7/recoverability.png>]
 Chapter 9.
-) (./lecture_9/lecture9.tex [71
+[69
 
-] [72] [73] [74] [75] [76]) [77] [78
+]) (./lecture_8/lecture8.tex [70] [71]) (./lecture_8/lecture8_2.tex [72]
+Chapter 10.
+) (./lecture_9/lecture9.tex [73
 
-] [79
+] [74] [75] [76] [77] [78]) [79] [80
+
+] [81
 
 ] (./main.aux)
  ***********
@@ -369,18 +368,18 @@ L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2079 strings out of 474141
- 38048 string characters out of 5748625
- 1939998 words of memory out of 5000000
- 24320 multiletter control sequences out of 15000+600000
+ 2085 strings out of 474141
+ 38222 string characters out of 5748625
+ 1940998 words of memory out of 5000000
+ 24323 multiletter control sequences out of 15000+600000
  564217 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,16n,65p,856b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><e:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (80 pages, 9006491 bytes).
+Output written on main.pdf (82 pages, 9008580 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 217 compressed objects within 3 object streams
+ 387 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
