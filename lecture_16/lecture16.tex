@@ -1,0 +1,189 @@
+Support Vector Machines
+    It basically exploits linear programming.
+    Limitation: if you use it to find a decision boundary, you could find multiple solution.
+        The constraints make us to find the best solution 
+
+    It wants to find a linear decision boundary that separates the two classes, by finding a support vector 
+    Find the extreme points of the classes, called support vectors
+    And find the hyperplane that minimizes the distance between the support vectors 
+
+    The cost function is quadratic, so it is convex --> only global minimum.
+
+    In the real world, it exists the non linear separable case.
+    Add an error term to consider how much you are misclassifying, and in order
+    to move from a nonlinear to a linear space, go to another feature space 
+    by applying a transformation of the space using a kernel function.
+
+    Them are not so interpretable, 
+    
+    Variable selection: backward induction 
+
+    Rule extraction: you can represent a SVM as a NN, and build the rules
+    the same way in which you build them for NN.
+
+    Pedagogical Approach: 12:45
+    Two-stage models : 12:45
+
+    The procedures explained yesterday are the same to interpret these models.
+
+Ensemble Methods 
+    The more complex is the model, the more high is the probability to overfit.
+    Main idea is to provide an explanation of the target label by putting togheter different models 
+    Combine the results of multiple models 
+    Based on the assumption that multiple diverse models capture different features/trends of the dataset
+
+    To be successful, ensemble must be done with models which are sensitive to changes
+
+    They are commonly used with decision trees:
+
+    Bagging (bootstrap aggregating):
+        Start by taking B bootstraps from the underlying sample.
+        A bootstrap is a sample with replacement.
+
+        Build a classifier for each bootstrap
+        For classification: majority voting 
+        For regression: average the results
+
+        The number of bootstraps can be decided at the beginning or tuned via 
+        an independent validation set.
+
+        If you use bagging with techniques which are robust wrt to data changes the thing will be weak.
+
+    Boosting
+        Idea: start from a dataset and assign a weight to each instance of the dataset (uniform at the beginning)
+        iteratively re-weight data according to classification error.
+
+        Difficult observations should get more attention
+
+        The final ensemble is a weighted combination of all the individual models 
+
+        You're somehow improving the detection until you find also the difficult ones 
+
+        Problem: you may overfit data if the models keep updating the weights for things you misclassified.
+
+    Random Forest:
+        Creates a forest of decision trees.
+        Key concept: when you want to build random forests you must ensure the fact that each single tree you select must be 
+        as much as possible random.
+        The selection of the dataset for the subsample must be random.
+
+        Create as much as diversity in the classifier 
+        The higher the diversity, the higher the performances
+
+    Evaluating the ensemble models:
+        main disadvantage: they are black box because they are based on random decision trees
+        you'll get very different rows for each trees 
+
+        You can calculate the variable importance (12:58)
+        just a weight, not an explanation 
+
+Evaluating a Fraud Detection Model
+    Two main phases:
+        How to split up the dataset 
+        Which performance metrics I have to consider 
+    
+    Splitting of the dataset:
+        If large dataset: train, validation, test with no data shared, otherwise you're cheating
+            strict separation between them 
+            perform stratified sampling (each split must be representative of the dataset)
+        
+        Small dataset:
+            cross validation: try to mitigate the problem of having a small dataset 
+                small dataset but not so small 
+                divide the dataset in k parts (folds)
+                build a model training on k-1 folds and testing in the last one fold 
+                then go on until you tested on all folds 
+                final performance will be an average of the performance on each of the datasets 
+                here you are somehow randomizing the parts to see if the model is really generalizing
+            leave-one-out: very small
+                train on N-1, test on 1 sample.
+            
+            Problem:
+                cross validation gives us multiple models, 
+                    present the results of cross validation 
+                    then to provide a model you can build a model based on your entire dataset, re-train 
+                    or, build an ensemble of all the models 
+                    in the case of LOO, you can pick one at random because the difference is of only one sample.
+    
+    Performance Metrics 
+        confusion matrix 
+        based on it you can compute
+        classification accuracy
+        classification error
+        sensitivity, recall, hit rate : how many true positive were you able to correctly detect
+        specificity
+        precision
+
+        usually accuracy is not a good measure in fraud detection domain
+        because frauds are rare, disperse in a huge amount of data 
+        they represent 0.1 percent of data 
+        if you say that everything is legitimate you will get an accuracy of 99,9
+
+        With an unbalance dataset, accuracy is not good 
+        the good ones are F1 measure: armonic mean of precision and recall 
+        Matthew Correlation Coefficient
+        or other graphical measures (we will see)
+        and precision/recall 
+
+        All the performance measures will be dependent on the treshold 
+        0= nothing is fraud 
+        1= everything is fraud
+
+        Receiving Operating Characteristic Curve 
+         13:15
+         a good model will be near to the extreme left point of the graph 
+        the more you move near the position 
+        the more in the diagonal the more random model performance 
+
+        problem: if you have few models to compare, okay 
+                to compare very different models, it's difficult 
+
+        Area under The ROC curve 
+            solution to the problem (13:17)
+        
+    Developing predictive models for skewed data sets 
+        the datasets will be full of non-positive data examples
+
+        to manage this there are two ways:
+            differently weight the samples (higher to fraudulent cases)
+
+            rebalance the dataset by oversampling the minority case or by undersampling the majority case 
+
+            Or decide to use a larger dataset 13:19 circa 
+
+                main challenge of performing under-over sampling is that you have to decide
+                    how much to over-under sampling 
+                    this will impact the final performance 
+                    this methodology must be applied only on the training set and not on the test set 
+
+                    the optimal number of over-under sampling 
+                    be much as possible near to the distribution
+                        but it really depends on the case 
+                            select the one that achieves the best results 
+                        bu under-over you introduce bias 
+
+                        empirical procedure 
+                            start from bla 
+                            poi bla bla 
+
+                        in general it seems that undersampling works better than oversampling 
+                
+                another technique is: syntetic mynority oversampling technique
+                    syntetically generate new samples from the one available
+                    identify the k nearest neighbors from the sample you want to replicate
+                    and then syntetically generate the new one by average the neighbors
+                    so you generated a new one which is slightly different 
+
+        Cost-Sensitive Learning 
+            besides interpretability, efficiency, main problem:
+                your output if is not in real time it's going to be investigated 
+                investigation 
+                you can estimate a cost associated to the misclassification,
+                in case of misclassification, boooh ultima cosa bro.
+
+                quando dice estimate this cost il cost è quello total ma poi lui ha puntato ai false positives
+
+                the same metric can be used to apply many theoretical procedures 
+
+                Some example of question at the exam.
+                
