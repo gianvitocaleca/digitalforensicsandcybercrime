@@ -20,41 +20,45 @@
             \end{itemize}
             These three features are meaningful when interpreted individually, and their interaction is very useful for fraud detection and anti-money laundering.\\
             All these features come from expert driven analysis of the data.
-\iffalse
-            Merging data sources 
-                once you selected the correct sources you have to merge them, in a structured manner (tables) 
-                    the rows are the entities you analyze
-                    columns contain info about the basic entities
-
-            Types of data elements
-                continous: defined in an interval (amount, timesteamp,,,,)
-                categorical: data that can be nominal, ordinal, finite 
-                    the challenge of fd domain is that usually data are a mixture of these categorical data 
-                    they need to manage both of these data 
-                    preprocessing works also in transforming all the sources in a way to be able to understand them by the model 
-
-            Sampling 
-                process to take a subset of historical data to build a model 
-                usually the model is built on a sample of the entire dataset, a subset of the entire dataset, which is smaller
-                why don't we use the whole dataset?
-                    Train-test split 
-                    maybe some features never change, so maybe a small dataset would represent the same information
-                    data from a long time ago may be no more important today
-
-                Sampling may introduce bias 
-                    the decision of the amount of data to be considered can introduce it because maybe you're wrong on the subset of data to be considered 
-
-                    Credit card context example
-                        you have to choose a month 
-                            non va bene
-                            you can use a month which is a kind of "average" of all the months (usually less precise but just one model)
-
-                            or, instead of building the average, you can build a model for each month of a year, and use the correct model in the correct time phase (more precise, costy, lot of models (12 per user))
-
-                Stratified Sampling (13.30 ti sei addormentato)
-
-                Visual Data Exploration 
-                    To have initial insights
-                    
-                Dataset overview example 13.40
-\fi
+        \subsection{Merging data sources}
+            Once the correct sources are selected, them must be merged in a structured manner (i.e. a table):
+            The rows represent the entities to analyze, while the columns contain the information about the entities.
+        \subsection{Types of data elements}
+            \begin{itemize}
+                \item \textbf{Continous:} data elements defined on an interval which can be limited or unlimited
+                \item \textbf{Categorical:}
+                \begin{itemize}
+                    \item \textit{Nominal:} can only take on a limited set of values with no meaningful ordering in between
+                    \item \textit{Ordinal:} can only take on a limited set of values, but with a meaningful ordering in between
+                    \item \textit{Binary:} can only take one out of two values
+                \end{itemize}
+            \end{itemize}
+            In the fraud detection domain data usually are a mixture of the three kinds of categorical types.\\
+            Preprocessing is also needed to transform all the sources in a way to make them understandable by the model.
+        \subsection{Sampling}
+            It is the process to take a subset of historical data to build an analytical model. Usually models are built on samples of the entire dataset,
+            much smaller than the whole dataset. Why don't we use the whole dataset?
+            \begin{itemize}
+                \item Data must be representative for the future entities, so maybe lots of data which are not recent can cause lack in representation.
+                \item Some features never change, maybe a small dataset would represent the same information of the whole one.
+            \end{itemize}
+            \subsubsection{Sampling timing and bias}
+                Trade off between:
+                \begin{itemize}
+                    \item Lots of data (more robust model)
+                    \item Recent data (more representative model)
+                \end{itemize}
+                Sampling can introduce bias:\\
+                Which month is the more representative? (different behavior in december or february).
+                Every month may deviate from the norm (average), two possible solutions:
+                \begin{itemize}
+                    \item \textbf{Build separate models:}  for different months or homogeneous time-frames, complex solution, multiple models to manage.
+                    \item \textbf{Build a single model:} Sample observations over a period covering a full business cycle, reduced power since less tailoring on particular time frames, but lower complexity and costs.
+                \end{itemize}
+            \subsubsection{Stratified sampling:}
+                In a fraud detection context data sets are very skew:
+                \begin{itemize}
+                    \item Stratify according to the target fraud indicator to have samples containing exactly the same percentage of fraudulent/non-fraudulent transaction as in the original data
+                    \item Strafity according to predictor variables: resemble the real product transaction distribution
+                \end{itemize}
+                Notice that sampling may also introduce bias according to the considered subset of data.

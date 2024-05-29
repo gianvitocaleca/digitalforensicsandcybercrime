@@ -1,172 +1,190 @@
-\contentsline {part}{I\hspace {1em}Cybercrime: threats, modus operandi, underground economy, financially-motivated malware}{5}{}%
-\contentsline {chapter}{\numberline {1}Cybercrime: Threat Landscape}{6}{}%
-\contentsline {section}{\numberline {1.1}Threat landscape}{6}{}%
-\contentsline {subsection}{\numberline {1.1.1}A gartner quadrant of threats}{8}{}%
-\contentsline {subsection}{\numberline {1.1.2}Examples of internal treaths}{9}{}%
-\contentsline {subsection}{\numberline {1.1.3}Data breaches and targeted attacks}{10}{}%
-\contentsline {section}{\numberline {1.2}Brief history of malicious software}{11}{}%
-\contentsline {section}{\numberline {1.3}Financially motivated attackers}{12}{}%
-\contentsline {section}{\numberline {1.4}Direct monetization: ransomware attacks}{13}{}%
-\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{13}{}%
-\contentsline {subsection}{\numberline {1.4.2}Ransomware screenshot and social meanings}{13}{}%
-\contentsline {subsection}{\numberline {1.4.3}How to get infected}{14}{}%
-\contentsline {subsection}{\numberline {1.4.4}Encryption mechanism: how do ransomware work}{14}{}%
-\contentsline {section}{\numberline {1.5}Indirect monetization: Botnets}{15}{}%
-\contentsline {subsection}{\numberline {1.5.1}Rise of the bots}{15}{}%
-\contentsline {subsection}{\numberline {1.5.2}Geolocalization of botnets command and control}{16}{}%
-\contentsline {subsection}{\numberline {1.5.3}Type of (botnet) malware families}{17}{}%
-\contentsline {section}{\numberline {1.6}The cybercrime ecosystem}{18}{}%
-\contentsline {subsection}{\numberline {1.6.1}Identity sales}{19}{}%
-\contentsline {subsection}{\numberline {1.6.2}Drive by download}{19}{}%
-\contentsline {subsection}{\numberline {1.6.3}Exploitation kits sales}{19}{}%
-\contentsline {subsection}{\numberline {1.6.4}Monetization on the dark web}{19}{}%
-\contentsline {subsection}{\numberline {1.6.5}Cybercrime and perception}{20}{}%
-\contentsline {subsection}{\numberline {1.6.6}Money mules and money laundering}{20}{}%
-\contentsline {chapter}{\numberline {2}Cryptocurrencies: abuses and forensics}{21}{}%
-\contentsline {section}{\numberline {2.1}Bitcoin and blockchain}{21}{}%
-\contentsline {section}{\numberline {2.2}Wallet and addresses}{21}{}%
-\contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{22}{}%
-\contentsline {section}{\numberline {2.4}Mining}{22}{}%
-\contentsline {section}{\numberline {2.5}Fork events}{23}{}%
-\contentsline {section}{\numberline {2.6}Bitcoin and black market}{23}{}%
-\contentsline {subsection}{\numberline {2.6.1}Pseudo-anonimity}{23}{}%
-\contentsline {subsubsection}{Silk Road Example}{24}{}%
-\contentsline {subsection}{\numberline {2.6.2}Why do people use Bitcoin for ransoms?}{24}{}%
-\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{25}{}%
-\contentsline {chapter}{\numberline {3}Frauds: definition and types}{26}{}%
-\contentsline {section}{\numberline {3.1}What is a fraud?}{26}{}%
-\contentsline {section}{\numberline {3.2}Cybercriminal ecosystem}{27}{}%
-\contentsline {section}{\numberline {3.3}Why do people commit frauds?}{27}{}%
-\contentsline {section}{\numberline {3.4}Fraud categories}{28}{}%
-\contentsline {subsection}{\numberline {3.4.1}Social Engineering}{29}{}%
-\contentsline {subsection}{\numberline {3.4.2}Famous social engineering cases}{29}{}%
-\contentsline {subsubsection}{Phishing}{30}{}%
-\contentsline {subsubsection}{The Nigerian Prince Scam}{30}{}%
-\contentsline {subsubsection}{Vishing}{30}{}%
-\contentsline {subsubsection}{Getting dressed}{30}{}%
-\contentsline {subsection}{\numberline {3.4.3}Frauds Impact}{30}{}%
-\contentsline {section}{\numberline {3.5}Anti-Fraud Strategy}{30}{}%
-\contentsline {subsection}{\numberline {3.5.1}Example: Banking Fraud}{31}{}%
-\contentsline {subsection}{\numberline {3.5.2}Fraud Detection and Prevention}{31}{}%
-\contentsline {subsection}{\numberline {3.5.3}Fraud Detection approach}{32}{}%
-\contentsline {subsection}{\numberline {3.5.4}Fraud prevention mechanism}{32}{}%
-\contentsline {subsubsection}{Classic technologies}{32}{}%
-\contentsline {subsubsection}{Modern Technology}{33}{}%
-\contentsline {subsubsection}{Attackers adapt to it}{33}{}%
-\contentsline {section}{\numberline {3.6}Expert-based knowledge}{33}{}%
-\contentsline {subsection}{\numberline {3.6.1}Expert-based approach}{33}{}%
-\contentsline {subsection}{\numberline {3.6.2}Fraud investigation and management}{33}{}%
-\contentsline {subsubsection}{Corrective Measures}{33}{}%
-\contentsline {subsubsection}{Preventive Measures}{34}{}%
-\contentsline {subsection}{\numberline {3.6.3}Rule-based engine}{34}{}%
-\contentsline {subsection}{\numberline {3.6.4}Fraud becomes easier to detect the more time has passed}{34}{}%
-\contentsline {subsection}{\numberline {3.6.5}Expert based vs Automated fraud-detection systems}{35}{}%
-\contentsline {subsection}{\numberline {3.6.6}Data-driven fraud detection}{35}{}%
-\contentsline {section}{\numberline {3.7}Fraud-Detection Techniques}{35}{}%
-\contentsline {subsection}{\numberline {3.7.1}Fraud detection is challenging}{36}{}%
-\contentsline {subsection}{\numberline {3.7.2}Fraud detection techniques}{36}{}%
-\contentsline {subsection}{\numberline {3.7.3}Unsupervised learning techniques}{36}{}%
-\contentsline {subsubsection}{Example: Telecommunications Fraud}{37}{}%
-\contentsline {subsubsection}{Limitations of unsupervised techniques}{37}{}%
-\contentsline {subsection}{\numberline {3.7.4}Supervised learning techniques}{37}{}%
-\contentsline {subsubsection}{Limitations of supervised techniques}{37}{}%
-\contentsline {subsection}{\numberline {3.7.5}Complementarity of supervised and unsupervised methods }{38}{}%
-\contentsline {subsection}{\numberline {3.7.6}Graph/Network Analysis}{38}{}%
-\contentsline {subsection}{\numberline {3.7.7}Developing a fraud-detection system}{38}{}%
-\contentsline {subsection}{\numberline {3.7.8}Challenges of developing fraud-detection models}{39}{}%
-\contentsline {subsubsection}{Frauds are a dynamic phenomenon}{39}{}%
-\contentsline {subsubsection}{Good detection power}{39}{}%
-\contentsline {subsubsection}{Skewness of the data}{39}{}%
-\contentsline {subsubsection}{Operational Efficiency}{39}{}%
-\contentsline {section}{\numberline {3.8}Fraud management cycle}{39}{}%
-\contentsline {subsection}{\numberline {3.8.1}Regular update of the model}{40}{}%
-\contentsline {section}{\numberline {3.9}Fraud Analytical Process}{40}{}%
-\contentsline {subsection}{\numberline {3.9.1}Possible analysis output}{41}{}%
-\contentsline {subsection}{\numberline {3.9.2}Additional consideration}{41}{}%
-\contentsline {subsection}{\numberline {3.9.3}Key characteristics of a successful fraud analytics model}{41}{}%
-\contentsline {subsubsection}{Statistical accuracy}{41}{}%
-\contentsline {subsubsection}{Interpretability}{41}{}%
-\contentsline {subsubsection}{Operational efficiency}{42}{}%
-\contentsline {subsubsection}{Fraud Detection Costs}{42}{}%
-\contentsline {subsubsection}{Regulatory compliance}{42}{}%
-\contentsline {chapter}{\numberline {4}Machine Learning for Fraud Detection}{43}{}%
-\contentsline {section}{\numberline {4.1}Data Preprocessing Step}{43}{}%
-\contentsline {subsection}{\numberline {4.1.1}Types of data sources}{43}{}%
-\contentsline {subsection}{\numberline {4.1.2}Transactional data}{43}{}%
-\contentsline {part}{III\hspace {1em}Digital Forensics principles}{45}{}%
-\contentsline {chapter}{\numberline {5}Introduction to Digital Forensics}{46}{}%
-\contentsline {section}{\numberline {5.1}What does forensics mean?}{46}{}%
-\contentsline {section}{\numberline {5.2}The Daubert standard (USA)}{46}{}%
-\contentsline {subsection}{\numberline {5.2.1}The Daubert Standard}{46}{}%
-\contentsline {subsection}{\numberline {5.2.2}What is scientific? (Italy)}{47}{}%
-\contentsline {subsection}{\numberline {5.2.3}Daubert Test for scientific}{47}{}%
-\contentsline {section}{\numberline {5.3}Example of forensic engagements}{48}{}%
-\contentsline {section}{\numberline {5.4}Phases of an investigation (Pollitt)}{48}{}%
-\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{49}{}%
-\contentsline {chapter}{\numberline {6}Acquisition}{50}{}%
-\contentsline {section}{\numberline {6.1}Brittleness of digital evidence}{50}{}%
-\contentsline {section}{\numberline {6.2}The usage of hashes in digital forensics}{51}{}%
-\contentsline {section}{\numberline {6.3}Hardware and software for acquisition}{51}{}%
-\contentsline {section}{\numberline {6.4}Bitstream images}{52}{}%
-\contentsline {section}{\numberline {6.5}Basic procedure of acquisition}{52}{}%
-\contentsline {subsection}{\numberline {6.5.1}Challenges: time}{52}{}%
-\contentsline {subsection}{\numberline {6.5.2}Challenges: size}{53}{}%
-\contentsline {subsection}{\numberline {6.5.3}Challenges: encryption}{53}{}%
-\contentsline {section}{\numberline {6.6}Alternative procedures}{53}{}%
-\contentsline {subsection}{\numberline {6.6.1}Alternative 1: booting from live distribution}{53}{}%
-\contentsline {subsection}{\numberline {6.6.2}Alternative 2: Target powered on}{53}{}%
-\contentsline {subsection}{\numberline {6.6.3}Alternate 3: live network analysis}{54}{}%
-\contentsline {subsection}{\numberline {6.6.4}New Challenges (separate classes)}{54}{}%
-\contentsline {chapter}{\numberline {7}Analysis or Identification}{55}{}%
-\contentsline {subsection}{\numberline {7.0.1}What does scientific mean?}{56}{}%
-\contentsline {subsection}{\numberline {7.0.2}What does analyisis mean?}{56}{}%
-\contentsline {section}{\numberline {7.1}Recovery of deleted data}{56}{}%
-\contentsline {subsection}{\numberline {7.1.1}Disk Geometry}{57}{}%
-\contentsline {subsection}{\numberline {7.1.2}Free software tools for data recovery}{58}{}%
-\contentsline {section}{\numberline {7.2}Antiforensic techniques}{58}{}%
-\contentsline {subsection}{\numberline {7.2.1}Critical failure points}{58}{}%
-\contentsline {subsection}{\numberline {7.2.2}Timeline tampering (definitive)}{58}{}%
-\contentsline {subsection}{\numberline {7.2.3}Countering file recovery (definitive)}{59}{}%
-\contentsline {subsection}{\numberline {7.2.4}Fileless attacks (definitive)}{59}{}%
-\contentsline {subsection}{\numberline {7.2.5}Filesystem insertion (transient)}{59}{}%
-\contentsline {subsection}{\numberline {7.2.6}Log analysis ($\sim $ transient)}{60}{}%
-\contentsline {subsection}{\numberline {7.2.7}Partition table tricsk (transient)}{60}{}%
-\contentsline {chapter}{\numberline {8}SSD Forensics}{61}{}%
-\contentsline {section}{\numberline {8.1}SSD technology}{61}{}%
-\contentsline {section}{\numberline {8.2}Can we bypass the FTL?}{62}{}%
-\contentsline {section}{\numberline {8.3}Challenges in black box analysis and goals}{62}{}%
-\contentsline {subsection}{\numberline {8.3.1}An unclear picture}{62}{}%
-\contentsline {subsection}{\numberline {8.3.2}Testing methodology}{62}{}%
-\contentsline {subsection}{\numberline {8.3.3}Test drives}{63}{}%
-\contentsline {subsection}{\numberline {8.3.4}Trimming}{63}{}%
-\contentsline {subsection}{\numberline {8.3.5}Garbage Collection}{64}{}%
-\contentsline {subsection}{\numberline {8.3.6}Erasing Patterns}{64}{}%
-\contentsline {subsection}{\numberline {8.3.7}Compression}{64}{}%
-\contentsline {subsection}{\numberline {8.3.8}Wear Leveling}{64}{}%
-\contentsline {subsection}{\numberline {8.3.9}Files Recoverability}{65}{}%
-\contentsline {chapter}{\numberline {9}Cloud Forensics}{69}{}%
-\contentsline {section}{\numberline {9.1}Acquisition issues}{69}{}%
-\contentsline {subsection}{\numberline {9.1.1}simple case: web pages}{70}{}%
-\contentsline {section}{\numberline {9.2}Analysis issues}{70}{}%
-\contentsline {section}{\numberline {9.3}Attribution issues}{70}{}%
-\contentsline {section}{\numberline {9.4}Legal issues}{71}{}%
-\contentsline {section}{\numberline {9.5}Forensically-enabled clouds}{72}{}%
-\contentsline {section}{\numberline {9.6}Dual considerations: cloud-enabled forensics}{72}{}%
-\contentsline {chapter}{\numberline {10}Evaluation and Presentation}{73}{}%
-\contentsline {section}{\numberline {10.1}Evaluation Phase}{73}{}%
-\contentsline {section}{\numberline {10.2}Items to evaluate}{73}{}%
-\contentsline {section}{\numberline {10.3}Relationship with lawyers}{74}{}%
-\contentsline {section}{\numberline {10.4}Relationship with the customer}{74}{}%
-\contentsline {section}{\numberline {10.5}Relationship with prosecutors/police}{74}{}%
-\contentsline {section}{\numberline {10.6}Evaluation: analyzing the documents}{75}{}%
-\contentsline {section}{\numberline {10.7}Typical technical and factual errors}{75}{}%
-\contentsline {section}{\numberline {10.8}Typical presentation errors}{76}{}%
-\contentsline {section}{\numberline {10.9}Presentation: writing your report}{76}{}%
-\contentsline {section}{\numberline {10.10}How not to write a report}{77}{}%
-\contentsline {section}{\numberline {10.11}Structure of a report}{77}{}%
-\contentsline {subsection}{\numberline {10.11.1}Example}{78}{}%
-\contentsline {section}{\numberline {10.12}Testimony as a witness}{78}{}%
-\contentsline {subsection}{\numberline {10.12.1}Direct examination}{79}{}%
-\contentsline {subsection}{\numberline {10.12.2}Cross examination}{79}{}%
-\contentsline {part}{V\hspace {1em}Ethics elements}{80}{}%
-\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{81}{}%
+\contentsline {part}{I\hspace {1em}Cybercrime: threats, modus operandi, underground economy, financially-motivated malware}{6}{}%
+\contentsline {chapter}{\numberline {1}Cybercrime: Threat Landscape}{7}{}%
+\contentsline {section}{\numberline {1.1}Threat landscape}{7}{}%
+\contentsline {subsection}{\numberline {1.1.1}A gartner quadrant of threats}{9}{}%
+\contentsline {subsection}{\numberline {1.1.2}Examples of internal treaths}{10}{}%
+\contentsline {subsection}{\numberline {1.1.3}Data breaches and targeted attacks}{11}{}%
+\contentsline {section}{\numberline {1.2}Brief history of malicious software}{12}{}%
+\contentsline {section}{\numberline {1.3}Financially motivated attackers}{13}{}%
+\contentsline {section}{\numberline {1.4}Direct monetization: ransomware attacks}{14}{}%
+\contentsline {subsection}{\numberline {1.4.1}Brief history of ransomware}{14}{}%
+\contentsline {subsection}{\numberline {1.4.2}Ransomware screenshot and social meanings}{14}{}%
+\contentsline {subsection}{\numberline {1.4.3}How to get infected}{15}{}%
+\contentsline {subsection}{\numberline {1.4.4}Encryption mechanism: how do ransomware work}{15}{}%
+\contentsline {section}{\numberline {1.5}Indirect monetization: Botnets}{16}{}%
+\contentsline {subsection}{\numberline {1.5.1}Rise of the bots}{16}{}%
+\contentsline {subsection}{\numberline {1.5.2}Geolocalization of botnets command and control}{17}{}%
+\contentsline {subsection}{\numberline {1.5.3}Type of (botnet) malware families}{18}{}%
+\contentsline {section}{\numberline {1.6}The cybercrime ecosystem}{19}{}%
+\contentsline {subsection}{\numberline {1.6.1}Identity sales}{20}{}%
+\contentsline {subsection}{\numberline {1.6.2}Drive by download}{20}{}%
+\contentsline {subsection}{\numberline {1.6.3}Exploitation kits sales}{20}{}%
+\contentsline {subsection}{\numberline {1.6.4}Monetization on the dark web}{20}{}%
+\contentsline {subsection}{\numberline {1.6.5}Cybercrime and perception}{21}{}%
+\contentsline {subsection}{\numberline {1.6.6}Money mules and money laundering}{21}{}%
+\contentsline {chapter}{\numberline {2}Cryptocurrencies: abuses and forensics}{22}{}%
+\contentsline {section}{\numberline {2.1}Bitcoin and blockchain}{22}{}%
+\contentsline {section}{\numberline {2.2}Wallet and addresses}{22}{}%
+\contentsline {section}{\numberline {2.3}The bitcoin transaction life cycle}{23}{}%
+\contentsline {section}{\numberline {2.4}Mining}{23}{}%
+\contentsline {section}{\numberline {2.5}Fork events}{24}{}%
+\contentsline {section}{\numberline {2.6}Bitcoin and black market}{24}{}%
+\contentsline {subsection}{\numberline {2.6.1}Pseudo-anonimity}{24}{}%
+\contentsline {subsubsection}{Silk Road Example}{25}{}%
+\contentsline {subsection}{\numberline {2.6.2}Why do people use Bitcoin for ransoms?}{25}{}%
+\contentsline {part}{II\hspace {1em}Fraud detection and analysis}{26}{}%
+\contentsline {chapter}{\numberline {3}Frauds: definition and types}{27}{}%
+\contentsline {section}{\numberline {3.1}What is a fraud?}{27}{}%
+\contentsline {section}{\numberline {3.2}Cybercriminal ecosystem}{28}{}%
+\contentsline {section}{\numberline {3.3}Why do people commit frauds?}{28}{}%
+\contentsline {section}{\numberline {3.4}Fraud categories}{29}{}%
+\contentsline {subsection}{\numberline {3.4.1}Social Engineering}{30}{}%
+\contentsline {subsection}{\numberline {3.4.2}Famous social engineering cases}{30}{}%
+\contentsline {subsubsection}{Phishing}{31}{}%
+\contentsline {subsubsection}{The Nigerian Prince Scam}{31}{}%
+\contentsline {subsubsection}{Vishing}{31}{}%
+\contentsline {subsubsection}{Getting dressed}{31}{}%
+\contentsline {subsection}{\numberline {3.4.3}Frauds Impact}{31}{}%
+\contentsline {section}{\numberline {3.5}Anti-Fraud Strategy}{31}{}%
+\contentsline {subsection}{\numberline {3.5.1}Example: Banking Fraud}{32}{}%
+\contentsline {subsection}{\numberline {3.5.2}Fraud Detection and Prevention}{32}{}%
+\contentsline {subsection}{\numberline {3.5.3}Fraud Detection approach}{33}{}%
+\contentsline {subsection}{\numberline {3.5.4}Fraud prevention mechanism}{33}{}%
+\contentsline {subsubsection}{Classic technologies}{33}{}%
+\contentsline {subsubsection}{Modern Technology}{34}{}%
+\contentsline {subsubsection}{Attackers adapt to it}{34}{}%
+\contentsline {section}{\numberline {3.6}Expert-based knowledge}{34}{}%
+\contentsline {subsection}{\numberline {3.6.1}Expert-based approach}{34}{}%
+\contentsline {subsection}{\numberline {3.6.2}Fraud investigation and management}{34}{}%
+\contentsline {subsubsection}{Corrective Measures}{34}{}%
+\contentsline {subsubsection}{Preventive Measures}{35}{}%
+\contentsline {subsection}{\numberline {3.6.3}Rule-based engine}{35}{}%
+\contentsline {subsection}{\numberline {3.6.4}Fraud becomes easier to detect the more time has passed}{35}{}%
+\contentsline {subsection}{\numberline {3.6.5}Expert based vs Automated fraud-detection systems}{36}{}%
+\contentsline {subsection}{\numberline {3.6.6}Data-driven fraud detection}{36}{}%
+\contentsline {section}{\numberline {3.7}Fraud-Detection Techniques}{36}{}%
+\contentsline {subsection}{\numberline {3.7.1}Fraud detection is challenging}{37}{}%
+\contentsline {subsection}{\numberline {3.7.2}Fraud detection techniques}{37}{}%
+\contentsline {subsection}{\numberline {3.7.3}Unsupervised learning techniques}{37}{}%
+\contentsline {subsubsection}{Example: Telecommunications Fraud}{38}{}%
+\contentsline {subsubsection}{Limitations of unsupervised techniques}{38}{}%
+\contentsline {subsection}{\numberline {3.7.4}Supervised learning techniques}{38}{}%
+\contentsline {subsubsection}{Limitations of supervised techniques}{38}{}%
+\contentsline {subsection}{\numberline {3.7.5}Complementarity of supervised and unsupervised methods }{39}{}%
+\contentsline {subsection}{\numberline {3.7.6}Graph/Network Analysis}{39}{}%
+\contentsline {subsection}{\numberline {3.7.7}Developing a fraud-detection system}{39}{}%
+\contentsline {subsection}{\numberline {3.7.8}Challenges of developing fraud-detection models}{40}{}%
+\contentsline {subsubsection}{Frauds are a dynamic phenomenon}{40}{}%
+\contentsline {subsubsection}{Good detection power}{40}{}%
+\contentsline {subsubsection}{Skewness of the data}{40}{}%
+\contentsline {subsubsection}{Operational Efficiency}{40}{}%
+\contentsline {section}{\numberline {3.8}Fraud management cycle}{40}{}%
+\contentsline {subsection}{\numberline {3.8.1}Regular update of the model}{41}{}%
+\contentsline {section}{\numberline {3.9}Fraud Analytical Process}{41}{}%
+\contentsline {subsection}{\numberline {3.9.1}Possible analysis output}{42}{}%
+\contentsline {subsection}{\numberline {3.9.2}Additional consideration}{42}{}%
+\contentsline {subsection}{\numberline {3.9.3}Key characteristics of a successful fraud analytics model}{42}{}%
+\contentsline {subsubsection}{Statistical accuracy}{42}{}%
+\contentsline {subsubsection}{Interpretability}{42}{}%
+\contentsline {subsubsection}{Operational efficiency}{43}{}%
+\contentsline {subsubsection}{Fraud Detection Costs}{43}{}%
+\contentsline {subsubsection}{Regulatory compliance}{43}{}%
+\contentsline {chapter}{\numberline {4}Machine Learning for Fraud Detection}{44}{}%
+\contentsline {section}{\numberline {4.1}Data Preprocessing Step}{44}{}%
+\contentsline {subsection}{\numberline {4.1.1}Types of data sources}{44}{}%
+\contentsline {subsection}{\numberline {4.1.2}Transactional data}{44}{}%
+\contentsline {subsection}{\numberline {4.1.3}Merging data sources}{45}{}%
+\contentsline {subsection}{\numberline {4.1.4}Types of data elements}{45}{}%
+\contentsline {subsection}{\numberline {4.1.5}Sampling}{45}{}%
+\contentsline {subsubsection}{Sampling timing and bias}{45}{}%
+\contentsline {subsubsection}{Stratified sampling:}{46}{}%
+\contentsline {subsection}{\numberline {4.1.6}Missing Values}{46}{}%
+\contentsline {subsubsection}{Example:}{46}{}%
+\contentsline {subsection}{\numberline {4.1.7}Outliers}{47}{}%
+\contentsline {subsubsection}{Univariate Outlier Detection and Treatment}{47}{}%
+\contentsline {subsubsection}{Multivariate Outlier Detection and Treatment}{48}{}%
+\contentsline {subsubsection}{How to deal with outliers}{48}{}%
+\contentsline {subsubsection}{Expert-based outlier detection}{48}{}%
+\contentsline {subsection}{\numberline {4.1.8}Standardizing Data}{48}{}%
+\contentsline {subsubsection}{Euclidean vs Manhattan distance}{48}{}%
+\contentsline {subsubsection}{Standardization}{49}{}%
+\contentsline {subsection}{\numberline {4.1.9}Categorization}{49}{}%
+\contentsline {subsection}{\numberline {4.1.10}Variable Selection}{49}{}%
+\contentsline {section}{\numberline {4.2}Unsupervised Learning for Fraud Detection}{49}{}%
+\contentsline {part}{III\hspace {1em}Digital Forensics principles}{50}{}%
+\contentsline {chapter}{\numberline {5}Introduction to Digital Forensics}{51}{}%
+\contentsline {section}{\numberline {5.1}What does forensics mean?}{51}{}%
+\contentsline {section}{\numberline {5.2}The Daubert standard (USA)}{51}{}%
+\contentsline {subsection}{\numberline {5.2.1}The Daubert Standard}{51}{}%
+\contentsline {subsection}{\numberline {5.2.2}What is scientific? (Italy)}{52}{}%
+\contentsline {subsection}{\numberline {5.2.3}Daubert Test for scientific}{52}{}%
+\contentsline {section}{\numberline {5.3}Example of forensic engagements}{53}{}%
+\contentsline {section}{\numberline {5.4}Phases of an investigation (Pollitt)}{53}{}%
+\contentsline {part}{IV\hspace {1em}Acquisition, analysis, evaluation and presentation of evidence}{54}{}%
+\contentsline {chapter}{\numberline {6}Acquisition}{55}{}%
+\contentsline {section}{\numberline {6.1}Brittleness of digital evidence}{55}{}%
+\contentsline {section}{\numberline {6.2}The usage of hashes in digital forensics}{56}{}%
+\contentsline {section}{\numberline {6.3}Hardware and software for acquisition}{56}{}%
+\contentsline {section}{\numberline {6.4}Bitstream images}{57}{}%
+\contentsline {section}{\numberline {6.5}Basic procedure of acquisition}{57}{}%
+\contentsline {subsection}{\numberline {6.5.1}Challenges: time}{57}{}%
+\contentsline {subsection}{\numberline {6.5.2}Challenges: size}{58}{}%
+\contentsline {subsection}{\numberline {6.5.3}Challenges: encryption}{58}{}%
+\contentsline {section}{\numberline {6.6}Alternative procedures}{58}{}%
+\contentsline {subsection}{\numberline {6.6.1}Alternative 1: booting from live distribution}{58}{}%
+\contentsline {subsection}{\numberline {6.6.2}Alternative 2: Target powered on}{58}{}%
+\contentsline {subsection}{\numberline {6.6.3}Alternate 3: live network analysis}{59}{}%
+\contentsline {subsection}{\numberline {6.6.4}New Challenges (separate classes)}{59}{}%
+\contentsline {chapter}{\numberline {7}Analysis or Identification}{60}{}%
+\contentsline {subsection}{\numberline {7.0.1}What does scientific mean?}{61}{}%
+\contentsline {subsection}{\numberline {7.0.2}What does analyisis mean?}{61}{}%
+\contentsline {section}{\numberline {7.1}Recovery of deleted data}{61}{}%
+\contentsline {subsection}{\numberline {7.1.1}Disk Geometry}{62}{}%
+\contentsline {subsection}{\numberline {7.1.2}Free software tools for data recovery}{63}{}%
+\contentsline {section}{\numberline {7.2}Antiforensic techniques}{63}{}%
+\contentsline {subsection}{\numberline {7.2.1}Critical failure points}{63}{}%
+\contentsline {subsection}{\numberline {7.2.2}Timeline tampering (definitive)}{63}{}%
+\contentsline {subsection}{\numberline {7.2.3}Countering file recovery (definitive)}{64}{}%
+\contentsline {subsection}{\numberline {7.2.4}Fileless attacks (definitive)}{64}{}%
+\contentsline {subsection}{\numberline {7.2.5}Filesystem insertion (transient)}{64}{}%
+\contentsline {subsection}{\numberline {7.2.6}Log analysis ($\sim $ transient)}{65}{}%
+\contentsline {subsection}{\numberline {7.2.7}Partition table tricsk (transient)}{65}{}%
+\contentsline {chapter}{\numberline {8}SSD Forensics}{66}{}%
+\contentsline {section}{\numberline {8.1}SSD technology}{66}{}%
+\contentsline {section}{\numberline {8.2}Can we bypass the FTL?}{67}{}%
+\contentsline {section}{\numberline {8.3}Challenges in black box analysis and goals}{67}{}%
+\contentsline {subsection}{\numberline {8.3.1}An unclear picture}{67}{}%
+\contentsline {subsection}{\numberline {8.3.2}Testing methodology}{67}{}%
+\contentsline {subsection}{\numberline {8.3.3}Test drives}{68}{}%
+\contentsline {subsection}{\numberline {8.3.4}Trimming}{68}{}%
+\contentsline {subsection}{\numberline {8.3.5}Garbage Collection}{69}{}%
+\contentsline {subsection}{\numberline {8.3.6}Erasing Patterns}{69}{}%
+\contentsline {subsection}{\numberline {8.3.7}Compression}{69}{}%
+\contentsline {subsection}{\numberline {8.3.8}Wear Leveling}{69}{}%
+\contentsline {subsection}{\numberline {8.3.9}Files Recoverability}{70}{}%
+\contentsline {chapter}{\numberline {9}Cloud Forensics}{74}{}%
+\contentsline {section}{\numberline {9.1}Acquisition issues}{74}{}%
+\contentsline {subsection}{\numberline {9.1.1}simple case: web pages}{75}{}%
+\contentsline {section}{\numberline {9.2}Analysis issues}{75}{}%
+\contentsline {section}{\numberline {9.3}Attribution issues}{75}{}%
+\contentsline {section}{\numberline {9.4}Legal issues}{76}{}%
+\contentsline {section}{\numberline {9.5}Forensically-enabled clouds}{77}{}%
+\contentsline {section}{\numberline {9.6}Dual considerations: cloud-enabled forensics}{77}{}%
+\contentsline {chapter}{\numberline {10}Evaluation and Presentation}{78}{}%
+\contentsline {section}{\numberline {10.1}Evaluation Phase}{78}{}%
+\contentsline {section}{\numberline {10.2}Items to evaluate}{78}{}%
+\contentsline {section}{\numberline {10.3}Relationship with lawyers}{79}{}%
+\contentsline {section}{\numberline {10.4}Relationship with the customer}{79}{}%
+\contentsline {section}{\numberline {10.5}Relationship with prosecutors/police}{79}{}%
+\contentsline {section}{\numberline {10.6}Evaluation: analyzing the documents}{80}{}%
+\contentsline {section}{\numberline {10.7}Typical technical and factual errors}{80}{}%
+\contentsline {section}{\numberline {10.8}Typical presentation errors}{81}{}%
+\contentsline {section}{\numberline {10.9}Presentation: writing your report}{81}{}%
+\contentsline {section}{\numberline {10.10}How not to write a report}{82}{}%
+\contentsline {section}{\numberline {10.11}Structure of a report}{82}{}%
+\contentsline {subsection}{\numberline {10.11.1}Example}{83}{}%
+\contentsline {section}{\numberline {10.12}Testimony as a witness}{83}{}%
+\contentsline {subsection}{\numberline {10.12.1}Direct examination}{84}{}%
+\contentsline {subsection}{\numberline {10.12.2}Cross examination}{84}{}%
+\contentsline {part}{V\hspace {1em}Ethics elements}{85}{}%
+\contentsline {part}{VI\hspace {1em}Optional: casi studio specifici}{86}{}%
