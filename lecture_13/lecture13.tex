@@ -78,66 +78,67 @@
                 \item \textbf{Decimal scaling}
             \end{itemize}
     \subsection{Categorization}
-        
+        For categorical variables, it is needed to reduce the number of categories.\\
+        Basic methods:
+        \begin{itemize}
+            \item \textbf{Equal interval binning:} create bins with the same range
+            \item \textbf{Equal frequency binning:} create bins with the same number of observations
+            \item \textbf{Chi-squared analysis}
+            \item \textbf{Pivot table}
+        \end{itemize}
     \subsection{Variable Selection}
+        Typically, only few variables contribute to the prediction. We need to select only the helpful ones.\\
+        Usually, in fraud detection domain, the number of variables is in the range of 10-15, how do we find them?
+        \subsubsection{Filters}
+            It is a selection mechanism based on statistical tests. Allow a quick screening of which variables should be retained for further analysis. They allow reduction in the number of dimensions of the data set early in the analysis.
+            Drawbacks:
+            \begin{itemize}
+                \item They do not consider correlation betwen dimensions
+            \end{itemize}
+        \subsubsection{Principal Component Analysis}
+            Dimension reduction by forming new linearly independent variables, which are linear combinations of the original set, which have the property to better describe the distribution.\\
+            The new variables are called principal components. The variance contained in the original data can be summarized by a limited number of principal components. Left out the ones which account for a very small fraction of variance.
+            Limitations:
+            \begin{itemize}
+                \item \textbf{Reduced interpretability:} a transaction may be labeled as fraudulent whithout us knowing why because of the strange form of features.
+            \end{itemize}
 \section{Unsupervised Learning for Fraud Detection}
+    Unsupervised learning aims at finding anomalous behavior deviating from the \textbf{norm}.\\
+    The challenge is to find a way to correctly model the norm, like the behavior of the average customer at a snapshot in time or the average behavior of a given customer across a time period.
+    \subsection{Unsupervised learning = anomaly detection}
+        It aims at finding anomalies, useful when:
+        \begin{itemize}
+            \item Organizations are starting doing fraud detection 
+            \item No labeled historical dataset available 
+            \item Fraudsters are continously adapting
+        \end{itemize}
+    \subsection{Unsupervised Learning Challenge}
+        \textbf{Define the average behavior or norm:} 
+        \begin{itemize}
+            \item it depends on the application field
+            \item Boundary between norm and outliers is not clear-cut (fraudsters try to blend into norm)
+            \item The norm may change overtime
+        \end{itemize}
+        Anomalies do not necessarily represent frauds, unsupervised learning for fraud detection requires extensive validation of the identified suspicious observations
+    \subsection{Basic tasks to find anomalies}
+        \begin{itemize}
+            \item \textbf{Graphical outlier detection:} find outliers with histograms or box plots for the one-dimensional, with scatter plots for the multi-dimensional
+            \begin{itemize}
+                \item Disadvantages: less formal and limited to few dimensions, requires active end-user involvement, very difficult to perform for a large dimensional dataset
+            \end{itemize}
+            \item \textbf{Statistical outlier detection:}
+            \begin{itemize}
+                \item Use z-score: if the z-score is bigger than 3 consider outliers 
+                \item Fit a distribution: outliers are the observations with small values for the probability density distribution 
+                \item \textbf{Break Point Analysis}
+                \item \textbf{Peer Group Analysis}
+            \end{itemize}
+        \end{itemize}
+        \subsubsection{Break Point Analysis}
+        \subsubsection{Peer Group Analysis}
+        \subsubsection{Example: Credit card fraud}
+        \subsubsection{Break Point vs Peer Group analysis}
 \iffalse
-        Categorisation:
-            It is needed to reduce the number of categories 
-            Basic methods:
-                equal interval binning-> bins with the same range
-                equal frequency binning -> bins with the same number of observation
-                --> altre 2 cose zioncam
-        
-        Variable selection:
-            Typically only a few variables actually contribute to the prediction
-            select only the helpful ones 
-            usually in fraud detection the number of variables are in the range of 10-15
-            how do we find these variables?
-        
-            Filters:
-                selection mechanisms based on statistical tests or (?).
-                Tabella con i tipi di test performabili in base al tipo di variabile e target 
-
-            Principal Component Analysis 
-                dimension reduction by forming new linearly independent (non correlated) variables (a new set of variables)
-                and the variables are a linear combination of the original set of features 
-                + they have the property to better describe the distribution 
-                these are called principal components 
-                if you start from a dataset with 15 variables you'll obtain 15 components 
-                so fai come c'è scritto alla slide 60
-                perchè the variance contained in the original data is summarized by top-k components 
-                some of them are less important, so you can discard them 
-
-                Limitations:
-                    reduced interpretability 
-                        a transaction may be labeled as fraudulent without me knowing why because the features are strange 
-
-Unsupervised Learning for fraud detection 
-    Aim to find fraudulent cases as anomalies that deviates from the norm 
-    The challenge is to find a way to correctly model the norm 
-        Behavior of the average customer at a snapshot in time 
-        The average behavior of given customer at given period
-    
-    Unsupervised ml = anomaly detection 
-        Relevant where:
-            you're starting to do fraud detection 
-            no labeled hystorical dataset 
-            fraudsters keep becoming stronger sti pazzi 
-
-    ULChalleng
-        define the average behavior or norm 
-            it depend on the application field 
-            boundary between norm and outlier is not clear-out because fraudsters try to blend in 
-            The norm may change overtime, even if you were able to define the norm on the original data, you must be ready to update it
-    
-    Basic task of finding anomalies 
-        find outliers (single/multi dimension) single with histogram or box plot, multi with scatter plot 
-
-        disadvantages:
-            less formal and only limited to few dimensions 
-            it requires a human 
-            for a large dataset is very very very difficult to perform 
 
     Statistical outlier detection 
         z-score 
