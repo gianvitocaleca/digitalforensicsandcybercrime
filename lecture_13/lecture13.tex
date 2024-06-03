@@ -135,48 +135,38 @@
             \end{itemize}
         \end{itemize}
         \subsubsection{Break Point Analysis}
+            It is an \textbf{intra}-account fraud detection method. A \textbf{break point} is a sudden change in account behavior.
+            \begin{itemize}
+                \item Define a fixed time window
+                \item Split it into an \textit{old} and \textit{new} part 
+                \item Compare the new part with the old part
+                \item The old part represents a local profile against which new observations are compared 
+            \end{itemize}
         \subsubsection{Peer Group Analysis}
+        It is an \textbf{inter}-account fraud detection method. A \textbf{peer group} is a group of accounts that behave similarly to the target account.\\
+        When the behavior of the target account deviates substantially from the peers, an anomaly can be signaled.
+        \begin{itemize}
+            \item Identify the peer group of a particular account
+            \begin{itemize}
+                \item use prior business knowledge 
+                \item or statistical similarity metrics 
+                \item define the number of peers (too small means sensitive to noise, too large means insensitive to local important irregularities)
+            \end{itemize}
+            \item Target account behavior is contrasted with its peers
+            \begin{itemize}
+                \item With statistical tests 
+                \item or distance metrics
+            \end{itemize}
+        \end{itemize}
         \subsubsection{Example: Credit card fraud}
+            Weekly amount time series: $$y_1,y_2,\dots,y_{n-1},y_n$$. Verify whether the amount spent at time n is anomalous.
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.6\linewidth]{lecture_13/peer.png}
+            \end{figure}
+            \begin{itemize}
+                \item \textbf{1:} identify the k peers of the target account
+                \item \textbf{2:} compare the behaviors
+            \end{itemize}
         \subsubsection{Break Point vs Peer Group analysis}
-\iffalse
-
-    Statistical outlier detection 
-        z-score 
-        fit a distribution 
-        break point analysis 
-        peer group analysis
-
-        Break point analysis
-            intra-account method 
-                ha detto delle cose 
-                detect a breakpoint in your ds and compare the distributions before and after this breakpoint 
-                breakpoint is a sudden change in an account behavior 
-                example slide 71
-                    compare the distribution of the old model wrt new model's 
-                    t-score (slide 72)
-        
-        peer group analysis 
-            inter-account fraud detection method 
-            Peer group is a group of accounts which have similar behavior to the target account 
-            when an account's behavior deviates substantially from it's peers then an anomaly is signaled 
-                1- identify the peer group, using prior, statistical way(similarity metrics)
-                    define the number of peers (too small) -> noise sensitive 
-                                                (too big) -> insensitive to local
-                poi ha detto cose? Chi lo sa? 13:39 
-
-            CC fraud example 
-                weekly amount time series 
-                    verify whether the amount spent at timestep n is anomalous 
-                    c'è il disegno 
-                    consider the peer group and see if the amount spent is anomalous wrt peer group 
-
-        These techniques are the basis for existing unsup. learning techniques.
-            What are the advantages and disadvantages of peer-group/break-point analysis 
-                if we consider months from january to november, everything performed in december can be cosnidered anomalous (Christmas)
-                for sure the main disadvantage is that they have issues with seasonality
-                What can we do to limit the problem of seasonality?
-                    peers will behave similarly during christmas, so it depends on the objective of your fraud detection system
-                    if it might be efficient enough you can think to combine the two approaches 
-                    ha aggiunto cose (13:47)
-    Clustering (ultimi 2 minuti)
-\fi
+            Both will detect local anomalies rather than global anomalies. They both have issues with seasonality.

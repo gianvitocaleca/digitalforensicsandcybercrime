@@ -1,206 +1,95 @@
-\iffalse
-Clustering:
-    tries to divide the dataset into clusters (groups). 
-    You try to build clusters which satisfy;
-        cohesion: maximum omogeneity inside
-        separation: heterogeneity between clusters 
-    You don't just want to divide ds, you want to find groups, where each group
-    has element very similar and each group is dissimilar from the other groups
-
-    Carefully select data 
-    More data the better: but avoid excessive amounts of correlated data by applying
-    feature selection: if too many features are correlated, clusters may be made using them 
-
-    Clustering for fraud detection
-        We want to detect frauds as deviation from the norm
-        Find frauds as elements inside your clustering that do not belong to clusters
-        or that belong to small clusters far away normal large clusters 
-        Important: we're not 100 percent sure that them are frauds, they're just outliers
-            so they need to be investigated to understand what they are 
-            An efficient unsupervised algo maybe tries to minimize as much as possible the number of false positives
-
-    Distance metric
-        to group elements toghether you need to define a similarity measure
-        at the end of the day each element of the cluster must be transformed in vectors of numbers 
-        to understand if two entities are similar we need to compute distance between them 
-        Possible distances:
-            euclidean, minkowski or manhattan, mahalanobis (when high variance in dataset)
-
-        Continous vs categorical 
-            Continous variables
-                euclidean metric, pearson correlation or cosine measure 
-            Categorical variables
-                binary variables (like if a thing is enabled or not)
-                    consider binary features with
-                    SMC: simple matching coefficient, compute the number of identical matches between the variable values
-                        if you have two binary vectors, it will compute how many matches between the two vectors 
-                        1100 1001 --> 2/4
-                    Jaccard index: measures the similarity between both (vedi 12.49) per lui conta solo il primo 1, 1/9
-
-                    Use Jaccard index when you have a lot of red flags 
-                        if you know only few red flags raised in your dataset you have a situation like;
-                            1 0 0 0 0 0 0 0 1 0
-                            1 1 0 0 0 0 0 0 1 0
-                            SMC will be 8/10
-                            Jaccard will be 2/10
-                        depending of which kind of similarity we want to pick 
-        
-        Types of clustering techniques 
-            albero slide 
-
-            Hierarchical clustering
-                agglomerative strategies vs divisive strategies 
-                    aggl. starts by assigning a cluster to each single element 
-                        then agglomerates small clusters in greater clusters 
-                        until to a single cluster with all elements 
-                    divisive does the same thing but in the opposite direction
-
-                The final result is usually in between of the two extremes of the picture at slide 85
-
-                We need a distance to move from step 1 to step 4
-                    how to compute the distance between clusters?
-                        main problem is that there is no standard way, there are different ways
-                        by just selecting one of them you'll have differences in the output
-
-                    Single Linkage: distance by considering the closest elements in the two clusters
-
-                    Complete Linkage: distance by considering the furthest ones 
-
-                    Average Linkage: avg distance between all elements of the two clusters 
-
-                    Centroid Method: elect an element as representative of the cluster (centroid)
-                                    compute the distance between centroids 
-                                    how to chose the centroid depends on the dataset 
-
-                    Dward: estimate the difference between computing the distance of the two clusters
-                            when merged toghether and when separated 12:59
-
-                Number of clusters 
-                    which is the best number of clusters?
-                    we can estimate it based on the number of data we have 
-                    Dendrogram: try to build a tree like diagram that records the sequence of merges based on the distance in which merge toghether or divide the clusters
-                        a distanza y abbiamo unito questi 2 cluster, a distanza y questi altri 2 e così via vedi slide 88
-                        usually a treshold of 75 percent of the distance sets the number of final clusters
-                    Screen plot: keep track of all the distances at which you merge clusters,
-                                select a number k when the plot have an elbow
-                
-                Example of hierarchical clustering 
-                    dataset of points which are 2d. Scatter plot 
-                    imagine that we decide to apply hierarchical we use single linkage (using euclidean)
-
-                    we put toghether a,b + c,d because they're close toghether 
-                        single linkage distance between b and c (nearest)
-                        crea (a,b) (c,d) (e) (f) (g)
-                        computa tutte le distanze, scopre che b,c sono i piu vicini
-                        allora (a,b,c,d) (e) (f) (g)
-                        poi cclclclc
-                    
-                    Con complete linkage we obtain a completely different Dendrogram
-                    in this case we'll have two clusters
-
-                    by just using two different measures we obtain different clusters 
-                    which are good? probably both.
-
-                    Centroid changes again 
-                    Ward changes again 
-                
-                Conclusions 
-                    depending on the things we're going to chose, we get different clusters and clusters number 
-                    Advantages:
-                        we don't have to specify the number of clustes, we'll se aftwerwards based on similarity measures
-                    Disadvantages
-                        do not scale very well with large datasets: dendrograms will become almost unreadable + huge amount of different clusters 
-                        if from 7 elements 3 clusters, with 3k maybe 1,5k clusters 
-
-                        the interpretation of the clusters is often subjective and depends on the business expert and/or data scientist
-           
-            Non-hierarchical clustering
-                k-means
-                Self organizing maps 
-
-                K means 
-                    the great difference is that the first step is to decide the number of clusters you want
-
-                    choose the number of clusters 
-                    algo picks two random centroids (example k = 2)
-                    1st iteration of the algo assigns all the points to one of the two centroids
-                    recompute centroids in the two clusters, then redo all 
-                    at the end it will converge
-                    
-                    Limitation
-                        if the dataset is easy to cluster ok 
-                        otherwise you have to take some decision 
-                        you need to find the number of clusters 
-                        usually you ask to an expert
-
-                        another possibility is to first run a hierarchical algoritm
-                        then pick the number of clusters found by the hierarchichal and use this
-                        because k means is designed to find the best output given that k number of clusters while hierarchical was not built for this 
-
-                        Engineering way: try different k and at the end of different iteration compute performance metric, and select the best 
-
-                        When you perform k-means you must not perform it only once, because it depends on the random initialization of the centroids
-
-                        More robust alternative is to use k-mode (using the mode) for categorical variables or k-medoid using the median
-
-                        k means may be biased by the presence of outliers, it will oblige the algo to consider all the points to be part of a cluster, this is true for some versions, other versions with k = 2 will generate 3 clusters with the third being the outliers cluster
-
-                    Slide 105 
-                        before, after 
-                        a clustering algo always finds a result 
-
-                    Evaluating the results:
-                        graphically compare some features of clusters wrt other clusters 
-                        compare the distribution of this feature wrt the entire population
-                        in red distribution in cluster c1, in blue distribution in the entire population 
-
-                        What we observe in the graph:
-                            C1 has a difference in distribution for some features 
-                                similar to population in frequency
-                                different in recency and monetary
-                                the cluster has high monetary value, small recency
-                                with a frequency which was similar to population 
-
-                            if you wanted to find clusters of spending patterns this is a good way 
-
-                        Or use SSE (Sum of squared errors) computing the average distance of each point belonging to a cluster 
-                        and pick the solution with the smallest RSS 
-                        SSE is just for intra-cluster similarity 
-                
-                SOM: Self organizing maps 
-                    unsupervised learning algo that allows to visualise clusters on high dimentional data on a low dimentional grid of neurons 
-
-                    by projecting data on a lower dimentional space organized as a grid of neurons 
-                    FFNN with an input and an output layer 
-
-                    Output is usually structured as rectangular/hexagonal 13:32
-
-                    Functioning: slide 111 c'è la figura 
-                        for each input assign a weight for each element of the output
-                        trying to compute a weighted combination of the input 
-
-                        how will it build the final map?
-                            first assigns random weights 
-                            then establish a distance metric to optimize
-
-                            compute a distance between the values and each weight 
-
-                            the neuron with the smallest distance is BMU 
-
-                            then update all the weights based on BMU -> move the weights towards the point 
-                            try to match the distribution of the original points 
-                            This is what happens: slide 115 alle ore 13:37 
-
-                            First advantage:
-                                able to automatically cluster data 
-                                you can visualzie and interpret the results 
-                                    by using the unified distance matrix
-                                        add an additional measure to the dataset, superimpose a height Z which corresponds to the avg distance between neurons and neighbors 
-                                        lighter area in the left image corresponds to the division between clusters 
-                                        riguardalo 13:41
-                                    or the component plane 
-\fi
-
-                    
-
-
+\subsection{Clustering}
+    Technique that tries to divide the dataset into clusters (groups) that maximize:
+    \begin{itemize}
+        \item Cohesion: homogeneity within a cluster 
+        \item Separation: heterogeneity between clusters 
+    \end{itemize}
+    Each cluster should contain elements very similar between them and very different from other groups' elements.
+    \subsubsection{Clustering for fraud detection}
+        We want to detect frauds as deviation from the norm. Frauds can be seen as elements inside the corpus which do not belong to any cluster, or that belong to very small clusters far away from the others.\\
+        \textbf{Important:} we're not 100\% sure that them are frauds, they're just outliers, so they need to be investigated to understand what they are.\\ 
+        An efficient unsupervised algorithm tries to minimize as much as possible the number of false positives
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{lecture_13/anomalies.png}
+        \end{figure}
+    \subsubsection{Distance metric}
+        To group elements toghether we need to define a similarity measure:\\
+        at the end of the day each element of the cluster must be transformed in vectors of numbers, to understand if two entities are similar we need to compute distance between them.\\
+        Possible distance measures can be: euclidean, minkowski or manhattan, mahalanobis \textit{(when high variance in dataset)}
+    \subsubsection{Distance metric: Continous vs Categorical}
+        \begin{itemize}
+            \item \textbf{Continous Variables:}
+            \begin{itemize}
+                \item Euclidean metric 
+                \item Pearson correlation or cosine measure
+            \end{itemize}
+            \item \textbf{Categorical Variables:} (binary variables 01010101)
+            \begin{itemize}
+                \item Simple matching coefficient:\\ compute the number of identical matches between the variable values
+                \item Jaccard index: measure the similarity between both claims across those red flags raised at least once
+            \end{itemize}
+        \end{itemize}
+\subsection{Clustering Techniques: Hierarchical clustering}
+    Two main strategies: \textbf{agglomerative vs divisive}.
+    \begin{itemize}
+        \item \textbf{Agglomerative strategies:} assign each single element to a cluster, then agglomerate small clusters in greater ones
+        \item \textbf{Divisive strategies:} split a great cluster in smaller clusters until each element is assigned to a single cluster
+    \end{itemize}
+    The final result is usually in between of the two extremes. But to agglomerate/divide, how to compute the distance between clusters?
+    \begin{itemize}
+        \item \textbf{Single Linkage:} consider the distance between the closest elements in the two clusters 
+        \item \textbf{Complete Linkage:} consider the distance between the furthest elements in the two clusters
+        \item \textbf{Average Linkage:} consider the average distance between all elements of the two clusters
+        \item \textbf{Centroid Method:} elect an element as the representative of the cluster (centroid), compute the distances between centroids
+    \end{itemize}
+    \subsubsection{Number of Clusters}
+        To decide the optimal number of clusters:
+        \begin{itemize}
+            \item \textbf{Dendrogram:} tree-like diagram that records the sequences of merges. Cut the dendrogram at the desired level to find the optimal clustering
+            \item \textbf{Screen Plot:} plot the distance at which clusters are merged, the optimal clustering is indicated by the elbow point
+        \end{itemize}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{lecture_13/dendro.png}
+        \end{figure}
+    \subsubsection{Hierarchical clustering: conclusions}
+        \begin{itemize}
+            \item \textbf{Advantages:}
+            \begin{itemize}
+                \item The number of cluster doesn't need to be specified prior to the analysis
+            \end{itemize}
+            \item \textbf{Disadvantages:}
+            \begin{itemize}
+                \item Do not scale well to large datasets
+                \item The interpretation of the clusters is often subjective and depends on the business expert
+            \end{itemize}
+        \end{itemize}
+\subsection{Clustering Techniques: Non-hierarchical clustering}
+    \subsubsection{K-means}
+        \begin{itemize}
+            \item Select the number of clusters k
+            \item Select k observations as initial cluster centroids
+            \item Assign each observation to the cluster with the closest centroid according to some distance 
+            \item When all observations have been assigned, recalculate the centroids
+            \item Repeat until the cluster centroids no longer change
+        \end{itemize}
+        \textbf{Limitations:}
+        \begin{itemize}
+            \item The number of cluster must be specified before the start of the analysis, it can be choose by experts or computed as result of other clustering techniques
+            \item It is sensitive to outliers, relevant in fraud detection setting
+        \end{itemize}
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=0.6\linewidth]{lecture_13/kmeans.png}
+        \end{figure}
+    \subsubsection{SOM: Self Organizing Maps}
+        It is an unsupervised learning algorithm that allows to visualize and cluster high-dimensional data on low dimensional grids of neurons:\\
+        It is a feedforward neural network with an input and an output layer.\\
+        Each input is connected to all neurons in output layer with weights, all randomly initialized.\\
+        \textbf{Functioning:}\\
+        When a training vector x is presented, the weight vector of each neuron is compared with x. The most similar neuron in euclidean sense is called the \textit{BMU: best matching unit}.\\
+        Then update all the weights based on BMU: move them towards the point, trying so to match the distribution of the original points.
+        \begin{itemize}
+            \item \textbf{Advantages:} it is able to automatically cluster data, results can be visualized and interpreted
+        \end{itemize}
