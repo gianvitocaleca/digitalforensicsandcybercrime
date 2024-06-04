@@ -1,83 +1,68 @@
+    \subsection{Support Vector Machines}
+        Method that originates from linear programming:
+        \begin{itemize}
+            \item Objective function 
+            \item Constraints 
+        \end{itemize}
+        SVMs aim at maximizing the margin to pull both classes as far apart as possible.\\
+        We call \textbf{support vectors} the training points that lie on the separating hyperplanes.\\
+        The optimization problem has a quadratic cost function, no local minima and only one global minimum.\\
+        In the real world it exists the non-linear separable case, add an error term to consider how much are we misclassifying, use kernel function to change feature space.
+        \subsubsection{Interpretability and Variable Selection}
+            They are black box methods, complex in settings where interpretability is important.\\
+            Variable selection can be performed using backward variable selection (this reduces the variables but not provide any additional insight into the workings of the SVM).
+        \subsubsection{Rule Extraction}
+            \begin{itemize}
+                \item \textbf{Decompositional:} represent SVM as a neural network
+                \item \textbf{Pedagogical:} 
+                \begin{itemize}
+                    \item Use SVM first to construct a dataset with SVM predictions for each one of the observations
+                    \item Give the dataset to a decision tree algorithm to build a decision tree
+                \end{itemize}
+                \item \textbf{Two stage models:} A simple model is estimated first, followed by a SVM to correct the errors of the latter
+            \end{itemize}
+    \subsection{Ensemble Methods}
+        The idea is to provide an explanation of the target label by putting toghether different models combining their results, based on the assumption that multiple diverse models capture different trends of the dataset.\\
+        To be successful, ensemble must be done with models sensitive to changes.
+        \begin{itemize}
+            \item \textbf{Bagging}
+            \item \textbf{Boosting}
+            \item \textbf{Random Forests}
+        \end{itemize}
+        \subsubsection{Bagging}
+            \begin{itemize}
+                \item Start by taking B bootstraps from the underlying sample. A bootstrap is a sample with replacement.
+                \item Build a model for every bootstrap
+                \item Use majority voting for classification, average for regression
+            \end{itemize}
+            The key element for bagging is the instability of the analytical technique. For models that are robust with respect to the underlying dataset, bagging will not give much added value.
+        \subsubsection{Boosting}
+            Estimate multiple models using a weighted data sample \textit{(uniform at the beginning)}.\\
+            Iteratively re-weight data according to classification error.\\
+            The idea is that difficult observations should get more attention. The final ensemble is a weighted combination of all the individual models.
+            \begin{itemize}
+                \item Key Advantage: easy to implement
+                \item Potential Drawback: risk to overfitting to the hard \textit{(potentially noisy)} examples in the data, which will get higher weights as the algorithm proceeds. Relevant in fraud detection setting because the target labels are tipically quite noisy.
+            \end{itemize}
+        \subsubsection{Random Forests}
+            Creates a forest of decision trees:
+            \begin{itemize}
+                \item Given a dataset with n observations and N inputs 
+                \item m = constant chosen on beforehand 
+                \item For t = 1,\dots,T:
+                \begin{itemize}
+                    \item take a bootstrap sample with n observations 
+                    \item build a decision tree whereby for each node of the tree, randomly choose m variables on which to base the splitting decision
+                    \item Split on the best of this subset 
+                    \item Fully grow each tree without pruning
+                \end{itemize}
+            \end{itemize}
+            Create as much diversity in the classifiers, the higher the diversity, the higher the performances.
+        \subsubsection{Evaluating Random Forests}
+            Random forests can achieve excellent predictive performances.\\
+            Their main disadvantage is that they are black-box models because they're based on random decision trees.
+\section{Evaluating a Fraud Detection Model}
 \iffalse
-Support Vector Machines
-    It basically exploits linear programming.
-    Limitation: if you use it to find a decision boundary, you could find multiple solution.
-        The constraints make us to find the best solution 
-
-    It wants to find a linear decision boundary that separates the two classes, by finding a support vector 
-    Find the extreme points of the classes, called support vectors
-    And find the hyperplane that minimizes the distance between the support vectors 
-
-    The cost function is quadratic, so it is convex --> only global minimum.
-
-    In the real world, it exists the non linear separable case.
-    Add an error term to consider how much you are misclassifying, and in order
-    to move from a nonlinear to a linear space, go to another feature space 
-    by applying a transformation of the space using a kernel function.
-
-    Them are not so interpretable, 
-    
-    Variable selection: backward induction 
-
-    Rule extraction: you can represent a SVM as a NN, and build the rules
-    the same way in which you build them for NN.
-
-    Pedagogical Approach: 12:45
-    Two-stage models : 12:45
-
-    The procedures explained yesterday are the same to interpret these models.
-
-Ensemble Methods 
-    The more complex is the model, the more high is the probability to overfit.
-    Main idea is to provide an explanation of the target label by putting togheter different models 
-    Combine the results of multiple models 
-    Based on the assumption that multiple diverse models capture different features/trends of the dataset
-
-    To be successful, ensemble must be done with models which are sensitive to changes
-
-    They are commonly used with decision trees:
-
-    Bagging (bootstrap aggregating):
-        Start by taking B bootstraps from the underlying sample.
-        A bootstrap is a sample with replacement.
-
-        Build a classifier for each bootstrap
-        For classification: majority voting 
-        For regression: average the results
-
-        The number of bootstraps can be decided at the beginning or tuned via 
-        an independent validation set.
-
-        If you use bagging with techniques which are robust wrt to data changes the thing will be weak.
-
-    Boosting
-        Idea: start from a dataset and assign a weight to each instance of the dataset (uniform at the beginning)
-        iteratively re-weight data according to classification error.
-
-        Difficult observations should get more attention
-
-        The final ensemble is a weighted combination of all the individual models 
-
-        You're somehow improving the detection until you find also the difficult ones 
-
-        Problem: you may overfit data if the models keep updating the weights for things you misclassified.
-
-    Random Forest:
-        Creates a forest of decision trees.
-        Key concept: when you want to build random forests you must ensure the fact that each single tree you select must be 
-        as much as possible random.
-        The selection of the dataset for the subsample must be random.
-
-        Create as much as diversity in the classifier 
-        The higher the diversity, the higher the performances
-
-    Evaluating the ensemble models:
-        main disadvantage: they are black box because they are based on random decision trees
-        you'll get very different rows for each trees 
-
-        You can calculate the variable importance (12:58)
-        just a weight, not an explanation 
-
 Evaluating a Fraud Detection Model
     Two main phases:
         How to split up the dataset 
