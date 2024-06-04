@@ -62,114 +62,77 @@
             Random forests can achieve excellent predictive performances.\\
             Their main disadvantage is that they are black-box models because they're based on random decision trees.
 \section{Evaluating a Fraud Detection Model}
-\iffalse
-Evaluating a Fraud Detection Model
-    Two main phases:
-        How to split up the dataset 
-        Which performance metrics I have to consider 
-    
-    Splitting of the dataset:
-        If large dataset: train, validation, test with no data shared, otherwise you're cheating
-            strict separation between them 
-            perform stratified sampling (each split must be representative of the dataset)
-        
-        Small dataset:
-            cross validation: try to mitigate the problem of having a small dataset 
-                small dataset but not so small 
-                divide the dataset in k parts (folds)
-                build a model training on k-1 folds and testing in the last one fold 
-                then go on until you tested on all folds 
-                final performance will be an average of the performance on each of the datasets 
-                here you are somehow randomizing the parts to see if the model is really generalizing
-            leave-one-out: very small
-                train on N-1, test on 1 sample.
-            
-            Problem:
-                cross validation gives us multiple models, 
-                    present the results of cross validation 
-                    then to provide a model you can build a model based on your entire dataset, re-train 
-                    or, build an ensemble of all the models 
-                    in the case of LOO, you can pick one at random because the difference is of only one sample.
-    
-    Performance Metrics 
-        confusion matrix 
-        based on it you can compute
-        classification accuracy
-        classification error
-        sensitivity, recall, hit rate : how many true positive were you able to correctly detect
-        specificity
-        precision
-
-        usually accuracy is not a good measure in fraud detection domain
-        because frauds are rare, disperse in a huge amount of data 
-        they represent 0.1 percent of data 
-        if you say that everything is legitimate you will get an accuracy of 99,9
-
-        With an unbalance dataset, accuracy is not good 
-        the good ones are F1 measure: armonic mean of precision and recall 
-        Matthew Correlation Coefficient
-        or other graphical measures (we will see)
-        and precision/recall 
-
-        All the performance measures will be dependent on the treshold 
-        0= nothing is fraud 
-        1= everything is fraud
-
-        Receiving Operating Characteristic Curve 
-         13:15
-         a good model will be near to the extreme left point of the graph 
-        the more you move near the position 
-        the more in the diagonal the more random model performance 
-
-        problem: if you have few models to compare, okay 
-                to compare very different models, it's difficult 
-
-        Area under The ROC curve 
-            solution to the problem (13:17)
-        
-    Developing predictive models for skewed data sets 
-        the datasets will be full of non-positive data examples
-
-        to manage this there are two ways:
-            differently weight the samples (higher to fraudulent cases)
-
-            rebalance the dataset by oversampling the minority case or by undersampling the majority case 
-
-            Or decide to use a larger dataset 13:19 circa 
-
-                main challenge of performing under-over sampling is that you have to decide
-                    how much to over-under sampling 
-                    this will impact the final performance 
-                    this methodology must be applied only on the training set and not on the test set 
-
-                    the optimal number of over-under sampling 
-                    be much as possible near to the distribution
-                        but it really depends on the case 
-                            select the one that achieves the best results 
-                        bu under-over you introduce bias 
-
-                        empirical procedure 
-                            start from bla 
-                            poi bla bla 
-
-                        in general it seems that undersampling works better than oversampling 
-                
-                another technique is: syntetic mynority oversampling technique
-                    syntetically generate new samples from the one available
-                    identify the k nearest neighbors from the sample you want to replicate
-                    and then syntetically generate the new one by average the neighbors
-                    so you generated a new one which is slightly different 
-
-        Cost-Sensitive Learning 
-            besides interpretability, efficiency, main problem:
-                your output if is not in real time it's going to be investigated 
-                investigation 
-                you can estimate a cost associated to the misclassification,
-                in case of misclassification, boooh ultima cosa bro.
-
-                quando dice estimate this cost il cost è quello total ma poi lui ha puntato ai false positives
-
-                the same metric can be used to apply many theoretical procedures 
-
-                Some example of question at the exam.
-     \fi           
+    When evaluating predictive models, two key decisions need to be made:
+    \begin{itemize}
+        \item \textbf{On the dataset split up}
+        \item \textbf{On the performance metrics}
+    \end{itemize}
+    \subsection{Splitting up the dataset}
+        \subsubsection{Large dataset}
+            The decision on how to split up the dataset for performance measurements depends on its size.\\
+            Split large datasets into:
+            \begin{itemize}
+                \item (70\%) Training dataset 
+                \item (30\%) Test dataset
+            \end{itemize}
+            There must be \textbf{strict separation} between training and test sample.\\
+            In the case of decision trees or neural networks separate the training dataset in 40\% training, 30\% validation.\\
+            Stratified split-up ensures that fraudsters/non-fraudsters are equally distributed amongst the various samples.
+        \subsubsection{Small dataset}
+            With small datasets special schemes need to be adopted
+            \begin{itemize}
+                \item \textbf{Cross-validation:} split data in K folds, train models with K-1 folds and test on the remaining one. It will result in K performance estimates that then are averaged.
+                \item \textbf{Leave-one-out cross-validation:} every observation is left out in turn and a model is estimated on the remaining K-1 observations, this gives K analytical models in total.
+            \end{itemize}
+            Cross-validation gives multipe models, how should the final model be?
+            \begin{itemize}
+                \item All models collaborate in an ensamble 
+                \item Pick one LOO model at random, they will be quite similar anyway
+                \item Build one final model on all observations but report the performance coming out of the cross-validation
+            \end{itemize}
+    \subsection{Performance Metrics}
+        \begin{itemize}
+            \item \textbf{Classification Accuracy:} percentage of correctly classified observations: $$\frac{TP+TN}{TP+FP+FN+TN}$$
+            \item \textbf{Classification Error:} $$\frac{FP+FN}{TP+FP+FN+TN}$$
+            \item \textbf{Sensitivity, Recall or Hit Rate:} how many of the fraudsters are correctly labeled as fraudster: $$\frac{TP}{TP+FN}$$
+            \item \textbf{Specificity:} how many of the non-fraudsters are correctly labeled as non fraudsters $$\frac{TN}{FP+TN}$$
+            \item \textbf{Precision:} how many of the predicted fraudsters are actually fraudsters $$\frac{TP}{TP+FP}$$
+        \end{itemize}
+        Usually accuracy is not a good measure in fraud detection domain because frauds are rare, disperse in a huge amount of data.\\
+        Frauds represent 0.1 percent of data, if you say that everything is legitimate you will still get an accuracy of 99,9.\\
+        The good measures are F1 measure: armonic mean of precision and recall, Matthew Correlation Coefficient or other graphical measures and precision/recall.
+        \subsubsection{Receiver Operating Characteristic (ROC) Curve}
+            It plots the sensitivity vs 1-specificity:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.6\linewidth]{lecture_16/roc.png}
+            \end{figure}
+            a good model will be near to the extreme left point of the graph.\\
+            A problem arises if curves intersect, \textbf{AUC (Area under the ROC curve)} provides a simple figure-of-merit for the performance:\\
+            the higher the AUC, the better the performance. It interprets the probability that a randomly chosen fraudster gets a higher score than a randomly chosen nonfraudster.\\
+            A good classifier should have a ROC above the diagonal, and AUC bigger than 50\%.
+    \subsection{Developing predictive models for skewed datasets}
+        Fraud detection datasets often have a very skew target class, frauds are $$\leq 1\%$$. This creates problems for the analytical techniques.\\
+        It is recommended to increase the number of fraudulent observations or their weight, such that the analytical techniques can pay better attention to them.\\
+        Increase the number of frauds by:
+        \begin{itemize}
+            \item Increasing the time horizon for prediction: instead of six-month, 12-month.
+            \item Sample every fraud twice or more 
+            \item Undersample the majority case
+        \end{itemize}
+        \subsubsection{Oversampling}
+            Replicate frauds two or more times to make the distribution less skew
+        \subsubsection{Undersampling}
+            Remove nonfrauds two or more times to make the distribution less skew, remove low value transactions or inactive accounts.
+        \subsubsection{Under and Over sampling}
+            They can be combined, they should be performed only on training data and not on test data to give an unbiased view on model performance.
+        \subsubsection{SMOTE: Synthetic Minority Oversampling Technique}
+            Works by creating synthetic observations based on the existing minority observations.\\
+            Synthetically generate new samples from the ones available, identify the k nearest neighbors from the sample to replicate and synthetically generate the new one averaging the neighbors.
+        \subsubsection{Cost-Sensitive Learning}
+            Besides interpretability, efficiency is the main problem:\\
+            output is going to be investigated. We can estimate the cost associated to the misclassification 
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=0.6\linewidth]{lecture_16/last.png}
+            \end{figure}
