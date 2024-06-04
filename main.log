@@ -89,4 +89,171 @@ LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... o
+LaTeX Font Info:    ... okay on input line 10.
+ (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count199
+\scratchdimen=\dimen145
+\scratchbox=\box52
+\nofMPsegments=\count266
+\nofMParguments=\count267
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count268
+\MPscratchDim=\dimen146
+\MPnumerator=\count269
+\makeMPintoPDFobject=\count270
+\everyMPtoPDFconversion=\toks19
+) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
+
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+ [1
+
+] [2] [3] [4])
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [5] [6
+
+] (./lecture_1/lecture1.tex
+Chapter 1.
+[7
+
+{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [8] [9]
+<lecture_1/internaltreaths.png, id=44, 1541.76pt x 525.46312pt>
+File: lecture_1/internaltreaths.png Graphic file (type png)
+<use lecture_1/internaltreaths.png>
+Package pdftex.def Info: lecture_1/internaltreaths.png  used on input line 77.
+(pdftex.def)             Requested size: 345.0pt x 117.58266pt.
+ [10 <./lecture_1/internaltreaths.png>]
+<lecture_1/verizon.png, id=50, 478.03593pt x 444.91219pt>
+File: lecture_1/verizon.png Graphic file (type png)
+<use lecture_1/verizon.png>
+Package pdftex.def Info: lecture_1/verizon.png  used on input line 92.
+(pdftex.def)             Requested size: 241.49895pt x 224.76373pt.
+<lecture_1/malicious.png, id=51, 560.0925pt x 377.91188pt>
+File: lecture_1/malicious.png Graphic file (type png)
+<use lecture_1/malicious.png>
+Package pdftex.def Info: lecture_1/malicious.png  used on input line 108.
+(pdftex.def)             Requested size: 241.49895pt x 162.94872pt.
+ [11 <./lecture_1/verizon.png>] [12 <./lecture_1/malicious.png>] [13]
+<lecture_1/ransomware_history.png, id=66, 576.65437pt x 323.70938pt>
+File: lecture_1/ransomware_history.png Graphic file (type png)
+<use lecture_1/ransomware_history.png>
+Package pdftex.def Info: lecture_1/ransomware_history.png  used on input line 140.
+(pdftex.def)             Requested size: 137.9979pt x 77.46461pt.
+<lecture_1/ransomware_screen.png, id=67, 638.385pt x 462.22687pt>
+File: lecture_1/ransomware_screen.png Graphic file (type png)
+<use lecture_1/ransomware_screen.png>
+Package pdftex.def Info: lecture_1/ransomware_screen.png  used on input line 157.
+(pdftex.def)             Requested size: 137.9979pt x 99.91286pt.
+<lecture_1/ransomware_email.png, id=68, 606.76688pt x 303.38344pt>
+File: lecture_1/ransomware_email.png Graphic file (type png)
+<use lecture_1/ransomware_email.png>
+Package pdftex.def Info: lecture_1/ransomware_email.png  used on input line 165.
+(pdftex.def)             Requested size: 165.59853pt x 82.7988pt.
+<lecture_1/ransomware_email2.png, id=69, 560.8453pt x 365.11406pt>
+File: lecture_1/ransomware_email2.png Graphic file (type png)
+<use lecture_1/ransomware_email2.png>
+Package pdftex.def Info: lecture_1/ransomware_email2.png  used on input line 166.
+(pdftex.def)             Requested size: 165.59853pt x 107.80241pt.
+ [14 <./lecture_1/ransomware_history.png> <./lecture_1/ransomware_screen.png>]) (./lecture_2/lecture2.tex [15 <./lecture_1/ransomware_email.png> <./lecture_1/ransomware_email2.png>] [16]
+<lecture_2/chart.png, id=83, 604.50844pt x 353.06906pt>
+File: lecture_2/chart.png Graphic file (type png)
+<use lecture_2/chart.png>
+Package pdftex.def Info: lecture_2/chart.png  used on input line 20.
+(pdftex.def)             Requested size: 207.0021pt x 120.89848pt.
+ [17 <./lecture_2/chart.png>]
+<lecture_2/families.png, id=87, 1056.94875pt x 660.21657pt>
+File: lecture_2/families.png Graphic file (type png)
+<use lecture_2/families.png>
+Package pdftex.def Info: lecture_2/families.png  used on input line 35.
+(pdftex.def)             Requested size: 207.0021pt x 129.30081pt.
+ [18 <./lecture_2/families.png>]
+<lecture_2/ecosystem.png, id=92, 410.2828pt x 279.29344pt>
+File: lecture_2/ecosystem.png Graphic file (type png)
+<use lecture_2/ecosystem.png>
+Package pdftex.def Info: lecture_2/ecosystem.png  used on input line 58.
+(pdftex.def)             Requested size: 207.0021pt x 140.91208pt.
+ [19 <./lecture_2/ecosystem.png>]
+<lecture_2/drivebydownload.png, id=97, 923.70094pt x 341.77687pt>
+File: lecture_2/drivebydownload.png Graphic file (type png)
+<use lecture_2/drivebydownload.png>
+Package pdftex.def Info: lecture_2/drivebydownload.png  used on input line 79.
+(pdftex.def)             Requested size: 207.0021pt x 76.58878pt.
+ [20 <./lecture_2/drivebydownload.png>] [21]
+Chapter 2.
+<lecture_2/lifecycle.png, id=105, 933.4875pt x 660.21657pt>
+File: lecture_2/lifecycle.png Graphic file (type png)
+<use lecture_2/lifecycle.png>
+Package pdftex.def Info: lecture_2/lifecycle.png  used on input line 123.
+(pdftex.def)             Requested size: 207.0021pt x 146.39653pt.
+[22
+
+] [23 <./lecture_2/lifecycle.png>]
+<lecture_2/fork.png, id=112, 1177.39874pt x 595.47469pt>
+File: lecture_2/fork.png Graphic file (type png)
+<use lecture_2/fork.png>
+Package pdftex.def Info: lecture_2/fork.png  used on input line 138.
+(pdftex.def)             Requested size: 207.0021pt x 104.6912pt.
+) (./lecture_3/lecture3.tex [24 <./lecture_2/fork.png>]) [25] [26
+
+] (./lecture_10/lecture10.tex
+Chapter 3.
+[27
+
+]
+<lecture_10/eco.png, id=127, 768.62157pt x 568.37344pt>
+File: lecture_10/eco.png Graphic file (type png)
+<use lecture_10/eco.png>
+Package pdftex.def Info: lecture_10/eco.png  used on input line 23.
+(pdftex.def)             Requested size: 155.24895pt x 114.80011pt.
+<lecture_10/eco2.png, id=128, 634.62094pt x 662.475pt>
+File: lecture_10/eco2.png Graphic file (type png)
+<use lecture_10/eco2.png>
+Package pdftex.def Info: lecture_10/eco2.png  used on input line 24.
+(pdftex.def)             Requested size: 155.24895pt x 162.06013pt.
+<lecture_10/triangle.png, id=129, 415.5525pt x 389.95688pt>
+File: lecture_10/triangle.png Graphic file (type png)
+<use lecture_10/triangle.png>
+Package pdftex.def Info: lecture_10/triangle.png  used on input line 38.
+(pdftex.def)             Requested size: 155.24895pt x 145.68604pt.
+ [28 <./lecture_10/eco.png> <./lecture_10/eco2.png>] [29 <./lecture_10/triangle.png>]
+<lecture_10/memes.png, id=136, 337.26pt x 206.27063pt>
+File: lecture_10/memes.png Graphic file (type png)
+<use lecture_10/memes.png>
+Package pdftex.def Info: lecture_10/memes.png  used on input line 76.
+(pdftex.def)             Requested size: 155.24895pt x 94.95172pt.
+ [30 <./lecture_10/memes.png>] [31]
+<lecture_10/bank_example.png, id=144, 941.01563pt x 572.89032pt>
+File: lecture_10/bank_example.png Graphic file (type png)
+<use lecture_10/bank_example.png>
+Package pdftex.def Info: lecture_10/bank_example.png  used on input line 117.
+(pdftex.def)             Requested size: 155.24895pt x 94.51407pt.
+ [32 <./lecture_10/bank_example.png>]
+<lecture_10/fraudanalysis.png, id=149, 907.89188pt x 444.15938pt>
+File: lecture_10/fraudanalysis.png Graphic file (type png)
+<use lecture_10/fraudanalysis.png>
+Package pdftex.def Info: lecture_10/fraudanalysis.png  used on input line 132.
+(pdftex.def)             Requested size: 155.24895pt x 75.94661pt.
+ [33 <./lecture_10/fraudanalysis.png>]) (./lecture_11/lecture_11.tex [34] [35] [36] [37]
+<lecture_11/telecom.png, id=167, 1342.2647pt x 830.35219pt>
+File: lecture_11/telecom.png Graphic file (type png)
+<use lecture_11/telecom.png>
+Package pdftex.def Info: lecture_11/telecom.png  used on input line 97.
+(pdftex.def)             Requested 
