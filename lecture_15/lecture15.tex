@@ -1,239 +1,168 @@
 \section{Supervised Learning for Fraud Detection}
-    \subsection{Regression vs Classification}
+    Technique that assumes the availability of historical labelled data. With this technique is possible to identify \textbf{known fraudulent patterns}.\\
+    The aim is to build an analytical model predicting a target measure of interest, for example classifying a new instance as fraudulent or not.\\
+    The target fraud indicator is usually hard to obtain:
+    \begin{itemize}
+        \item Typically not provided by the collaborating entity
+        \item They are not noise-free, it is crucial to avoid overfitting
+    \end{itemize}
+    \subsection{Regression vs Classification: Target variables}
+    \begin{itemize}
+        \item \textbf{Regression}
+        \begin{itemize}
+            \item Continous target variable
+            \item Varies along a predefined limited or unlimited interval 
+        \end{itemize}
+        \item \textbf{Classification}
+        \begin{itemize}
+            \item Categorical target variable 
+            \item It can only take on a limited set of predefined values
+        \end{itemize}
+    \end{itemize}
     \subsection{Linear Regression}
-    \subsection{Logistic Regression}
+        Technique to model a continous target varaiable. The goal is to find the \textbf{best fit line} that can accurately predict the output of a continous variable.\\ 
+        General formulation:\\
+        \centering $$y(x,w) = w_0 + \sum_{i=1}^{N}w_ix_i$$\\
+        The weights $$w_i$$ measure the impact on the target variable $$y$$ of each of the individual explanatory variables.\\
+        The weights can be estimated by minimizing a cost function, for example the \textbf{squared error function} (OLS: Ordinary Least Squares).\\
+    \subsection{Logistic Regression (classification)}
+        When the target variable is categorical, linear regression gives us no guarantees to have the target in between 0 and 1.\\
+        With an S-curved function like the sigmoid, we can bound the values of the target variable.\\
+        Logistic regression results can be interpreted as probabilities, the optimization method is Maximum Likelihood Estimation.
     \subsection{Variable Selection}
+        Different methods to perform variable selection:
+        \begin{itemize}
+            \item \textbf{Statistical tests:} to verify if the coefficient of a variable is significantly different from zero, a low p-value represents a significant variable
+            \begin{itemize}
+                \item Linear Regression: Student's t-distribution 
+                \item Logistic Regression: Chi-squared distribution 
+            \end{itemize}
+            \item \textbf{Forward regression:} start from the empty model and always add variables
+            \item \textbf{Backward regression:} start from the full model and always remove variables
+            \item \textbf{Stepwise regression:} mix the two
+        \end{itemize}
+        \subsubsection{Evaluation criteria for variable selection}
+            \begin{itemize}
+                \item Statistical significance (p-value)
+                \item Interpretability
+                \item Operational Efficiency 
+                \item Legal Issues 
+            \end{itemize}
     \subsection{Decision Trees}
+        They are recursive-partitioning algorithms, based on a tree-like structure which can represent patterns in an underlying dataset.\\
+        Each top node (root node) specifies a testing condition, of which the outcome corresponds to a branch leading up to an internal node. The terminal nodes (leaves) assign fraud labels.\\
+        Implement three main functionalities:
+        \begin{itemize}
+            \item \textbf{Splitting decision}
+            \item \textbf{Stopping decision}
+            \item \textbf{Assignment decision}
+        \end{itemize}
+        \subsubsection{Splitting Decision}
+            Which variable to split at what value \textit{(e.g. transaction amount is $$>\$100.000$$ or not)}.\\
+            To understand the concept, \textbf{impurity or chaos:}
+            \begin{itemize}
+                \item \textbf{Minimal impurity:} occurs when all customers are either good or bad 
+                \item \textbf{Maximal impurity:} occurs when one has the same number of good and bad customers 
+            \end{itemize}
+            Kinds of impurity measures:
+            \begin{itemize}
+                \item entropy: bounded in 0 and 1
+                \item gini: bounded in 0 and 0.5
+            \end{itemize}
+            They can be both used with no great differences. The aim of decision tree is to minimize one of these measures (impurity).\\
+            By the end of the day the algortim selects a sequence of candidates for a splitting decision and then selects the one that minimizes the impurity.\\
+            This approach considers different candidate splits for its root node. It is a greedy and recursive strategy by picking the one with the biggest gain \textit{(gain = decrease in impurity)}.\\
+            It can be perfectly parallelized. 
+        \subsubsection{Stopping Decision}
+            When to stop adding nodes to the tree. If the tree continues to split we'll reach the situation where there is one leaf node per observation (overfitting).\\
+            To avoid overfitting train-validation. Stop adding nodes when the validation test curve reaches its minimum.
+        \subsubsection{Assignment Decision}
+            What class \textit{(fraud/not fraud)} to assign to a leaf node.
+    \subsection{Decision Tree Properties}
+            \subsubsection{Rule set}
+                Decision trees are interpretable models, they can be represented as a rule set: every path from a root node to a leaf makes up a simple if-then rule.\\
+                These trees can automatically extract rules, they're a tool which can help experts in build rules: no more manual update.
+            \subsubsection{Decision Boundaries}
+                Decision tree essentially model decision boundaries orthogonal to the axes
+                \begin{figure}[ht!]
+                    \centering 
+                    \includegraphics[width=0.6\linewidth]{lecture_15/boundaries.png}
+                \end{figure}
+    \subsection{Using Decision Trees in Fraud Analytics}
+        These mechanisms can be used to interpret the result of other machine learning techniques, for example to interpret clustering solutions:\\
+        given the clustering solution, build a decision tree with the cluster output interpreted as label, trying to explain it.\\
+        Advantages:
+        \begin{itemize}
+            \item White-box models with clear explanation: interpretable 
+            \item Operationally efficient 
+            \item Powerful techniques that allow for more complex decision boundaries than logistic regression 
+            \item Non-parametric
+        \end{itemize}
+        Disadvantage:
+        \begin{itemize}
+            \item Highly dependent on the sample that was used for tree construction
+        \end{itemize}
     \subsection{Neural Networks}
-\iffalse
-Supervised Learning for Fraud Detection
-    Assumes the availability of historical labelled data, so it can identify known fraudulent patterns.
-
-    Main problem: usually the labels related to transactions are difficult to obtain
-        because they are not provided by the entity with which you're collaborating
-        and usually the lables are not noise free (and we don't want to learn noise because it will make us overfit)
-
-    Regression vs Classification 
-    
-    In regression target variable continous and varies along a predef. interval
-    In classification target variable is categorical (binary class vs multi-class class.)
-
-    Linear Regression 
-        Technique that tries to model a continous target value
-        General formulation 
-        y(x,w) = w0 + w1x1 + \dots
-        y is the target variable 
-        w are the parameters 
-        x are the explanatory variables (features)
-
-        weight the features based on their important
-        we're training the weights 
-        how do you train them?
-            minimize a cost function (loss function)
-            minimize the Squared Error Function 
-            try to minimize the error of the prediction wrt the values that compose the dataset
-            try to find the best Line(linear relation) that represent the dataset
-            w0 is the intercept parameter of the line wrt the y axis 
-
-    Logistic Regression (Classification)
-        When you have a categorical target variable 
-        If you try to apply linear regression, the thing is shit because
-        the error/target are not normally distributed but follow a bernoulli distribution
-        No guarantees that the linear regression target is between 0 and 1
-
-        You want a function that stays in between 0 and 1 (Use S-Curved )
-        You're bounding the values of the target variable 
-
-        We decide to fit with a sigmoid function, the parameters are now put as 
-        exponents of an exponential in the denominator of a fraction 
-
-        You can interpret log. regression result as probabilities 
-
-        We pass the weighted sum of the inputs through an activation function that 
-        can map the values in between 0 and 1 
-        The activation function is called sigmoid 
-        Optimized with MLE 
-
-        From higher perspective logistic regression tries to estimate the best plane where to separate both classes 
-        Set a treshold and decide which parameters are considered okay or fraudulent 
-
-        Used for:
-            classification and/or regression 
-            output between 0 and 1 
-
-    Linear and Logistic: variable selection 
-        built in procedures to perform variable selection 
-        Linear regression --> perfrom statistical test based on Student's t 
-        Logistic regression --> perform based on Chi-squared distribution 
-
-        p value 
-        A low p-value means significant variable 
-        High p-value means insignificant variable 
-
-        Perform these:
-            forward regression --> start from few features and add 
-            backward regression 
-            stepwise regression 
-
-        Evaluation criteria for variable selection 
-            statistical significance (p-value)
-            interpretability
-                sign of the regression coefficient: direction of 
-                    positive: 
-                    negative: 
-            Operational efficiency 
-            Legal issues: some variables cannot be used because of privacy or discrimination concers 
-
-    Slide 144 Recap
-
-    Decision Trees
-        recursive partitioning algo built with tree-like structure 
-
-        top node= root node where you specify a testing condition of which the outcome corresponds to a branch leading up to an internal node 
-        leaf nodes assign fraud labels 
-
-        Implement 3 main funcitonalities 
-            splitting decision : 
-            stopping decision 
-            assignment decision : to which class assign a specific instance of the dataset 
-
-            Splitting Decision:
-                to understand it we define the concepts of impurity and chaos
-                with an example of three boxes with two different objects 
-                minimal impurity= all the boxes contains the same object (o black or white per ciascuno)
-                maximal impurity = when you have a box that contain an equal number of good or bad 
-
-                Impurity measures:
-                    entropy: bounded in 0 and 1
-                    gini : bounded in 0 and 0.5
-                    you can use both with no restrictions 
-
-                By the end of the day the algortim selects a sequence of candidates for a splitting decision and
-                then selects the one that minimizes the impurity 
-
-                We measure the decrease of impurity with the gain 
-                higher gain is better
-
-                The algo can perfectly be parallelized and executed with a greedy and recursive strategy
-
-            Stopping decision:
-                ha detto delle cose alle 12:59
-
-            Decision Tree Properties
-                binary trees:
-                multiple branches:
-                difference is the shape of the tree
-
-                decision trees are interpretable models, you can directly extract rule sets.
-
-                By building these and automatically extract rules you have a tool which can help 
-                experts in build rules --> no more manual update
-
-            Decision Boundaries
-                the tree decides to build more decision boundaries to split data 
-                manca ragionamento
-
-            Using Decision Trees in Fraud Analytics 
-                these kind of mechanism can be used to interpret the result of other machine learning techniques
-
-                For example you can use it to interpret the solutions of clustering
-                    in the moment you get the cluster is very difficult to understand if it is meaningful or not 
-                    we try to interpret the clustering output as a label of a supervised learning dataset, the label is the cluster to which each sample is assigned 
-                    youre going to have a decision tree that tries to explain 
-                    and so you can understand if the cluster is meaning or not 
-
-                manca ovviamente una parte 
-        
-    Neural Networks
-        Neural networks are mathematical representations
-        inspired by the functioning of the human brain”
-        Neural networks can model very complex patterns and
-        decision boundaries in the data.
-
-        However if we analyse how a NN works, in truth they are just generalisation of logistic regression 
-
-        because a neuron uses sigmoid as activating function 
-
-        logistic regression is a neural network with just a neuron (contestabile)
-
-
-        MultiLayer Perceptron 
-            sequence of neurons organised in different layers 
-                input : acquires the input
-                hidden : number of neurons that perform feature extraction, try to combine the feature inputs with the weights assigned to the different logistic functions 
-                output : number of nodes depending on the result we want to obtain
-            
-            For classification: logistic transform in the output layer 
-            For regression: you can use a linear function 
-
-        Details 
-            in fraud analytics no complex patterns, good with just one hidden layer 
-            Universal Approximators, in the fraud domain they're able to approximate any function 
-            no complex models 
-
-        Weight Learning:
-            to predict continuous target variable MSE 
-            binary target variable MAXIMUM LIKELIHOOD 
-
-            start from random weights, then start an optimization proble 
-            perform until you reach the solution or the limit of the number of operations 
-
-            The function they try to minimize is not convex so it has multiple local minima but only one global minimum
-
-            You can mitigate the fact to remain in a local minima with :
-                preliminary training: start from different sets with random weights and select the one with best performance 
-                stopping criterion: when no more progress, weights stop changing substantially, after a certain number of epochs 
-        
-        Second problem: select the number of layers and hidden neurons per each layer 
-            Select them based on the complexity and non-linearity of the patterns in data 
-            You want to find more complex relations between input and output 
-
-            Do train,val,test split and do things 
-
-        Overfitting Problem 
-            13:30
-            Options to mitigate overfitting 
-             1: train test and stop training when you notice an increase of classificaiton error 
-             2: weight regularization: put some bound on the value of each weight is going to assume, because 
-                                        nn work updating weights associated to hidden neurons, so bigger weights can 
-                                        make the model give importance to something which is not so good 
-        
-        13:33 esempio di domanda esame 
-        Disadvantage è che sono black box method 
-            impossible or not easy to interpret, it may make investigation longer 
-
-            But we have a way to interpret them (capisci che cosa ha detto)
-                hinton diagram 
-                    how many hidden neurons you've activated?
-                    look at the size of the weights (these two neurons will be activated when a thing arrives to input)
-                    in the example do not consider the income because it is activated by small number of neurons with small weights
-                    remove it and 
-
-                Another way is to use backward variable selection 
-                remove features until you start to see a decrease of performance 
-
-                The two methodologies above allows us to perform variable selection 
-                but ??? 13:43
-
-            Rule Extraction Procedure 
-                you can use 
-                Decompositional Technique: decompose the NN internal workings by automatically analysing weights and/or activation values 
-                Pedagogical Technique: vedila 
-
-                Example:
-                    + parte finale lezione vedi tutto 
-
-                    
-
-\fi
-
-
-        
-
-
-
-
-
-
-
-
+        \textit{Mathematical representations inspired by the functioning of the human brain}.\\
+        Can model very complex patterns and decision boundaries in the data. They are a generalization of logistic regression, each neuron uses sigmoid as activation function.\\
+        \subsubsection{MultiLayer Perceptron}
+            Sequence of neurons organized in different layers:
+            \begin{itemize}
+                \item Input layer
+                \item Hidden layers 
+                \item Output layer 
+            \end{itemize}
+            Since in fraud analytics there are no complex patterns, neural networks with just one hidden layer are already good.
+        \subsubsection{Weights Learning}
+            The optimization is more complex: iterative algorithm that optimizes a cost-function
+            \begin{itemize}
+                \item For regression: MSE 
+                \item For classification: Maximum Likelihood 
+            \end{itemize}
+            Start from a set of random weights, and iteratively adjust them to the patterns in the data using an optimization algorithm (backpropagation).
+            The curvature of the objective function is not convex, to avoid local minima start with different randomizations of the weights and select the one with the best performances.\\
+            Stop after a certain number of epochs without \textit{progess}.
+        \subsubsection{Overfitting}
+            Options to mitigate overfitting:
+            \begin{itemize}
+                \item train test and stop training when you notice an increase of classificaiton error 
+                \item weight regularization: put some bound on the value of each weight is going to assume, because neural network work updating weights associated to hidden neurons, bigger weights give importance to something that don't.
+            \end{itemize}
+        \subsubsection{Variable Selection and Interpretability}
+            Neural networks are black box: relate input to output in a mathematically complex, non-transparent and opaque way.\\
+            In fraud domain, we need to perform variable selection without removing what can be important to our model: \textbf{Hinton Diagram}.
+            The Hinton diagram visualizes the weights between the inputs and the hidden neurons as squares, where the size of the square is proportional to the size of the weight. It is possible to inspect the diagram and remove the variable whose weights are closest to zero.\\
+            Another way is to use backward variable selection, by removing features until we start to see a decrease of performance.
+        \subsubsection{Rule Extraction Procedure}
+            To extract if-then classification rules, mimicking the behavior of the neural network.
+            \begin{itemize}
+                \item \textbf{Decompositional technique:} decompose the network's internal workings by inspecting weights and/or activation rules.
+                \item \textbf{Pedagogical technique:} consider the neural network as a black box and use its predictions as input to a white-box analytical technique such as decision trees.
+            \end{itemize}
+        \subsubsection{Decompositional Rule Extraction Example}
+            \begin{figure}[ht!]
+                \centering 
+                \includegraphics[width=0.6\linewidth]{lecture_15/decompositional.png}
+            \end{figure}
+        \subsubsection{Pedagogical Rule Extraction Example}
+            \begin{figure}[ht!]
+                \centering 
+                \includegraphics[width=0.6\linewidth]{lecture_15/pedagogical.png}
+            \end{figure}
+        \subsubsection{Rule Extraction Approaches Evaluation}
+            Rule-sets must be evaluated in terms of:
+            \begin{itemize}
+                \item \textbf{Accuracy}
+                \item \textbf{Conciseness}
+                \item \textbf{Fidelity:} measures to what extent the extracted rule set succeeds in mimicking the neural network and is calculated as follows.
+            \end{itemize}
+    \subsection{Two-stage model setup}
+        \begin{itemize}
+            \item Estimate an easy-to-understand model first \textit{(e.g. linear regression, logistic regression)}, this will give us the interpretability part
+            \item Use a neural network to predict the errors made by the simple model using the same set of predictors
+            \item Both models are then combined in additive way
+        \end{itemize}
+        \begin{figure}[ht!]
+            \centering 
+            \includegraphics[width=0.6\linewidth]{lecture_15/twostage.png}
+        \end{figure}
