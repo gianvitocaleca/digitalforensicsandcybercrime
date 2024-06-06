@@ -1,29 +1,31 @@
 \section{Bitcoin and black market}
-    Bitcoin immediately started to be used for black markets. Because you had a way to pay without an infrastructure.
+    Bitcoin immediately started to be used in black markets: there was a way to pay without an infrastructure.
     \subsection{Pseudo-anonimity}
         The first reason to use Bitcoin for black markets is \textbf{anonimity}.\\ 
         In reality Bitcoin is actually \textbf{pseudonymous}: the identifier for the transactions is not directly connected to an identity, but to an address which can be seen as a username.\\
-        Every entity generates multiple keys for themselves, so more pseudonyms. This pseudonimity is robust because addresses don't refer in any way to their owners.\\
+        Every entity generates multiple keys for themselves, so more pseudonyms.\\ 
+        This pseudonimity is robust because addresses don't refer in any way to their owners.\\
         Transactions are public by the way, and this is a terrible property if you're interested in anonimity; while addresses are not connected to people, there is something that connects addresses related to the same person:
         \begin{itemize}
-            \item transaction can have multiple keys as input, if a transaction has multiple inputs, very likely that the inputs are all owned by the same entity
-            \item Bitcoin works in a way in which you cannot spend less than the whole amount of bitcoin you have in your address, to send a smaller amount to somebody, you'd generate a transaction with two outputs:
+            \item A transaction can have multiple keys as input, if a transaction has multiple inputs, it is very likely that the inputs are all owned by the same entity
+            \item Bitcoin works in a way in which you cannot spend less than the whole amount of bitcoin you have in your address: to send a smaller amount to somebody, you'd generate a transaction with two outputs
             \begin{itemize}
                 \item The destination address
                 \item A new address called Shadow Address which is owned by the same person who started the transaction, where the rest of the currency is sent.
             \end{itemize}
         \end{itemize}
         Until 2013, a bug made very easy to know which of the two outputs in a transaction were the shadow address, hence making easier to track their correlations.\\
-        It was then possible to track addresses in a way in which keys belonging to the same entity were collapsed in large sets. When you have one of those addresses connected to somebody's name you can actually connect all the others in the set to him.
-        \subsubsection{Silk Road Example}
+        It was then possible to track addresses in a way in which keys belonging to the same entity were collapsed in large sets.\\ 
+        When you have one of those addresses connected to somebody's name you can actually connect all the others in the set to him.
+        \subsubsection{The Silk Road Example}
             Silk Road was a black market which used BTC as currency, it was ran by someone under the name of \textit{"Dead Pirate Roberts"}.\\
             It was found out that someone using the nickname \textit{"altoid"} were advertising Silk Road on different websites, and with the same nickname earlier in the past was also hiring developers for a PHP project. \textit{(which then became Silk Road)}\\
             In that specific post, altoid was asking to contact him at \textit{"rossulbricht at gmail dot com"} if interested.\\
             He also posted a request for help which included PHP code with his address in it: 1LDNLreKJ6GawBHPgB5yfVLBERi8g3SbQS\footnote{today there are 20 dollars of Bitcoin}, which then was found to be associated with Silk Road\\
-            Ross Ulbricht was arrested in 2013.
+            Ross Ulbricht was arrested in 2013. \textit{(Hope he was arrested for using PHP and not for selling drugs)}
     \subsection{Why do people use Bitcoin for ransoms?}
         For these two characteristics:
         \begin{itemize}
             \item BTC transactions, in contrast with common electronic payment systems, are irreversible.
-            \item To use other kinds of digital payments you need an infrastructure \textit{(bank account\dots)}, with cryptocurrency you just need an address.
+            \item To use other kinds of digital payments an infrastructure is needed \textit{(bank account\dots)}, with cryptocurrency you just need an address.
         \end{itemize}

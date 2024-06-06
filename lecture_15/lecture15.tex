@@ -20,11 +20,12 @@
         \end{itemize}
     \end{itemize}
     \subsection{Linear Regression}
-        Technique to model a continous target varaiable. The goal is to find the \textbf{best fit line} that can accurately predict the output of a continous variable.\\ 
-        General formulation:\\
-        \centering $$y(x,w) = w_0 + \sum_{i=1}^{N}w_ix_i$$\\
-        The weights $$w_i$$ measure the impact on the target variable $$y$$ of each of the individual explanatory variables.\\
-        The weights can be estimated by minimizing a cost function, for example the \textbf{squared error function} (OLS: Ordinary Least Squares).\\
+        Technique to model a continous target variable.\\
+        The goal is to find the \textbf{best fit line} that can accurately predict the output of a continous variable.\\ 
+        General formulation:
+        $$y(x,w) = w_0 + \sum_{i=1}^{N}w_ix_i$$
+        The weights $w_i$ measure the impact on the target variable $y$ of each of the individual explanatory variables.\\
+        The weights can be estimated by minimizing a cost function, for example the \textbf{squared error function} (OLS: Ordinary Least Squares).
     \subsection{Logistic Regression (classification)}
         When the target variable is categorical, linear regression gives us no guarantees to have the target in between 0 and 1.\\
         With an S-curved function like the sigmoid, we can bound the values of the target variable.\\
@@ -104,7 +105,7 @@
         \end{itemize}
     \subsection{Neural Networks}
         \textit{Mathematical representations inspired by the functioning of the human brain}.\\
-        Can model very complex patterns and decision boundaries in the data. They are a generalization of logistic regression, each neuron uses sigmoid as activation function.\\
+        Can model very complex patterns and decision boundaries in the data. They are a generalization of logistic regression, each neuron uses sigmoid as activation function.
         \subsubsection{MultiLayer Perceptron}
             Sequence of neurons organized in different layers:
             \begin{itemize}

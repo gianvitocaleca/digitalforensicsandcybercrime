@@ -107,37 +107,39 @@
         \\Unaccomplished ones may be people which are fooled by things like the Nigerian prince scam: they get the money on their bank account, send 70\% of them to criminals in packages or by moneytransfer, and keep 30\%. Most of the cases they get arrested and have to pay back all the money, also the ones they don't own no more.\\
         Buying and selling of goods \textit{(ricettazione)}, videogames curriencies, \dots, are other ways to perform money laundering.
 \chapter{Cryptocurrencies: abuses and forensics}
-    We talk about cryptocurrencies in the way they are used in cybercrime.
+    In this chapter we will talk about the cryptocurrencies role in cybercrime.
     \section{Bitcoin and blockchain}
         Bitcoin is an attempt to create \textbf{electronic cash}: a digital currency that has lots of properties that physical money have, one of them is \textbf{no central authority}.\\
-        What Satoshi Nakamoto wanted to have is an electronic distributed ledger\footnote{ledger=registro}.\\
-        Having no central authority is a really hard problem to solve \textit{(byzantine consensus)}, he did it with \textbf{the blockchain}.\\
+        What Satoshi Nakamoto wanted to have was an electronic distributed ledger\footnote{ledger=registro}.\\
+        Having no central authority is a really hard problem to solve \textit{(byzantine consensus)}, he did it with \textbf{the blockchain}:\\
         The blockchain is a \textbf{shared, append-only, trustable} ledger of all coins transactions. The limits of distributed consensus defined in the Byzantine Problem and CAP Theorem are solved using the technique of \textbf{proof-of-work}.
     \section{Wallet and addresses}
-        A wallet is the software that allows to manage and store the \textbf{public} and \textbf{private} keys for each of the user's bitcoin addresses. To create and sign transactions, track the balance.\\
-        A bitcoin address is an alphanumeric string which identifies a \textit{point} where you can send bitcoin to, and where they can be sent from.
-        In order to know how many Bitcoin are \textit{stored} in that key you need to go to the origin of all the transactions and track the flow of them to understand how much of them are there now. This computations is not really efficient but can run without central authority, so the only reason for using a blockchain is if it is really so important to get a way out of a central authority.
+        A wallet is the software that allows to manage and store the \textbf{public} and \textbf{private} keys for each of the user's bitcoin addresses, to create and sign transactions, track the balance.\\
+        A bitcoin address is an alphanumeric string which identifies a \textit{point} where you can send bitcoin to, and where they can be sent from.\\
+        In order to know how many Bitcoin are \textit{stored} in that key you need to go to the origin of all the transactions and track their flow. This computation is not really efficient but \textbf{it can run without central authority}, so the only reason to use a blockchain is that is really so important to get a way out of a central authority.
     \section{The bitcoin transaction life cycle}
         \begin{figure}[ht!]
             \centering
             \includegraphics[width=0.6\linewidth]{lifecycle.png}
         \end{figure}
-        As soon as the transaction is on the immutable ledger, the money are on the other address. How do we ensure that this is the only transaction done with those Bitcoins?\\
-        Our immutable ledger must be consolidated, with a central authority that would have been easy, how do we agree with no central authority? We need a history that cannot be modified, and to do this we talk about mining.\\
-        Mining is the process to generate a block containing all the transactions, and to append it to the blockchain.
+        As soon as the transaction is written in the immutable ledger, the money are property of the destination address.\\
+        To be sure that this is the only transaction done with those Bitcoins, the immutable ledger must be consolidated: that would have been easy with a central authority, but to agree without one, we need a history that \textbf{cannot be modified}, and to do this we use mining.
     \section{Mining}
-        Miners compete to generate a new valid block that solves a complex mathematical problem bybruteforce: the solver is then rewarded a fixed number of BTC.\\
-        It is a computational demanding activity: miners put a set of transactions in the new block, put there a destination for the reward and then start bruteforcing the block to find a sha256 hash of it which starts \textbf{with a certain number of zeros}. The more zeros, the more difficult is the process.\\
-        When a block is added to the blockchain, the other miners stop bruteforcing their blocks and start to compute the hash of another one, to link it to the last found block.
+        It is the process to generate a block containing a set of new transactions, and to append it to the blockchain.\\
+        Miners compete to generate a new valid block that solves a complex mathematical problem by bruteforce: the solver is then rewarded with a fixed number of BTC.\\
+        This is a computational demanding activity: miners put a set of transactions in the new block, put there a destination for the reward and then start bruteforcing the block to find a sha256 hash of it which starts \textbf{with a certain number of zeros}: the more the zeros, the more difficult is the process.\\
+        When a block is added to the blockchain, the other miners stop bruteforcing their blocks and start to compute the hash of another one, to link it to the last found block.\\
         The difficulty increases more and more, the reward got smaller and smaller but BTC value gets larger and larger.\\
-        Besides of the reward you get, you can also put a fee you want to receive from the transactions you included in the block. Since reward is becoming smaller, fees are becoming larger. Now the fees make small transactions unfeasible.
+        Besides of the reward you get, you can also put a fee you want to receive from the transactions you included in the block.\\ 
+        Since rewards are becoming smaller, fees are becoming larger, making small transactions unfeasible.
 \newpage    
     \section{Fork events}
         \begin{figure}[ht!]
             \centering
             \includegraphics[width=0.6\linewidth]{fork.png}
         \end{figure}
-        Sooner or later two miners will get a solution at more or less the same time. This causes a fork where the situation is that for some miners the blockchain ends with block A and for some others with block B.\\
-        Now the blockchains are two, and sooner or later some miner will find a solution and append a new block in one of them. The rule says that \textbf{the longest blockchain is the true one}. As soon as one blockchain becomes longer, all the miners move to that leaving the other one sadly alone.\\
-        This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is the longest one: this means that you would compete with all the other miners. 
+        Sooner or later two miners will get a solution at more or less the same time: this causes a \textbf{fork} where the situation is that for some miners the blockchain ends with block A and for some others with block B.\\
+        Now the blockchains are two, and sooner or later some miner will find a solution and append a new block to one of them.\\ 
+        The rule says that \textbf{the longest blockchain is the true one}, as soon as one blockchain becomes the longest, all the miners move to that leaving the other one sadly alone.\\
+        This is done because in order to revert a payment you'd need to go back on your block, go ahead mining until your blockchain is the longest one: this means that you would compete with all the other miners.\\ 
         To be sure that a certain transaction is there and cannot be canceled, you must wait that the block in which it finds itself is a couple blocks behind the last one.    
