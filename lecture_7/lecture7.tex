@@ -29,7 +29,7 @@ The underlying mapping is completely transparent and can be modified by the FTL 
     \subsection{Trimming}
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{trim.png}
+            \includegraphics[width=0.5\linewidth]{trim.png}
             \caption{trimming test flow}
         \end{figure}
         Their results:
@@ -39,38 +39,39 @@ The underlying mapping is completely transparent and can be modified by the FTL 
             \item ext4 erased the disk in about 15 seconds when formatting, some drives did not erase on delete, some only when unmounting.
         \end{itemize}
         Consider that nowadays most of the filesystems support SSDs, so they will work correctly. But it may be useful to check for any remainance.
+    \newpage
     \subsection{Garbage Collection}
+        In their tests, none of the SSDs performed garbage collection, even when trying to repeat a documented experiment with the help of the author of that experiment.
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{garbage.png}
+            \includegraphics[width=0.5\linewidth]{garbage.png}
             \caption{garbage collection test flow}
         \end{figure}
-        In their tests, none of the SSDs performed garbage collection, even when trying to repeat a documented experiment with the help of the author of that experiment.
     \subsection{Erasing Patterns}
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{patterns.png}
+            \includegraphics[width=0.5\linewidth]{patterns.png}
             \caption{erasing patterns test flow}
         \end{figure}
         They found out that certain SSD controllers may exhibit unexpected trimming patterns, leaving some parts \textit{more recoverable} than others. What the professor thinks is that the drive could be faulty, but this is important to check then, faulty drives may still keep data.
     \subsection{Compression}
+        They found out that some drives had less data transferred when transfering the same file, thus compression.
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{compression.png}
+            \includegraphics[width=0.5\linewidth]{compression.png}
             \caption{compression test flow}
         \end{figure}
-        They found out that some drives had less data transferred when transfering the same file, thus compression.
     \subsection{Wear Leveling}
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{wearleveling.png}
+            \includegraphics[width=0.5\linewidth]{wearleveling.png}
             \caption{wear leveling test flow}
         \end{figure}
         They wanted to find if more copies of the same data were created while doing wear leveling. They weren't.
     \subsection{Files Recoverability}
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=0.8\linewidth]{recoverability.png}
+            \includegraphics[width=0.5\linewidth]{recoverability.png}
             \caption{files recoverability test flow}
         \end{figure}
         Only the drive which presented trimming had recoverable files.

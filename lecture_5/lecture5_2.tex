@@ -28,7 +28,7 @@
         Data/evidence may have been voluntarily or unvoluntarily deleted because time passed, because of the OS, because the drive was formatted, because the drive was faulty.
         In many of these cases, we may be able to reconstruct all or part of the information, which is one of the most typical tasks computer forensics experts perform.\\
         Let's look at the UNIX file system again for the millionth time to recall basic elements on data storage by OSs:\\
-        \begin{figure}
+        \begin{figure}[ht!]
             \centering
             \includegraphics[width=0.7\linewidth]{filesystem.png}
         \end{figure}
@@ -38,13 +38,13 @@
         when we delete a file the operating system just marks the file as deleted and just doesn't shows it no more. The actual data will go away when overwritten by other files.\\
         Indexes and data will go away randomly and independently from each other, statistically on a large hard drive there is a good possibility that metadata goes away before data blocks.
         \subsection{Disk Geometry}
-            tracks, cylinders \dots 
-            \begin{figure}
+            \begin{figure}[ht!]
                 \centering
                 \includegraphics[width=0.7\linewidth]{sectors.png}
             \end{figure}
             When reading and writing, the minimum portion of a track is called sector, each drive has a different sector size, and the OS can't manage it for each of the existent models.\\
-            OS's filesystems are made to work on clusters of sectors \textit{(NTFS uses 4kb clusters)}, independently of the real dimension on the drive. So, storing for example a file of size 5kb needs 1 cluster of 4kb + a fourth of a cluster, and leaves the remaining part as unused slack space.\\
+            OS's filesystems are made to work on clusters of sectors \textit{(NTFS uses 4kb clusters)}, independently of the real dimension on the drive.\\ 
+            So, storing for example a file of size 5kb needs 1 cluster of 4kb + a fourth of a cluster, and leaves the remaining part as unused slack space.\\
             In the slack space there can possibly be remainances of old files, obviously they can be small portions, so only small files can be retrieved \textit{(e-mails, text files \dots)}, while other filetypes can't because they need to be full to be read \textit{(images, encrypted files \dots)}\\
             Sectors are one after the other, if we place a file on a drive there is a good possibility that all the sectors of it are one after the other, so by scanning \textit{(cramming)} the drive can be possible to find them and restore them too.\\
             The issues are with fragmented files, it was a big problem on small drives, now in most cases drives are so large to not fragment and most of OS's try to not break files for performance reasons. There still are techniques to find fragments of files and restore them.\\
